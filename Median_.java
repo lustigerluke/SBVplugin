@@ -41,13 +41,13 @@ public class Median_ implements PlugInFilter {
 		// step1: move mask to all possible image pixel positions
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				double[][] tmpDataArrDouble = inDataArrDouble.clone();
+				double[][] mask = inDataArrDouble.clone();
 				try {
 
 					// roi = new Rectangle(x - radius, y - radius, size - deltaX - 1, size);
 					Rectangle roi = getROI(width, height, x, y, radius);
-					tmpDataArrDouble = ImageJUtility.cropImage(tmpDataArrDouble, roi.width, roi.height, roi);
-					double median = getMedian(tmpDataArrDouble);
+					mask = ImageJUtility.cropImage(mask, roi.width, roi.height, roi);
+					double median = getMedian(mask,roi.width,roi.height);
 					resultImage[x][y] = median;
 
 					successIndex++;
@@ -89,35 +89,38 @@ public class Median_ implements PlugInFilter {
 		int xsize = 2 * radius + 1;
 		int ysize = 2 * radius + 1;
 
+		
 		// special behaviour
 		if (x - radius < 0) {
 			xsize = xsize - (radius - x);
 			x = radius;
 		}// set minimum x
-		if (x + radius >= width) {
-			int d = (radius - (width - x));
-			xsize = xsize - d;
-		}// set maximum x
 		if (y - radius < 0) {
 			ysize = ysize - (radius - y);
 			y = radius;
 		} // set minimum y
+		
+		
+		if (x + radius >= width) {
+			int d = (radius - (width - x));
+			xsize = xsize - d - 1 ;
+		}// set maximum x
 		if (y + radius >= height) {
-			int d = (radius - (height - y)) + 1;
-			ysize = ysize - d;
+			int d = (radius - (height - y));
+			ysize = ysize - d - 1 ;
 		} // set maximum y
 		
 		return new Rectangle(x - radius, y - radius, xsize, ysize);
 	}
 
-	public static double getMedian(double[][] inputImg) {
-		int size = inputImg.length * inputImg.length;
+	public static double getMedian(double[][] inputImg, int width, int height) {
+		int size = width * height;
 
 		// fill array
 		double[] arr = new double[size];
 		int index = 0;
-		for (int i = 0; i < inputImg.length; i++) {
-			for (int j = 0; j < inputImg.length; j++) {
+		for (int i = 0; i < width; i++) {
+			for (int j = 0; j < height; j++) {
 				arr[index] = inputImg[i][j];
 				index++;
 			}
