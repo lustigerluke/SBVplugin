@@ -21,6 +21,7 @@ public class Gauss_ implements PlugInFilter {
 		int width = ip.getWidth();
 		int height = ip.getHeight();
 		int tgtRadius = 4;
+		int sigma = 4;
 		
 		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
 		double[][] inDataArrDouble = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
@@ -33,7 +34,7 @@ public class Gauss_ implements PlugInFilter {
 		if(gd.wasCanceled()) {return;}
 		tgtRadius = (int)gd.getNextNumber();
 		
-		double[][] filterMask = ConvolutionFilter.GetGaussMask(tgtRadius,4);
+		double[][] filterMask = ConvolutionFilter.GetGaussMask(tgtRadius,sigma);
 		ImageJUtility.showNewImage(filterMask, filterMask.length, filterMask.length, "Gauss Mask");
         
 		//double[][] resultImage = ConvolutionFilter.ConvolveDouble(inDataArrDouble, width, height, filterMask, tgtRadius);
