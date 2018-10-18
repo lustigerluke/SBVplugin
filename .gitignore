@@ -1,2 +1,24 @@
 
 *.class
+
+*.aux
+
+*.cls
+
+*.gz
+
+*.out
+
+*.log
+
+*.blg
+
+*.bcf
+
+*.bbl
+
+DOKU/main\.tcp
+
+DOKU/main\.run\.xml
+
+*.toc
