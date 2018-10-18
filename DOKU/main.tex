@@ -2,6 +2,7 @@
 \usepackage{listings}
 %\usepackage[utf8]{inputenc}
 \usepackage{inputenc}
+\usepackage{graphicx}
 
 \lstset{
 extendedchars=\true,
@@ -71,10 +72,66 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
 \section{ Raster-Entfernung im Frequenzraum}
-\subsubsection{Code}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
-\subsubsection{Ablaufund Idee}
+\subsection{Workflow}
+\begin{itemize}
+	\item Starten von \textit{imageJ.exe}
+	\item Öffnen eines Bildes
+	\item \textit{Process $\rightarrow$ FFT $\rightarrow$ FFT}
+	\item Zuschneiden des interessanten Bereichs im FFT Bild
+	\item \textit{Process $\rightarrow$ FFT $\rightarrow$ inverse FFT}
+\end{itemize}
 
-\subsubsection{Tests}
+\subsection{Beispiele}
+
+\subsubsection{Auge}
+Es wurde ein Bild gewählt, welches (wie bei einem Plakatdruck) Punkte in regelmässigen Abständen aufweist. Die eigentliche Bildinformation steckt in der Dicke er Punkte. Eine FFT Transformation zeigt deutlich ein periodisches Muster. Will man nur die eigentliche Bildinformation gewinnen, müssen hochfrequente Anteile des Bildes entfernt werden. Tabelle \ref{tab:AuswertungAuge} zeigt deutlich dass durch ein Entfernen der Randbereiche (höhere Frequenzen) im FFT Bild und die anschließende Rücktransformation die eigentliche Bildinformation gewonnen werden konnte.
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c | c}
+    \hline
+    Bild & FFT \\
+    \hline
+	\includegraphics[width=4cm]{../testData/Auge.jpg} & \includegraphics[width=4cm]{../testData/Results/Auge/FFT_of_Auge.jpg} \\
+    \hline
+    \includegraphics[width=4cm]{../testData/Results/Auge/reduced_Auge.jpg} & \includegraphics[width=4cm]{../testData/Results/Auge/reduced_FFT_of_Auge.jpg} \\
+  \end{tabular}
+  \caption{Auswertung Auge}
+  \label{tab:AuswertungAuge}
+\end{table}
+
+
+\subsubsection{Elefant}
+In diesem Bild sind viele periodisch auftretende Elemente enthalten. Es wurde versucht die Schrift, die Gitterstäbe im Hintergrund und natürlich die beiden Tiere gut sichtbar zu erhalten. Da aber die Gitterstäbe selbst periodisch im Bild vorkommen und auch die Schrift sich wiederholende senkrechte Kanten hat, war dies nicht einfach. Ein Auslöschen der horizontalen und vertikalen Anteile aus dem Bild brachte in unseren Versuchen das beste Ergebnis. Hierbei ist aber zu beachten, dass das Zentrum des FFT Bildes die meiste Information enthält. Daher wurde diese bestehen gelassen. Auch die Randbereiche der FFT wurden belassen, da diese für scharfe Kanten im Bild verantwortlich sind. Ein Wegschneiden dieser Bereiche würde auch die Konturen des Elefanten und die Schrift unscharf machen.
+\begin{table}
+  \centering
+  \begin{tabular}{c | c}
+    \hline
+    Bild & FFT \\
+    \hline
+	\includegraphics[width=4cm]{../testData/Elefant.jpg} & \includegraphics[width=4cm]{../testData/Results/Elefant/FFT_of_Elefant.jpg} \\
+    \hline
+    \includegraphics[width=4cm]{../testData/Results/Elefant/reducedElefant.jpg} & \includegraphics[width=4cm]{../testData/Results/Elefant/reducedFFT_of_Elefant.jpg} \\
+  \end{tabular}
+  \caption{Auswertung Elefant}
+  \label{tab: AuswertungElefant }
+\end{table}
+
+\subsubsection{Lochgitter}
+Hier handelt es sich um ein perspektivisch beläuchtetes Lochgitter. Die Löcher sind sechseckig. In der FFT erkennt man gut die Periodizität. Ein Wegschneiden der äusseren Bereiche der FFT und eine Rücktransformation zeigt deutlich die perspektivische Beläuchtung. Das Lochgitter konnte aber vollkommen entfernt werden. Interessant ist auch zu bemerken, dass im Rücktransformierten Bild eine Schrift \textit{"colourbox"} deutlich zu erkennen ist. Bei genauerer Betrachtung des Ursprungsbildes ist diese hinter dem Gitter zu erkennen.  
+\begin{table}
+  \centering
+  \begin{tabular}{c | c}
+    \hline
+    Bild & FFT \\
+    \hline
+	\includegraphics[width=4cm]{../testData/Lochgitter.jpg} & \includegraphics[width=4cm]{../testData/Results/Lochgitter/FFT_of_Lochgitter.jpg} \\
+    \hline
+    \includegraphics[width=4cm]{../testData/Results/Lochgitter/reducedLochgitter.jpg} & \includegraphics[width=4cm]{../testData/Results/Lochgitter/reducedFFT_of_Lochgitter.jpg} \\
+  \end{tabular}
+  \caption{Auswertung Lochgitter}
+  \label{tab:AuswertungLochgitter}
+\end{table}
+
+
 
 \end{document}
