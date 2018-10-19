@@ -17,28 +17,14 @@ public class Mean_ implements PlugInFilter {
 
 	
 	public void run(ImageProcessor ip) {
-		byte[] pixels = (byte[])ip.getPixels();
 		int width = ip.getWidth();
 		int height = ip.getHeight();
-		int tgtRadius = 4;
+		int tgtRadius = 4; //default value
 		
-		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
-		double[][] inDataArrDouble = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
+		tgtRadius = getUserInputRadius(tgtRadius);
 		
+		double[][] resultImage = runFilter(ip, tgtRadius);
 		
-		//user input for radius
-		GenericDialog gd = new GenericDialog("user input:");
-		gd.addNumericField("radius", tgtRadius, 0);
-		gd.showDialog();
-		if(gd.wasCanceled()) {
-			return;
-		}
-		tgtRadius = (int)gd.getNextNumber();
-		
-		double[][] filterMask = ConvolutionFilter.GetMeanMask(tgtRadius);
-		//double[][] resultImage = ConvolutionFilter.ConvolveDouble(inDataArrDouble, width, height, filterMask, tgtRadius);
-		double[][] resultImage = ConvolutionFilter.ConvolveDoubleNorm(inDataArrDouble, width, height, filterMask, tgtRadius);
-        System.out.println("justhere");
 		ImageJUtility.showNewImage(resultImage, width, height, "mean with kernel r=" + tgtRadius);
                         
 	} //run
@@ -47,6 +33,35 @@ public class Mean_ implements PlugInFilter {
 		IJ.showMessage("About Template_...",
 			"this is a PluginFilter template\n");
 	} //showAbout
+	
+	public static double[][] runFilter(ImageProcessor ip, int radius) {
+		byte[] pixels = (byte[])ip.getPixels();
+		int width = ip.getWidth();
+		int height = ip.getHeight();
+		
+		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
+		double[][] inDataArrDouble = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
+		double[][] filterMask = ConvolutionFilter.GetMeanMask(radius);
+		double[][] resultImage = ConvolutionFilter.ConvolveDoubleNorm(inDataArrDouble, width, height, filterMask, radius);
+		return resultImage;
+	}
+	
+	/**
+	 * Asks the user to input a radius.
+	 * 
+	 * @return radius from user input. 0 if failed.
+	 */
+	public static int getUserInputRadius(int defaultValue) {
+		// user input
+		System.out.println("Read user input: radius");
+		GenericDialog gd = new GenericDialog("user input:");
+		gd.addNumericField("radius", defaultValue, 0);
+		gd.showDialog();
+		if (gd.wasCanceled()) {
+			return 0;
+		}
+		return (int) gd.getNextNumber();
+	}
 	
 } //class FilterTemplate_
 

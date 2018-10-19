@@ -20,13 +20,9 @@ public class Median_ implements PlugInFilter {
 	public void run(ImageProcessor ip) {
 
 		System.out.println("RUN: Plugin Median");
-		// convert to pixel array
-		byte[] pixels = (byte[]) ip.getPixels();
 		int width = ip.getWidth();
 		int height = ip.getHeight();
 
-		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
-		double[][] inDataArrDouble = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
 
 		int radius = getUserInputRadius(4);
 		// int radius = 2; // default value for debugging
@@ -35,6 +31,22 @@ public class Median_ implements PlugInFilter {
 			System.out.println("Be aware that double the radius has to fit in the image!");
 		}
 
+		double[][] resultImage = runFilter(ip, radius);
+		
+		System.out.println("Now show the result image!");
+		ImageJUtility.showNewImage(resultImage, width, height, "mean with kernel r=" + radius);
+		System.out.println("SUCCESS: MEDIAN FILTER DONE.");
+
+	} // run
+
+	public static double[][] runFilter(ImageProcessor ip, int radius) {
+		byte[] pixels = (byte[]) ip.getPixels();
+		int width = ip.getWidth();
+		int height = ip.getHeight();
+		
+		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
+		double[][] inDataArrDouble = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
+		
 		double[][] resultImage = inDataArrDouble.clone();
 		int successIndex = 0;
 		int failureIndex = 0;
@@ -61,14 +73,10 @@ public class Median_ implements PlugInFilter {
 
 			}
 		}
-		System.out.println("inputImg: width: " + width + ", heigth: " + height + ", surface: " + width * height);
-		System.out.println("SUCCESS: run over picture. succeed: " + successIndex + ", failed: " + failureIndex
-				+ ", sum: " + (int) (successIndex + failureIndex));
-		System.out.println("Now show the result image!");
-		ImageJUtility.showNewImage(resultImage, width, height, "mean with kernel r=" + radius);
-		System.out.println("SUCCESS: MEDIAN FILTER DONE.");
-
-	} // run
+		// System.out.println("SUCCESS: run over picture. succeed: " + successIndex + ", failed: " + failureIndex
+		//		+ ", sum: " + (int) (successIndex + failureIndex));
+		return resultImage;
+	}
 
 	void showAbout() {
 		IJ.showMessage("About Template_...", "this is a PluginFilter template\n");

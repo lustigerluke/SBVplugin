@@ -50,8 +50,12 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \newpage
 \section{Steuerung des Filtereffekts }
 \subsubsection{Code}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
 \subsubsection{Ablaufund Idee}
+\begin{figure}[h]
+	\includegraphics[width=7cm]{TimeEvaluationGraph.jpg}
+\end{figure}
+
 
 \subsubsection{Tests}
 
@@ -60,15 +64,13 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
 \section{Histogrammeinebnung  }
-\subsubsection{Code}
+\subsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
-\subsubsection{Ablaufund Idee}
-
-\subsubsection{Tests}
+\subsection{Tests}
 
 
 %% -------------------------------------------------------------------------------------------------------------------------
-%% ------------------------------------------- VIERTES BEISPIEL -----------------------------------------------------
+%% ------------------------------------------- FÜNFTES BEISPIEL -----------------------------------------------------
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
 \section{ Raster-Entfernung im Frequenzraum}
@@ -132,6 +134,7 @@ Hier handelt es sich um ein perspektivisch beläuchtetes Lochgitter. Die Löcher
   \label{tab:AuswertungLochgitter}
 \end{table}
 
-
+\subsection{Analyse eines Frequenzmusters}
+Ein sich wiederholendes Muster in einem Bild ist mittels \textit{FFT} gut vom eigentlichen Bildinhalt zu unterscheiden. So kann das Muster entfernt werden und das eigentliche Bild mittels \textit{inverseFFT} ermittelt werden. Leider sind reale Bilder meist nicht genau horizontal ausgerichtet. Auch kann man nicht davon ausgehen, dass sich wiederholende Elemente in der Realität unverzerrt in einem Bild dargestellt sind. Kanten werden nur in den seltensten Fällen genau durch einen Pixel des Bildes dargestellt. All diese Umstände machen es schwer aus einem Alltagsfoto wiederkehrende Elemente herauszufiltern.
 
 \end{document}

@@ -15,31 +15,14 @@ public class Gauss_ implements PlugInFilter {
 
 	
 	public void run(ImageProcessor ip) {
-		
-		// convert to pixel array
-		byte[] pixels = (byte[])ip.getPixels();
 		int width = ip.getWidth();
 		int height = ip.getHeight();
-		int tgtRadius = 4;
-		int sigma = 4;
+		int tgtRadius = getUserInput(4, "radius");
+		int sigma = getUserInput(4, "sigma");
 		
-		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
-		double[][] inDataArrDouble = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
+		double[][] resultImage = runFilter(ip, tgtRadius, sigma);
 		
-		
-		//user input for radius
-		GenericDialog gd = new GenericDialog("user input:");
-		gd.addNumericField("radius", tgtRadius, 0);
-		gd.showDialog();
-		if(gd.wasCanceled()) {return;}
-		tgtRadius = (int)gd.getNextNumber();
-		
-		double[][] filterMask = ConvolutionFilter.GetGaussMask(tgtRadius,sigma);
-		ImageJUtility.showNewImage(filterMask, filterMask.length, filterMask.length, "Gauss Mask");
-        
-		//double[][] resultImage = ConvolutionFilter.ConvolveDouble(inDataArrDouble, width, height, filterMask, tgtRadius);
-		double[][] resultImage = ConvolutionFilter.ConvolveDoubleNorm(inDataArrDouble, width, height, filterMask, tgtRadius);
-        ImageJUtility.showNewImage(resultImage, width, height, "mean with kernel r=" + tgtRadius);
+		ImageJUtility.showNewImage(resultImage, width, height, "mean with kernel r=" + tgtRadius);
                         
 	} //run
 
@@ -47,6 +30,40 @@ public class Gauss_ implements PlugInFilter {
 		IJ.showMessage("About Template_...",
 			"this is a PluginFilter template\n");
 	} //showAbout
+	
+	/**
+	 * Asks the user to input.
+	 * 
+	 * @return value from user input. 0 if failed.
+	 */
+	public static int getUserInput(int defaultValue, String nameOfValue) {
+		// user input
+		System.out.print("Read user input: " + nameOfValue);
+		GenericDialog gd = new GenericDialog("user input:");
+		gd.addNumericField("defaultValue", defaultValue, 0);
+		gd.showDialog();
+		if (gd.wasCanceled()) {
+			return 0;
+		}
+		int radius = (int) gd.getNextNumber();
+		System.out.println(radius);
+		return radius;
+	}
+	
+	public static double[][] runFilter(ImageProcessor ip, int radius, int sigma) {
+		// convert to pixel array
+		byte[] pixels = (byte[])ip.getPixels();
+		int width = ip.getWidth();
+		int height = ip.getHeight();
+		int tgtRadius = radius;
+		
+		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
+		double[][] inDataArrDouble = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
+		
+		double[][] filterMask = ConvolutionFilter.GetGaussMask(tgtRadius,sigma);
+		return ConvolutionFilter.ConvolveDoubleNorm(inDataArrDouble, width, height, filterMask, tgtRadius);
+        
+	}
 	
 } //class FilterTemplate_
 
