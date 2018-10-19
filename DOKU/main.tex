@@ -36,12 +36,16 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 %% ------------------------------------------- ZWEITES BEISPIEL -----------------------------------------------------
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
-\section{MedianFilter }
+\section{MedianFilter}
+Der MedianFilter kann leider nicht mittels der Klasse \textit{ConvolutionFilter} implementiert werden, da die Maske für dieses Vorgehen konstant sein müsste. Das Prinzip ist allerdings sehr ähnlich. Es wird ein Pixel in Mitten einer quadratischen Umgebung betrachtet. Dieses Pixel soll im resultierenden Bild als der Median Wert der Umgebung gesetzt werden. \\
+Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung aus einer Kopie des Ursprungsbildes und anschließender Medianwertberechnung. 
 \subsubsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
-\subsubsection{Ablaufund Idee}
+\subsubsection{resultierendes Bild}
+\begin{figure}[h]
+	\includegraphics[width=7cm]{../testData/Results/median.jpg}
+\end{figure}
 
-\subsubsection{Tests}
 
 
 %% -------------------------------------------------------------------------------------------------------------------------
