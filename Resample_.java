@@ -96,5 +96,17 @@ public class Resample_ implements PlugInFilter {
 		return 0;
 	}
 	
+	public int GetBilinearinterpolatedValue(int[][] inImg, double x, double y, int width, int height) {
+		//TODO
+		// how to get the 4 coordinate points for e.g. (3.7, 12.2)
+		//P0: (3,12)
+		//P1: (4,12)
+		//P2: (3,13)
+		//P3: (4,13)
+		
+		//imagecalculator macht diff Images
+		
+	}
+	
 } //class FilterTemplate_
 
