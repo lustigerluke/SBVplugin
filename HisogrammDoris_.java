@@ -41,17 +41,13 @@ public class HisogrammDoris_ implements PlugInFilter {
 
 	public static int[] GetHistogramEqualizationTF2(int maxVal, int[][] inImg, int width, int height) {
 
-		int[] tf = new int[maxVal + 1];
-
+		int[] tf = new int[maxVal +1];
 		int expectedValueSum = width * height / 256;
-
 		int constExpectedVal = expectedValueSum;
-
 		int usedSum = 0;
-
 		int tonalVal = 0;
-
-		int[] histogram = new int[maxVal + 1];
+		int[] histogram = new int[maxVal +1 ];
+		
 		// step1: get histogram
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
@@ -59,25 +55,15 @@ public class HisogrammDoris_ implements PlugInFilter {
 			}
 		}
 
-		tf[0] = 0;
-
-		for (int i = 1; i < histogram.length; i++) {
-
+		//tf[0] = 0;
+		for (int i = 0; i < histogram.length; i++) {
 			usedSum += histogram[i];
-
 			while (usedSum >= expectedValueSum) {
-
 				tonalVal++;
-
 				expectedValueSum = expectedValueSum + constExpectedVal;
-
 			}
-
 			tf[i] = tonalVal;
-
 		}
-
 		return tf;
-
 	}
 } // class FilterTemplate_
