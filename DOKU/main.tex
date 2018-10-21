@@ -21,15 +21,29 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \title{Übungsaufgaben I, SBV1 }
 \author{Lisa Panholzer, Lukas Fiel}
 \maketitle
+
+
 \newpage
 \section{Gauss Filter}
+Es wurde ein Gauss Filter als ImageJ Filter implementiert. Sigma wurde dabei als zirka $ \frac{radius}{3} $ angenommen. Dies lässt die Gauss Kurve im Bereich der Maske gut erkennbar darstellen. Die Behandlung der Randpixel wurde aus der Lehrveranstaltung übernommen. Gemeinsam mit dem Vortragenden Gerald Zwettler wirde die Java Klasse \textit{ConvolutionFilter} erweitert um auch die Randbereiche eines Bildes angemessen zu behandeln.
+
 \subsubsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Gauss_.java}
 
-\subsubsection{Ablauf und Idee}
+\subsubsection{Test}
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c | c | c}
+    \hline
+    Ausgangsbild & gefilterted Bild ($ radius = 4, \sigma = 1$) & gefiltertes Bild ($ radius = 4, \sigma = 3$) \\
+    \hline
+	\includegraphics[width=4cm]{../testData/Gauss/Lena.jpg} & 		 \includegraphics[width=4cm]{../testData/Gauss/LenaR4S1.jpg} &
+	\includegraphics[width=4cm]{../testData/Gauss/LenaR4S3.jpg} \\
 
-\subsubsection{Tests und Sonderfälle}
-
+  \end{tabular}
+  \caption{Test Gauss}
+  \label{tab:TestGauss}
+\end{table}
 
 
 %% -------------------------------------------------------------------------------------------------------------------------
@@ -140,5 +154,9 @@ Hier handelt es sich um ein perspektivisch beläuchtetes Lochgitter. Die Löcher
 
 \subsection{Analyse eines Frequenzmusters}
 Ein sich wiederholendes Muster in einem Bild ist mittels \textit{FFT} gut vom eigentlichen Bildinhalt zu unterscheiden. So kann das Muster entfernt werden und das eigentliche Bild mittels \textit{inverseFFT} ermittelt werden. Leider sind reale Bilder meist nicht genau horizontal ausgerichtet. Auch kann man nicht davon ausgehen, dass sich wiederholende Elemente in der Realität unverzerrt in einem Bild dargestellt sind. Kanten werden nur in den seltensten Fällen genau durch einen Pixel des Bildes dargestellt. All diese Umstände machen es schwer aus einem Alltagsfoto wiederkehrende Elemente herauszufiltern.
+
+\section{Anhang}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../ConvolutionFilter.java}
+
 
 \end{document}
