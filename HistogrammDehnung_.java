@@ -24,7 +24,7 @@ public class HistogrammDehnung_ implements PlugInFilter {
 		byte[] pixels = (byte[]) ip.getPixels();
 		int width = ip.getWidth();
 		int height = ip.getHeight();
-		int colorDepth = 256;
+		int colorDepth = 255;
 
 		int histo[] = new int[colorDepth]; // as many elements as possible gray values
 
@@ -55,14 +55,12 @@ public class HistogrammDehnung_ implements PlugInFilter {
 		System.out.println("there are " + zerosBehindIndex + " zeros behind the data in histogram");
 
 		// generate a lookup table
-		int dataLength = colorDepth - (colorDepth - zerosBehindIndex) - zerosInFrontIndex;
-		double delta = colorDepth / dataLength;
 		int[] lookUp = new int[colorDepth];
-
-		for (int j = zerosInFrontIndex; j < zerosBehindIndex; j++) {
-			int newIndex = (int) ((j -zerosInFrontIndex) * delta);
-			lookUp[j] = newIndex;
-			System.out.println(newIndex);
+		int tmp;
+		for (int j = 1; j < colorDepth; j++) {
+			int constante = colorDepth +1;
+			tmp = histo[j]  * constante;
+			lookUp[j] = (int) Math.floor( tmp + lookUp[j-1] );
 		}
 		
 		// run threw the resultImage (clone of inputImage) and set every Pixel depending on lookup table
