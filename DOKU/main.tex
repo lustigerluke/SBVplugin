@@ -56,9 +56,6 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
 \subsubsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
 \subsubsection{Ablaufund Idee}
-\begin{figure}[h]
-	\includegraphics[width=7cm]{TimeEvaluationGraph.jpg}
-\end{figure}
 
 
 \subsubsection{Tests}
@@ -68,9 +65,64 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
 \section{Histogrammeinebnung  }
+
+\subsubsection{a) Ablauf und Lösungsidee}
+ Die Histogrammeinebnung wurde mit der, wie im Foliensatz beschriebenen, Formel durchgeführt. Die genaue Implementierung findet sich im Bereich "Code". 
+\subsubsection{a) Tests}
+Die Implementierung wurde anhand der folgenden drei Bilder getestet:
+\begin{enumerate}
+\item Strand: 
+Das Bild "Strand" enthält eine halbwegs gleichmäßige Verteilung der Grautöne. Nach Anwendung der Histogrammeinebnung kann man eine Verstärkung des Kontrastes erkennen.
+\begin{figure}[h!] \centering
+	\includegraphics[width=7cm]{../testData/Results/Strand/Strand.jpg}
+	\includegraphics[width=4cm]{../testData/Results/Strand/Strand-histogram.png}
+\end{figure}
+\begin{figure}[h!] \centering
+	\includegraphics[width=7cm]{../testData/Results/Strand/Strand-equalized.jpg}
+	\includegraphics[width=4cm]{../testData/Results/Strand/Strand-equalized-histogram.png}
+\end{figure}
+
+\item Russland: 
+Das Bild "Russland" enthält sehr wenig Kontrast und viele der Grautöne sind im Histogram benachbart. Nach der Anwendung der Histogrammeinebnung verstärkt sich der Kontrast um ein vielfaches und selbst die Wokenformation sind nun detailliert sichtbar.
+\begin{figure}[h!] \centering
+	\includegraphics[width=7cm]{../testData/Results/Russland/Russland.jpg}
+	\includegraphics[width=4cm]{../testData/Results/Russland/Russland-histogram.png}
+\end{figure}
+\begin{figure}[h!] \centering
+	\includegraphics[width=7cm]{../testData/Results/Russland/Russland-equalized.jpg}
+	\includegraphics[width=4cm]{../testData/Results/Russland/Russland-equalized-histogram.png}
+\end{figure}
+
+\item Landschaft: 
+Das Bild "Landschaft" hat im Vergleich zu den ersten beiden Testbildern einen höheren Kontrast und ist dunkler. Bei der Anwendung der Histogrammeinebnung kann man nun beobachten, das aufgrund der Gleichverteilung der Grautöne Richtung den Maximalwert (255), das Bild sich aufhellt und der Kontrast erhalten bleibt.
+\begin{figure}[h!] \centering
+	\includegraphics[width=7cm]{../testData/Results/Landschaft/Landschaft.jpg}
+	\includegraphics[width=4cm]{../testData/Results/Landschaft/Landschaft-histogram.png}
+\end{figure}
+\begin{figure}[h!] \centering
+	\includegraphics[width=7cm]{../testData/Results/Landschaft/Landschaft-equalized.jpg}
+	\includegraphics[width=4cm]{../testData/Results/Landschaft/Landschaft-equalized-histogram.png}
+\end{figure}
+
+
+\end{enumerate}
+
+
+\pagebreak
+\subsection {b) Diskussion Histogrammeinebnung}
+Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogrammeinebnung zum Beispiel auf ein stark überbelichtetes Bild angewandt wird. Bei folgender Aufnahme einer Straße mit Fußgängern sieht man, dass der Großteil der Pixelintensitäten ca. über 200 liegt. Findet nun die Einebnung statt werden die Verläufe nicht mehr weich dargestellt. Die Unterschiede zwischen den Pixelintensitäten werden zu hoch und Teile des Bildes deshalb kantiger dargestellt.
+\begin{figure}[h!] \centering
+	\includegraphics[width=7cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung.jpg}
+	\includegraphics[width=4cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-histogram.png}
+\end{figure}
+\begin{figure}[h!] \centering
+	\includegraphics[width=7cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-equalized.jpg}
+	\includegraphics[width=4cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-equalized-histogram.png}
+\end{figure}
+\pagebreak
 \subsection{Code}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
-\subsection{Tests}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../HistogramEqualization_.java}
+
 
 
 %% -------------------------------------------------------------------------------------------------------------------------
