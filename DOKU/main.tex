@@ -25,25 +25,52 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 
 \newpage
 \section{Gauss Filter}
-Es wurde ein Gauss Filter als ImageJ Filter implementiert. Sigma wurde dabei als zirka $ \frac{radius}{3} $ angenommen. Dies lässt die Gauss Kurve im Bereich der Maske gut erkennbar darstellen. Die Behandlung der Randpixel wurde aus der Lehrveranstaltung übernommen. Gemeinsam mit dem Vortragenden Gerald Zwettler wirde die Java Klasse \textit{ConvolutionFilter} erweitert um auch die Randbereiche eines Bildes angemessen zu behandeln.
+Es wurde ein Gauss Filter als ImageJ Filter implementiert. Die Behandlung der Randpixel wurde aus der Lehrveranstaltung übernommen. Gemeinsam mit dem Vortragenden Gerald Zwettler wurde die Java Klasse \textit{ConvolutionFilter} erweitert um auch die Randbereiche eines Bildes angemessen zu behandeln. In Heimarbeit wurde die Klasse um die Methode \textit{GetGaussMask} erweitert. In dieser wird die Verteilung einer Gauss Kurve auf eine 2 dimensionale Maske übertragen. \\
+
+Anschlißend wurde eruiert welches Verhältnis von Sigma zum Radius der Maske eine klar zu erkennende Glocke darstellte. $ \frac{2}{4} $ hat die gewünschte Eigenschaft. 
+\begin{table}[h]
+  \centering
+  \begin{tabular}{| c | c | c |}
+    \hline
+    $ \frac{sigma}{radius} $ & Masken Surface Plot & gefiltertes Bild \\
+    \hline
+    $ \frac{1}{4} $ &
+	\includegraphics[width=4cm]{../testData/Gauss/GaussBellR4S1.jpg} & 	\includegraphics[width=4cm]{../testData/Gauss/LenaR4S1.jpg} \\
+	    \hline
+    $ \frac{2}{4} $ &
+	\includegraphics[width=4cm]{../testData/Gauss/GaussBellR4S2.jpg} & 	\includegraphics[width=4cm]{../testData/Gauss/LenaR4S2.jpg} \\
+	    \hline
+    $ \frac{3}{4} $ &
+	\includegraphics[width=4cm]{../testData/Gauss/GaussBellR4S3.jpg} & 	\includegraphics[width=4cm]{../testData/Gauss/LenaR4S3.jpg} \\
+	    \hline
+    $ \frac{4}{4} $ &
+	\includegraphics[width=4cm]{../testData/Gauss/GaussBellR4S4.jpg} & 	\includegraphics[width=4cm]{../testData/Gauss/LenaR4S4.jpg} \\
+  \end{tabular}
+  \caption{Gauss Filter Größen}
+  \label{tab:GaussFilterGroessen}
+\end{table}
+
+Weiters wurde der Übergang von scharfen Kanten und Verläufen mit dem Gauss Filter gefiltert. Man bemerkt gut, dass bei einem Intensitätsverlauf kaum ein Filtereffeckt sichtbar ist, während Kanten deutlich verschwommen erscheinen. Gewähltes Verhältnis: $ \frac{sigma}{radius} = \frac{2}{4} $
+\begin{table}[h]
+  \centering
+  \begin{tabular}{| c | c | c |}
+    \hline
+    $ \frac{sigma}{radius} $ & Masken Surface Plot & gefiltertes Bild \\
+    \hline
+    $ \frac{1}{4} $ &
+	\includegraphics[width=4cm]{../testData/Gauss/Schachbrett.jpg} & 	\includegraphics[width=4cm]{../testData/Gauss/SchachbrettR4S2.jpg} \\
+	    \hline
+    $ \frac{2}{4} $ &
+	\includegraphics[width=4cm]{../testData/Gauss/Regenbogen.jpg} & 	\includegraphics[width=4cm]{../testData/Gauss/RegenbogenR4S2.jpg} \\
+  \end{tabular}
+  \caption{Gauss Filter Evaluierung}
+  \label{tab:GaussFilterEvaluierung}
+\end{table}
 
 \subsubsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Gauss_.java}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../ConvolutionFilter.java}
 
-\subsubsection{Test}
-\begin{table}[h]
-  \centering
-  \begin{tabular}{c | c | c}
-    \hline
-    Ausgangsbild & gefilterted Bild ($ radius = 4, \sigma = 1$) & gefiltertes Bild ($ radius = 4, \sigma = 3$) \\
-    \hline
-	\includegraphics[width=4cm]{../testData/Gauss/Lena.jpg} & 		 \includegraphics[width=4cm]{../testData/Gauss/LenaR4S1.jpg} &
-	\includegraphics[width=4cm]{../testData/Gauss/LenaR4S3.jpg} \\
-
-  \end{tabular}
-  \caption{Test Gauss}
-  \label{tab:TestGauss}
-\end{table}
 
 
 %% -------------------------------------------------------------------------------------------------------------------------
@@ -67,13 +94,18 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
 \section{Steuerung des Filtereffekts }
-\subsubsection{Code}
+\subsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
 \subsubsection{Ablaufund Idee}
 \begin{figure}[h]
-	\includegraphics[width=7cm]{TimeEvaluationGraph.jpg}
+	\includegraphics[width=7cm]{TimeEvaluationGraph_Mean.png}
 \end{figure}
-
+\begin{figure}[h]
+	\includegraphics[width=7cm]{TimeEvaluationGraph_Gauss.png}
+\end{figure}
+\begin{figure}[h]
+	\includegraphics[width=7cm]{TimeEvaluationGraph_Median.png}
+\end{figure}
 
 \subsubsection{Tests}
 

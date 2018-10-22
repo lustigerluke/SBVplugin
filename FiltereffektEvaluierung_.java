@@ -25,7 +25,7 @@ public class FiltereffektEvaluierung_ implements PlugInFilter {
 		int sigma = 4;
 		
 		double[][] resultImage = new double[width][height];
-		int [] iterations = {1,10,20,30,40,50};
+		int [] iterations = {1,2,3,4,5};
 
 		System.out.println("Please Input the radius of the mask for all the filters.");
 		tgtRadius = getUserInput(tgtRadius, "radius");

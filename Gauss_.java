@@ -54,13 +54,46 @@ public class Gauss_ implements PlugInFilter {
 		int width = ip.getWidth();
 		int height = ip.getHeight();
 		int tgtRadius = radius;
+		int size = 2 * radius +1;
 
 		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
 		double[][] inDataArrDouble = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
 
 		double[][] filterMask = ConvolutionFilter.GetGaussMask(tgtRadius, sigma);
+		int[][] filterMaskInt = convert2Int(filterMask);
+		ImageJUtility.showNewImage(filterMaskInt, size, size, "GaussMask");
+		
 		return ConvolutionFilter.ConvolveDoubleNorm(inDataArrDouble, width, height, filterMask, tgtRadius);
 
+	}
+	
+	
+	public static int[][] convert2Int(double[][] inMask) {
+		double[][] tmpMask = inMask.clone();
+		int size = inMask.length;
+		int[][] maskInt = new int[size][size];
+		int maxInt = 255;
+		
+		// get maximum
+		double maxDouble = 0;
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j ++) {
+				if (maxDouble < tmpMask[i][j] ) { maxDouble = tmpMask[i][j];}
+			}
+		}
+		
+		// scale mask
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j ++) {
+				
+				maskInt[i][j] = (int) (tmpMask[i][j] / maxDouble * maxInt);
+			}
+		}
+		
+		
+		return maskInt;
+		
+		
 	}
 
 } // class FilterTemplate_
