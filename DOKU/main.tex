@@ -6,10 +6,14 @@
 
 \lstset{
 extendedchars=\true,
+language=JAVA,
 %inputencoding=utf8,
-basicstyle=\ttfamily,
+%basicstyle=\ttfamily,
+%basicstyle=\ttfamily\fontsize{8}{8},
+%commentstyle=\ttfamily\fontsize{8}{8},
+basicstyle=\tiny;
 columns=fullflexible,
-xleftmargin=5pt,
+%xleftmargin=5pt,
 frame=single,
 breaklines=true,
 postbreak=\mbox{{$\hookrightarrow$}\space},
@@ -110,14 +114,51 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
 \section{Steuerung des Filtereffekts }
-\subsection{Code}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
-\subsection{Idee}
-Das selbstgeschriebene Plugin \textit{FiltereffektEvaluierung\_} wurde geschrieben um die Laufzeiten der einzelnen Filter zu erfassen. Hierbei wurde darauf geachtet, dass mittels der Methode \textit{System.nanoTime()} im Gegensatz zu \textit{System.millis()} einge genauere Zeitmessung möglich ist. Als eine sehr große Maske wurde $  radius = 40 $ gewählt. Das Setzen der Größe $ sigma $ ist bei der Messung der Laufzeit irrelevant, da sie nur für das Erstellen der Maske ausschlaggebend ist. Dass die Berechnung von $ sigma $ eventuell mehr Zeit beansprucht als die Berechnungen die zum Erstellen einer Mean-Maske nötig ist, ist auch nicht von großer Bedeutung. Dies kann einfach durch den Fakt erklärt werden, dass die Maske immer nur ein mal vor dem Anwenden des Filters erstellt wird. \\
-Beim Median-Filter wird gedanklich auch eine Maske über das Bild bewegt. In diesem Fall ist die Maske aber nicht im vorhinein berechnet worden, sondern grenzt lediglich den Bereich ein, in dem der Median-Wert berechnet werden soll. \\
+
+\subsection{Vergleich}
+Das selbstgeschriebene Plugin \textit{FiltereffektEvaluierung\_} wurde geschrieben um die Laufzeiten der einzelnen Filter zu erfassen. Hierbei wurde darauf geachtet, dass mittels der Methode \textit{System.nanoTime()} im Gegensatz zu \textit{System.millis()} einge genauere Zeitmessung möglich ist. Als eine sehr große Maske wurde $  radius = 40 $ gewählt. Das Setzen der Größe $ sigma $ ist bei der Messung der Laufzeit irrelevant, da sie nur für das initiale Erstellen der Maske ausschlaggebend ist. \\
+
+Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt auch gut, dass eine große Filtermaske nicht unbedingt mit einem enormen Filtereffekt zu tun haben muss. Da hier ein kleines $sigma$ gewählt wurde, ist auch die Auswirkung des Filters nicht groß, aber deutlich von der des Filters mit der kleinen Maske unterscheidbar.
+
+\begin{figure} [h!]
+  \centering
+  \includegraphics[width=10cm]{TimeEvaluationGraph_Mean.png}
+  \caption{Der Mean Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
+  \includegraphics[width=10cm]{TimeEvaluationGraph_Gauss.png}
+  \caption{Der Gauss Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
+  \includegraphics[width=10cm]{TimeEvaluationGraph_Median.png}
+  \caption{Der Median Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
+\end{figure}
+\begin{figure} [h!]
+  \centering
+  \includegraphics[width=10cm]{TimeEvaluationGraph_allBig.png}
+  \caption{Wiederholtes Ausführen der Filter mit  ( $ radius = 40 $ )}
+\end{figure}
+
+\begin{figure} [h!]
+  \centering
+  \begin{tabular}{| c | c | c | c |}
+    \hline
+    ein mal gefiltert & zwei mal gefiltert & drei mal gefiltert & vier mal gefiltert \\
+    \hline
+	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR4S4v1.jpg} & 	
+	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR4S4v2.jpg} &
+	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR4S4v3.jpg} & 	
+	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR4S4v4.jpg} \\
+	    \hline
+	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR40S4v1.jpg} & 	
+	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR40S4v2.jpg} &
+	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR40S4v3.jpg} & 	
+	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR40S4v4.jpg} \\
+  \end{tabular}
+  \caption{Wiederholte Anwendung des Gauss Filters mit $ radius = 4 $ (oben) und $radius = 40 $ (unten)}
+  \label{tab:wiederholterGauss}
+
+\end{figure}
 3D Masken könnten neben dem Filtereffekt zum Beispiel bei einem RGB Bild auch Farbtöne verstärken/abschwächen. Dabei müsen aber im Falle des Median-Filters für jeden Pixel des dreidimensionalen Bildes alle 3 Dimensionen der Maske berechnet werden. Bei Mean- und Gauss-Filter hingegen reicht es einen zweidimensionalen Filter auf jede Ebene der dritten Dimension anzuwenden und die Ergebisse weiterzuverarbeiten. 
 
 
+\subsection{Berechnung}
 
 \begin{center}
 	$t_{gP} ... time to get pixel value. Die Zeit einen Pixel aus der Berechnung mit einer 2D Maske  $ \\
@@ -126,9 +167,7 @@ Beim Median-Filter wird gedanklich auch eine Maske über das Bild bewegt. In die
 	$d ... Anzahl der Dimensionen$ \\
 \end{center}
 
-\begin{figure}[h]
-	\includegraphics[width=7cm]{TimeEvaluationGraph_allBig.png}
-\end{figure}
+
 
 \begin{figure}[h]
 	\includegraphics[width=7cm]{TimeEvaluationGraph_Mean.png}
@@ -140,6 +179,10 @@ Beim Median-Filter wird gedanklich auch eine Maske über das Bild bewegt. In die
 	\includegraphics[width=7cm]{TimeEvaluationGraph_Median.png}
 \end{figure}
 
+
+\subsection{Code}
+Zusätzlich zur Klasse \textit{FiltereffektEvaluierung\_.java} werden auch viele der anderen in diesem Papier besprochenen Klassen benötigt.
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
 \subsubsection{Tests}
 
 %% -------------------------------------------------------------------------------------------------------------------------
