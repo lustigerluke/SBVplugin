@@ -66,6 +66,22 @@ Weiters wurde der Übergang von scharfen Kanten und Verläufen mit dem Gauss Fil
   \caption{Gauss Filter Evaluierung}
   \label{tab:GaussFilterEvaluierung}
 \end{table}
+Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels.Dieser stellt Kanten viel dutlicher dar und macht auch bei glatten Übergängen kaum einen bemerkenswerten Effeckt.
+\begin{table}[h]
+  \centering
+  \begin{tabular}{| c | c | c |}
+    \hline
+    $ \frac{sigma}{radius} $ & Gauss gefiltertes Bild & Median gefiltertes Bild \\
+    \hline
+    $ \frac{1}{4} $ &
+	\includegraphics[width=4cm]{../testData/Gauss/SchachbrettR4S2.jpg} & 	\includegraphics[width=4cm]{../testData/Median/SchachbrettR4.jpg} \\
+	    \hline
+    $ \frac{2}{4} $ &
+	\includegraphics[width=4cm]{../testData/Gauss/RegenbogenR4S2.jpg} & 	\includegraphics[width=4cm]{../testData/Median/RegenbogenR4.jpg} \\
+  \end{tabular}
+  \caption{Gauss Filter vs. Median Filter}
+  \label{tab:GaussMedianFilterEvaluierung}
+\end{table}
 
 \subsubsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Gauss_.java}
@@ -96,7 +112,24 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
 \section{Steuerung des Filtereffekts }
 \subsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
-\subsubsection{Ablaufund Idee}
+\subsection{Idee}
+Das selbstgeschriebene Plugin \textit{FiltereffektEvaluierung\_} wurde geschrieben um die Laufzeiten der einzelnen Filter zu erfassen. Hierbei wurde darauf geachtet, dass mittels der Methode \textit{System.nanoTime()} im Gegensatz zu \textit{System.millis()} einge genauere Zeitmessung möglich ist. Als eine sehr große Maske wurde $  radius = 40 $ gewählt. Das Setzen der Größe $ sigma $ ist bei der Messung der Laufzeit irrelevant, da sie nur für das Erstellen der Maske ausschlaggebend ist. Dass die Berechnung von $ sigma $ eventuell mehr Zeit beansprucht als die Berechnungen die zum Erstellen einer Mean-Maske nötig ist, ist auch nicht von großer Bedeutung. Dies kann einfach durch den Fakt erklärt werden, dass die Maske immer nur ein mal vor dem Anwenden des Filters erstellt wird. \\
+Beim Median-Filter wird gedanklich auch eine Maske über das Bild bewegt. In diesem Fall ist die Maske aber nicht im vorhinein berechnet worden, sondern grenzt lediglich den Bereich ein, in dem der Median-Wert berechnet werden soll. \\
+3D Masken könnten neben dem Filtereffekt zum Beispiel bei einem RGB Bild auch Farbtöne verstärken/abschwächen. Dabei müsen aber im Falle des Median-Filters für jeden Pixel des dreidimensionalen Bildes alle 3 Dimensionen der Maske berechnet werden. Bei Mean- und Gauss-Filter hingegen reicht es einen zweidimensionalen Filter auf jede Ebene der dritten Dimension anzuwenden und die Ergebisse weiterzuverarbeiten. 
+
+
+
+\begin{center}
+	$t_{gP} ... time to get pixel value. Die Zeit einen Pixel aus der Berechnung mit einer 2D Maske  $ \\
+	$t_{cM} ... time to caluclate initial Mask$ \\
+	$t_{cMM} ... time to calculate MedianMask $ \\
+	$d ... Anzahl der Dimensionen$ \\
+\end{center}
+
+\begin{figure}[h]
+	\includegraphics[width=7cm]{TimeEvaluationGraph_allBig.png}
+\end{figure}
+
 \begin{figure}[h]
 	\includegraphics[width=7cm]{TimeEvaluationGraph_Mean.png}
 \end{figure}
