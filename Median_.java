@@ -53,10 +53,8 @@ public class Median_ implements PlugInFilter {
 		// step1: move mask to all possible image pixel positions
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				double[][] mask = inDataArrDouble.clone();
+				double[][] mask = inDataArrDouble;
 				try {
-
-					// roi = new Rectangle(x - radius, y - radius, size - deltaX - 1, size);
 					Rectangle roi = getROI(width, height, x, y, radius);
 					mask = ImageJUtility.cropImage(mask, roi.width, roi.height, roi);
 					double median = getMedian(mask,roi.width,roi.height);
@@ -64,8 +62,6 @@ public class Median_ implements PlugInFilter {
 
 					successIndex++;
 				} catch (java.lang.ArrayIndexOutOfBoundsException exc) {
-					// TODO: error handling for edge cases
-
 					resultImage[x][y] = resultImage[x][y];
 					failureIndex++;
 
@@ -136,7 +132,6 @@ public class Median_ implements PlugInFilter {
 
 		// sort array
 		Arrays.sort(arr);
-		// System.out.println("SUCCESS: getMedian. size: " + size);
 		return arr[(int) (size / 2 + 1)];
 	}
 
