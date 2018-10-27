@@ -40,8 +40,37 @@ public class Median_ implements PlugInFilter {
 		System.out.println("Now plot 4x4 to see filtereffect.");
 
 		plot4x4(ip, resultImage);
+		getStatistics(ip, resultImage);
 
 	} // run
+
+	private void getStatistics(ImageProcessor ip, double[][] resultImage) {
+		byte[] pixels = (byte[]) ip.getPixels();
+		int width = ip.getWidth();
+		int height = ip.getHeight();
+		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
+		double[][] inImg = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
+		
+		Statistics inStatistic = new Statistics();
+		Statistics resStatistics = new Statistics();
+		
+		// calculate inStatistics
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				inStatistic.update(inImg[x][y]);
+			}
+		}
+		
+		// calculate resStatistics
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				resStatistics.update(inImg[x][y]);
+			}
+		}
+		
+		System.out.println(inStatistic);
+		System.out.println(resStatistics);
+	}
 
 	private void plot4x4(ImageProcessor ip, double[][] filteredImg) {
 		int segments = 4;
