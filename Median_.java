@@ -54,23 +54,13 @@ public class Median_ implements PlugInFilter {
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				double[][] mask = inDataArrDouble;
-				try {
-					Rectangle roi = getROI(width, height, x, y, radius);
-					mask = ImageJUtility.cropImage(mask, roi.width, roi.height, roi);
-					double median = getMedian(mask,roi.width,roi.height);
-					resultImage[x][y] = median;
-
-					successIndex++;
-				} catch (java.lang.ArrayIndexOutOfBoundsException exc) {
-					resultImage[x][y] = resultImage[x][y];
-					failureIndex++;
-
-				}
-
+				Rectangle roi = getROI(width, height, x, y, radius);
+				mask = ImageJUtility.cropImage(mask, roi.width, roi.height, roi);
+				double median = getMedian(mask,roi.width,roi.height);
+				resultImage[x][y] = median;
 			}
 		}
-		// System.out.println("SUCCESS: run over picture. succeed: " + successIndex + ", failed: " + failureIndex
-		//		+ ", sum: " + (int) (successIndex + failureIndex));
+
 		return resultImage;
 	}
 
