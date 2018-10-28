@@ -3,6 +3,7 @@
 %\usepackage[utf8]{inputenc}
 \usepackage{inputenc}
 \usepackage{graphicx}
+\usepackage{float}
 
 \lstset{
 extendedchars=\true,
@@ -32,7 +33,7 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 Es wurde ein Gauss Filter als ImageJ Filter implementiert. Die Behandlung der Randpixel wurde aus der Lehrveranstaltung übernommen. Gemeinsam mit dem Vortragenden Gerald Zwettler wurde die Java Klasse \textit{ConvolutionFilter} erweitert um auch die Randbereiche eines Bildes angemessen zu behandeln. In Heimarbeit wurde die Klasse um die Methode \textit{GetGaussMask} erweitert. In dieser wird die Verteilung einer Gauss Kurve auf eine 2 dimensionale Maske übertragen. \\
 
 Anschließend wurde eruiert welches Verhältnis von Sigma zum Radius der Maske eine klar zu erkennende Glocke darstellte. $ \frac{2}{4} $ hat die gewünschte Eigenschaft. 
-\begin{table}[h]
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | c | c |}
     \hline
@@ -55,7 +56,7 @@ Anschließend wurde eruiert welches Verhältnis von Sigma zum Radius der Maske e
 \end{table}
 
 Weiters wurde der Übergang von scharfen Kanten und Verläufen mit dem Gauss Filter gefiltert. Man bemerkt gut, dass bei einem Intensitätsverlauf kaum ein Filtereffeckt sichtbar ist, während Kanten deutlich verschwommen erscheinen. Gewähltes Verhältnis: $ \frac{sigma}{radius} = \frac{2}{4} $
-\begin{table}[h]
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | c | c |}
     \hline
@@ -71,7 +72,7 @@ Weiters wurde der Übergang von scharfen Kanten und Verläufen mit dem Gauss Fil
   \label{tab:GaussFilterEvaluierung}
 \end{table}
 Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels.Dieser stellt Kanten viel dutlicher dar und macht auch bei glatten Übergängen kaum einen bemerkenswerten Effeckt.
-\begin{table}[h]
+\begin{table}[H]
   \centering
   \begin{tabular}{| c | c | c |}
     \hline
@@ -101,12 +102,27 @@ Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels.Dieser
 \subsection{a)}Der MedianFilter kann leider nicht mittels der Klasse \textit{ConvolutionFilter} implementiert werden, da die Maske für dieses Vorgehen konstant sein müsste. Das Prinzip ist allerdings sehr ähnlich. Es wird ein Pixel in Mitten einer quadratischen Umgebung betrachtet. Dieses Pixel soll im resultierenden Bild als der Median Wert der Umgebung gesetzt werden. \\
 Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung aus einer Kopie des Ursprungsbildes und anschließender Medianwertberechnung. 
 \subsubsection{Code}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
-\subsubsection{resultierendes Bild}
-\begin{figure}[h]
-	\includegraphics[width=7cm]{../testData/Results/median.jpg}
-\end{figure}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../MedianFinal_.java}
+\subsubsection{resultierende Bilder}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c |}
+    \hline
+ 	 Median gefiltertes Schachbrett & Median gefilterte Bild "Lena" \\
+    \hline
+	\includegraphics[width=4cm]{../testData/Median/SchachbrettR4.jpg} & 	\includegraphics[width=4cm]{../testData/Median/LenaMedian.jpg} \\
+	\hline
+  \end{tabular}
+  \caption{Median Filter}
+  \label{tab:MedianFilter}
+\end{table}
+
 \subsection{b) Checkerboard}
+\begin{figure}[H]
+	\includegraphics[width=7cm]{../testData/Median/4x4Lena.jpg}
+\end{figure}
+
+
 \subsection{c )Salt \& Pepper}
 Der Salt \& Pepper Filter wird auf ein Testbild so oft angewendet, bis die Anzahl der Rausch-Pixel den Anteil der ursprünglichen Bild-Pixel übersteigt. Dies wird ca. bei einem Rausch-Anteil von über 50\% stattfinden. Da bei der Anwendung des Median-Filters immer der mittlerste Maskenwert herangezogen wird, kann bei einem Rausch-Anteil von über 50\% nur mehr Schwarz oder Weiß auftreten. Ab diesem Zeitpunkt kann der Median-Filter die Störsignale des Salt \& Pepper Filter nicht mehr korrigieren.
 
@@ -123,7 +139,7 @@ Das selbstgeschriebene Plugin \textit{FiltereffektEvaluierung\_} wurde geschrieb
 
 Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt auch gut, dass eine große Filtermaske nicht unbedingt mit einem enormen Filtereffekt zu tun haben muss. Da hier ein kleines $sigma$ gewählt wurde, ist auch die Auswirkung des Filters nicht groß, aber deutlich von der des Filters mit der kleinen Maske unterscheidbar.
 
-\begin{figure} [h!]
+\begin{figure} [H]
   \centering
   \includegraphics[width=10cm]{TimeEvaluationGraph_Mean.png}
   \caption{Der Mean Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
@@ -132,13 +148,13 @@ Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt
   \includegraphics[width=10cm]{TimeEvaluationGraph_Median.png}
   \caption{Der Median Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
 \end{figure}
-\begin{figure} [h!]
+\begin{figure} [H]
   \centering
   \includegraphics[width=10cm]{TimeEvaluationGraph_allBig.png}
   \caption{Wiederholtes Ausführen der Filter mit  ( $ radius = 40 $ )}
 \end{figure}
 
-\begin{figure} [h!]
+\begin{figure} [H]
   \centering
   \begin{tabular}{| c | c | c | c |}
     \hline
@@ -172,13 +188,13 @@ Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt
 
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\includegraphics[width=7cm]{TimeEvaluationGraph_Mean.png}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[H]
 	\includegraphics[width=7cm]{TimeEvaluationGraph_Gauss.png}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[H]
 	\includegraphics[width=7cm]{TimeEvaluationGraph_Median.png}
 \end{figure}
 
@@ -201,13 +217,13 @@ Die Implementierung wurde anhand der folgenden drei Bilder getestet:
 \begin{enumerate}
 \item Strand: 
 Das Bild "Strand" (siehe Figure \ref{fig:Strand01}) enthält eine halbwegs gleichmäßige Verteilung der Grautöne. Nach Anwendung der Histogrammeinebnung  (siehe Figure \ref{fig:Strand02}) kann man eine Verstärkung des Kontrastes erkennen.
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Strand/Strand.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Strand/Strand-histogram.png}
 	\caption{Original Test-Bild "Strand" mit dazugehörigem Histogramm}
 	 \label{fig:Strand01}
 \end{figure}
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Strand/Strand-equalized.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Strand/Strand-equalized-histogram.png}
 	\caption{Test-Bild "Strand" mit dazugehörigem Histogramm nach der Histogrammeinebnung}
@@ -216,13 +232,13 @@ Das Bild "Strand" (siehe Figure \ref{fig:Strand01}) enthält eine halbwegs gleic
 
 \item Russland: 
 Das Bild "Russland"  (siehe Figure \ref{fig:Russland01}) enthält sehr wenig Kontrast und viele der Grautöne sind im Histogram benachbart. Nach der Anwendung der Histogrammeinebnung  (siehe Figure \ref{fig:Russland02}) verstärkt sich der Kontrast um ein vielfaches und selbst die Wokenformation sind nun detailliert sichtbar.
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Russland/Russland.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Russland/Russland-histogram.png}
 	\caption{Original Test-Bild "Russland" mit dazugehörigem Histogramm}
 	 \label{fig:Russland01}
 \end{figure}
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Russland/Russland-equalized.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Russland/Russland-equalized-histogram.png}
 	\caption{Test-Bild "Russland" mit dazugehörigem Histogramm nach der Histogrammeinebnung}
@@ -231,13 +247,13 @@ Das Bild "Russland"  (siehe Figure \ref{fig:Russland01}) enthält sehr wenig Kon
 
 \item Landschaft: 
 Das Bild "Landschaft"  (siehe Figure \ref{fig:Landschaft01}) hat im Vergleich zu den ersten beiden Testbildern einen höheren Kontrast und ist dunkler. Bei der Anwendung der Histogrammeinebnung  (siehe Figure \ref{fig:Landschaft02}) kann man nun beobachten, das aufgrund der Gleichverteilung der Grautöne Richtung den Maximalwert (255), das Bild sich aufhellt und der Kontrast erhalten bleibt.
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Landschaft/Landschaft.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Landschaft/Landschaft-histogram.png}
 	\caption{Original Test-Bild "Landschaft" mit dazugehörigem Histogramm}
 	 \label{fig:Landschaft01}
 \end{figure}
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Landschaft/Landschaft-equalized.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Landschaft/Landschaft-equalized-histogram.png}
 	\caption{Test-Bild "Landschaft" mit dazugehörigem Histogramm nach der Histogrammeinebnung}
@@ -251,13 +267,13 @@ Das Bild "Landschaft"  (siehe Figure \ref{fig:Landschaft01}) hat im Vergleich zu
 \pagebreak
 \subsection {b) Diskussion Histogrammeinebnung}
 Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogrammeinebnung zum Beispiel auf ein stark überbelichtetes Bild angewandt wird. Bei dem Testbild "Straße mit Fußgängern"  (siehe Figure \ref{fig:Ueberbelichtung01}) sieht man, dass der Großteil der Pixelintensitäten ca. über 200 liegt. Findet nun die Einebnung  (siehe Figure \ref{fig:Ueberbelichtung02}) statt werden die Verläufe nicht mehr weich dargestellt. Die Unterschiede zwischen den Pixelintensitäten werden zu hoch und Teile des Bildes deshalb kantiger dargestellt.
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-histogram.png}
 	\caption{Original Test-Bild "Überbelichtung" mit dazugehörigem Histogramm}
 	\label{fig:Ueberbelichtung01}
 \end{figure}
-\begin{figure}[h!] \centering
+\begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-equalized.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-equalized-histogram.png}
 	\caption{Test-Bild "Überbelichtung" mit dazugehörigem Histogramm nach der Histogrammeinebnung}
@@ -287,7 +303,7 @@ Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogramme
 
 \subsubsection{Auge}
 Es wurde ein Bild gewählt, welches (wie bei einem Plakatdruck) Punkte in regelmässigen Abständen aufweist. Die eigentliche Bildinformation steckt in der Dicke der Punkte. Eine FFT zeigt deutlich ein periodisches Muster. Will man nun die eigentliche Bildinformation gewinnen, müssen hochfrequente Anteile des Bildes entfernt werden. Tabelle \ref{tab:AuswertungAuge} zeigt deutlich dass durch ein Entfernen der Randbereiche (höhere Frequenzen) im FFT Bild und die anschließende Rücktransformation die eigentliche Bildinformation gewonnen werden konnte.
-\begin{table}[h]
+\begin{table}[H]
   \centering
   \begin{tabular}{c | c}
     \hline
@@ -305,7 +321,7 @@ Es wurde ein Bild gewählt, welches (wie bei einem Plakatdruck) Punkte in regelm
 
 \subsubsection{Elefant}
 In diesem Bild sind viele periodisch auftretende Elemente enthalten. Es wurde versucht die Schrift, die Gitterstäbe im Hintergrund und natürlich die beiden Tiere gut sichtbar zu erhalten (siehe Tabelle \ref{tab:AuswertungElefant}). Da aber die Gitterstäbe selbst periodisch im Bild vorkommen und auch die Schrift sich wiederholende senkrechte Kanten hat, ist dies nicht einfach. Ein Auslöschen der horizontalen und vertikalen Anteile aus dem Bild brachte in unseren Versuchen das beste Ergebnis. Hierbei ist aber zu beachten, dass das Zentrum des FFT Bildes die meiste Information enthält. Daher wurde diese belassen. Auch die Randbereiche der FFT wurden belassen, da diese für scharfe Kanten im Bild verantwortlich sind. Ein Wegschneiden dieser Bereiche würde auch die Konturen des Elefanten und die Schrift unscharf machen.
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{c | c}
     \hline
@@ -321,7 +337,7 @@ In diesem Bild sind viele periodisch auftretende Elemente enthalten. Es wurde ve
 
 \subsubsection{Lochgitter}
 Hier handelt es sich um ein perspektivisch beleuchtetes Lochgitter (siehe Tabelle \ref{tab:AuswertungLochgitter}). Die Löcher sind sechseckig. In der FFT erkennt man gut die Periodizität. Ein Wegschneiden der äusseren Bereiche der FFT und eine Rücktransformation zeigt deutlich die perspektivische Beleuchtung. Das Lochgitter konnte vollkommen entfernt werden. Es ist auch anzumerken, dass im rücktransformierten Bild eine Schrift \textit{"colourbox"} deutlich zu erkennen ist. Bei genauerer Betrachtung des Ursprungsbildes ist diese hinter dem Gitter zu erkennen.  
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{c | c}
     \hline
