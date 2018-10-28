@@ -102,7 +102,7 @@ Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels.Dieser
 \subsection{a)}Der MedianFilter kann leider nicht mittels der Klasse \textit{ConvolutionFilter} implementiert werden, da die Maske für dieses Vorgehen konstant sein müsste. Das Prinzip ist allerdings sehr ähnlich. Es wird ein Pixel in Mitten einer quadratischen Umgebung betrachtet. Dieses Pixel soll im resultierenden Bild als der Median Wert der Umgebung gesetzt werden. \\
 Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung aus einer Kopie des Ursprungsbildes und anschließender Medianwertberechnung. 
 \subsubsection{Code}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../MedianFinal_.java}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
 \subsubsection{resultierende Bilder}
 \begin{table}[H]
   \centering
@@ -117,13 +117,45 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
   \label{tab:MedianFilter}
 \end{table}
 
-\subsection{b) Checkerboard}
+\subsection{Checkerboard}
 \begin{figure}[H]
-	\includegraphics[width=7cm]{../testData/Median/4x4Lena.jpg}
+\centering
+	\includegraphics[width=7cm]{../testData/Median/4x4LenaR8.jpg}
+	\caption{4x4 Darstellung des Originalbildes überlagert mit Segmenten des gefilterten Bildes}
+    \label{tab:checkerboard}
 \end{figure}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c |}
+    \hline
+ 	 Originalbild & gefiltertes Bild $radius = 8$ \\
+    \hline
+	\includegraphics[width=4cm]{../testData/Lena.jpg} & 	\includegraphics[width=4cm]{../testData/Median/LenaMedianR8.jpg} \\
+	\hline
+	Mean: 127.46 & Mean: 127.45 \\
+	StdDev: 46.6 & StdDev: 44.1 \\
+	Min: 29      & Min: 38      \\
+	Max: 243     & Max: 220     \\
+	\hline
+  \end{tabular}
+  \caption{Statistische Auswertung}
+  \label{tab:Statistics}
+\end{table}
 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c | c |}
+    \hline
+	\includegraphics[width=4cm]{../testData/Median/LenaLittleNoise.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoise.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoisyNoise.jpg} \\
+	\includegraphics[width=4cm]{../testData/Median/LenaMedian.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoiseR4.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoisyNoiseR4.jpg} \\
+	\hline
 
-\subsection{c )Salt \& Pepper}
+  \end{tabular}
+  \caption{Statistische Auswertung}
+  \label{tab:Statistics}
+\end{table}
+
+\subsection{Salt \& Pepper}
 Der Salt \& Pepper Filter wird auf ein Testbild so oft angewendet, bis die Anzahl der Rausch-Pixel den Anteil der ursprünglichen Bild-Pixel übersteigt. Dies wird ca. bei einem Rausch-Anteil von über 50\% stattfinden. Da bei der Anwendung des Median-Filters immer der mittlerste Maskenwert herangezogen wird, kann bei einem Rausch-Anteil von über 50\% nur mehr Schwarz oder Weiß auftreten. Ab diesem Zeitpunkt kann der Median-Filter die Störsignale des Salt \& Pepper Filter nicht mehr korrigieren.
 
 
@@ -141,18 +173,14 @@ Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt
 
 \begin{figure} [H]
   \centering
-  \includegraphics[width=10cm]{TimeEvaluationGraph_Mean.png}
+  \includegraphics[width=7cm]{TimeEvaluationGraph_Mean.png}
   \caption{Der Mean Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
-  \includegraphics[width=10cm]{TimeEvaluationGraph_Gauss.png}
+  \includegraphics[width=7cm]{TimeEvaluationGraph_Gauss.png}
   \caption{Der Gauss Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
-  \includegraphics[width=10cm]{TimeEvaluationGraph_Median.png}
+  \includegraphics[width=7cm]{TimeEvaluationGraph_Median.png}
   \caption{Der Median Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
 \end{figure}
-\begin{figure} [H]
-  \centering
-  \includegraphics[width=10cm]{TimeEvaluationGraph_allBig.png}
-  \caption{Wiederholtes Ausführen der Filter mit  ( $ radius = 40 $ )}
-\end{figure}
+
 
 \begin{figure} [H]
   \centering
@@ -186,17 +214,6 @@ Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt
 	$d ... Anzahl der Dimensionen$ \\
 \end{center}
 
-
-
-\begin{figure}[H]
-	\includegraphics[width=7cm]{TimeEvaluationGraph_Mean.png}
-\end{figure}
-\begin{figure}[H]
-	\includegraphics[width=7cm]{TimeEvaluationGraph_Gauss.png}
-\end{figure}
-\begin{figure}[H]
-	\includegraphics[width=7cm]{TimeEvaluationGraph_Median.png}
-\end{figure}
 
 
 \subsection{Code}
