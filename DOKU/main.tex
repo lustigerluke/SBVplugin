@@ -19,7 +19,8 @@ frame=single,
 breaklines=true,
 postbreak=\mbox{{$\hookrightarrow$}\space},
 }
-
+\renewcommand{\thesubsubsection}{\alph{subsubsection} )}
+%\renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection} )}
 
 \begin{document}
 
@@ -29,9 +30,17 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 
 
 \newpage
-\section{Gauss Filter}
+\section{Übungsaufgaben I}
+\subsection{Gauss Filter}
+\subsubsection{Gauss Filter Implementierung}
 Es wurde ein Gauss Filter als ImageJ Filter implementiert. Die Behandlung der Randpixel wurde aus der Lehrveranstaltung übernommen. Gemeinsam mit dem Vortragenden Gerald Zwettler wurde die Java Klasse \textit{ConvolutionFilter} erweitert um auch die Randbereiche eines Bildes angemessen zu behandeln. In Heimarbeit wurde die Klasse um die Methode \textit{GetGaussMask} erweitert. In dieser wird die Verteilung einer Gauss Kurve auf eine 2 dimensionale Maske übertragen. \\
 
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Gauss_.java}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../ConvolutionFilter.java}
+
+
+
+\subsubsection{Darstellung der Gauss-Maske mittels Surface-Plot}
 Anschließend wurde eruiert welches Verhältnis von Sigma zum Radius der Maske eine klar zu erkennende Glocke darstellte. $ \frac{2}{4} $ hat die gewünschte Eigenschaft. 
 \begin{table}[H]
   \centering
@@ -55,6 +64,7 @@ Anschließend wurde eruiert welches Verhältnis von Sigma zum Radius der Maske e
   \label{tab:GaussFilterGroessen}
 \end{table}
 
+\subsubsection{Auswirkungen im Bereich von Kanten und ansteigenden Intensitäten}
 Weiters wurde der Übergang von scharfen Kanten und Verläufen mit dem Gauss Filter gefiltert. Man bemerkt gut, dass bei einem Intensitätsverlauf kaum ein Filtereffeckt sichtbar ist, während Kanten deutlich verschwommen erscheinen. Gewähltes Verhältnis: $ \frac{sigma}{radius} = \frac{2}{4} $
 \begin{table}[H]
   \centering
@@ -88,18 +98,15 @@ Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels.Dieser
   \label{tab:GaussMedianFilterEvaluierung}
 \end{table}
 
-\subsubsection{Code}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Gauss_.java}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../ConvolutionFilter.java}
-
-
 
 %% -------------------------------------------------------------------------------------------------------------------------
 %% ------------------------------------------- ZWEITES BEISPIEL -----------------------------------------------------
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
-\section{MedianFilter}
-\subsection{a)}Der MedianFilter kann leider nicht mittels der Klasse \textit{ConvolutionFilter} implementiert werden, da die Maske für dieses Vorgehen konstant sein müsste. Das Prinzip ist allerdings sehr ähnlich. Es wird ein Pixel in Mitten einer quadratischen Umgebung betrachtet. Dieses Pixel soll im resultierenden Bild als der Median Wert der Umgebung gesetzt werden. \\
+\subsection{MedianFilter}
+\subsubsection{a)}
+
+Der MedianFilter kann leider nicht mittels der Klasse \textit{ConvolutionFilter} implementiert werden, da die Maske für dieses Vorgehen konstant sein müsste. Das Prinzip ist allerdings sehr ähnlich. Es wird ein Pixel in Mitten einer quadratischen Umgebung betrachtet. Dieses Pixel soll im resultierenden Bild als der Median Wert der Umgebung gesetzt werden. \\
 Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung aus einer Kopie des Ursprungsbildes und anschließender Medianwertberechnung. 
 \subsubsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
@@ -120,7 +127,7 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
 \subsection{Checkerboard}
 \begin{figure}[H]
 \centering
-	\includegraphics[width=7cm]{../testData/Median/4x4LenaR8.jpg}
+	\includegraphics[width=10cm]{../testData/Median/4x4LenaR8.jpg}
 	\caption{4x4 Darstellung des Originalbildes überlagert mit Segmenten des gefilterten Bildes}
     \label{tab:checkerboard}
 \end{figure}
@@ -145,13 +152,18 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
 \begin{table}[H]
   \centering
   \begin{tabular}{| c | c | c |}
+	\hline	
+	ein bisschen verrauscht & sehr verrauscht &  fast unkenntlich  \\
     \hline
-	\includegraphics[width=4cm]{../testData/Median/LenaLittleNoise.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoise.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoisyNoise.jpg} \\
+	\includegraphics[width=4cm]{../testData/Median/LenaLittleNoise.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoise.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoisyNoise.jpg} \\ 
+	\hline
+	normaler Filtereffeckt & erste Fehldarstellungen & ganze Bereiche sind schwarz/weiß \\
+	\hline
 	\includegraphics[width=4cm]{../testData/Median/LenaMedian.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoiseR4.jpg} & \includegraphics[width=4cm]{../testData/Median/LenaNoisyNoiseR4.jpg} \\
 	\hline
 
   \end{tabular}
-  \caption{Statistische Auswertung}
+  \caption{Amwendung des Median Filters auf Bilder die mit Salt Pepper Noise verschlechtert wurden.}
   \label{tab:Statistics}
 \end{table}
 
