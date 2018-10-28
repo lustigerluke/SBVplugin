@@ -5,8 +5,6 @@ import ij.gui.GenericDialog;
 import java.awt.Rectangle;
 import java.util.Arrays;
 
-import com.sun.net.httpserver.Authenticator.Success;
-
 public class Median_ implements PlugInFilter {
 
 	public int setup(String arg, ImagePlus imp) {
@@ -40,37 +38,8 @@ public class Median_ implements PlugInFilter {
 		System.out.println("Now plot 4x4 to see filtereffect.");
 
 		plot4x4(ip, resultImage);
-		getStatistics(ip, resultImage);
 
 	} // run
-
-	private void getStatistics(ImageProcessor ip, double[][] resultImage) {
-		byte[] pixels = (byte[]) ip.getPixels();
-		int width = ip.getWidth();
-		int height = ip.getHeight();
-		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
-		double[][] inImg = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
-		
-		Statistics inStatistic = new Statistics();
-		Statistics resStatistics = new Statistics();
-		
-		// calculate inStatistics
-		for (int x = 0; x < width; x++) {
-			for (int y = 0; y < height; y++) {
-				inStatistic.update(inImg[x][y]);
-			}
-		}
-		
-		// calculate resStatistics
-		for (int x = 0; x < width; x++) {
-			for (int y = 0; y < height; y++) {
-				resStatistics.update(inImg[x][y]);
-			}
-		}
-		
-		System.out.println(inStatistic);
-		System.out.println(resStatistics);
-	}
 
 	private void plot4x4(ImageProcessor ip, double[][] filteredImg) {
 		int segments = 4;
@@ -113,24 +82,21 @@ public class Median_ implements PlugInFilter {
 		byte[] pixels = (byte[]) ip.getPixels();
 		int width = ip.getWidth();
 		int height = ip.getHeight();
-		
+
 		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
 		double[][] inDataArrDouble = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
-		
-		double[][] resultImage = inDataArrDouble.clone();
-		int successIndex = 0;
-		int failureIndex = 0;
+
+		double[][] resultImage = new double[width][height];
 		// step1: move mask to all possible image pixel positions
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				double[][] mask = inDataArrDouble;
+
 				Rectangle roi = getROI(width, height, x, y, radius);
-				mask = ImageJUtility.cropImage(mask, roi.width, roi.height, roi);
-				double median = getMedian(mask,roi.width,roi.height);
+				double[][] mask = ImageJUtility.cropImage(inDataArrDouble, roi.width, roi.height, roi);
+				double median = getMedian(mask, roi.width, roi.height);
 				resultImage[x][y] = median;
 			}
 		}
-
 		return resultImage;
 	}
 

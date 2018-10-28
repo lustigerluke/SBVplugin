@@ -5,8 +5,6 @@ import ij.gui.GenericDialog;
 import java.awt.Rectangle;
 import java.util.Arrays;
 
-//import com.sun.net.httpserver.Authenticator.Success;
-
 public class MedianFinal_ implements PlugInFilter {
 
 	public int setup(String arg, ImagePlus imp) {
