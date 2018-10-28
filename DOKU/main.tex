@@ -32,7 +32,8 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \newpage
 \section{Übungsaufgaben I}
 \subsection{Gauss Filter}
-\subsubsection{Gauss Filter Implementierung}
+\subsubsection{Implementierung}
+\label{sec:Gausfilterimplementierung}
 Es wurde ein Gauss Filter als ImageJ Filter implementiert. Die Behandlung der Randpixel wurde aus der Lehrveranstaltung übernommen. Gemeinsam mit dem Vortragenden Gerald Zwettler wurde die Java Klasse \textit{ConvolutionFilter} erweitert um auch die Randbereiche eines Bildes angemessen zu behandeln. In Heimarbeit wurde die Klasse um die Methode \textit{GetGaussMask} erweitert. In dieser wird die Verteilung einer Gauss Kurve auf eine 2 dimensionale Maske übertragen. \\
 
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Gauss_.java}
@@ -82,9 +83,13 @@ Weiters wurde der Übergang von scharfen Kanten und Verläufen mit dem Gauss Fil
   \label{tab:GaussFilterEvaluierung}
 \end{table}
 Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels.Dieser stellt Kanten viel dutlicher dar und macht auch bei glatten Übergängen kaum einen bemerkenswerten Effeckt.
+
+
+
 \begin{table}[H]
-  \centering
-  \begin{tabular}{| c | c | c |}
+	\centering
+	\begin{tabular}{|c  | c | c |}
+    
     \hline
     $ \frac{sigma}{radius} $ & Gauss gefiltertes Bild & Median gefiltertes Bild \\
     \hline
@@ -104,13 +109,13 @@ Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels.Dieser
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
 \subsection{MedianFilter}
-\subsubsection{a)}
+\subsubsection{Implementierung)}
 
 Der MedianFilter kann leider nicht mittels der Klasse \textit{ConvolutionFilter} implementiert werden, da die Maske für dieses Vorgehen konstant sein müsste. Das Prinzip ist allerdings sehr ähnlich. Es wird ein Pixel in Mitten einer quadratischen Umgebung betrachtet. Dieses Pixel soll im resultierenden Bild als der Median Wert der Umgebung gesetzt werden. \\
 Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung aus einer Kopie des Ursprungsbildes und anschließender Medianwertberechnung. 
-\subsubsection{Code}
+
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
-\subsubsection{resultierende Bilder}
+
 \begin{table}[H]
   \centering
   \begin{tabular}{| c | c |}
@@ -124,7 +129,7 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
   \label{tab:MedianFilter}
 \end{table}
 
-\subsection{Checkerboard}
+\subsubsection{4x4 Segment Darstellung und Statistische Werte}
 \begin{figure}[H]
 \centering
 	\includegraphics[width=10cm]{../testData/Median/4x4LenaR8.jpg}
@@ -149,6 +154,11 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
   \label{tab:Statistics}
 \end{table}
 
+
+\subsubsection{Salt \& Pepper Rauschen}
+Der Salt \& Pepper Filter wird auf ein Testbild so oft angewendet, bis die Anzahl der Rausch-Pixel den Anteil der ursprünglichen Bild-Pixel übersteigt. Dies wird ca. bei einem Rausch-Anteil von über 50\% stattfinden. Da bei der Anwendung des Median-Filters immer der mittlerste Maskenwert herangezogen wird, kann bei einem Rausch-Anteil von über 50\% nur mehr Schwarz oder Weiß auftreten. Ab diesem Zeitpunkt kann der Median-Filter die Störsignale des Salt \& Pepper Filter nicht mehr korrigieren.
+
+
 \begin{table}[H]
   \centering
   \begin{tabular}{| c | c | c |}
@@ -167,8 +177,7 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
   \label{tab:Statistics}
 \end{table}
 
-\subsection{Salt \& Pepper}
-Der Salt \& Pepper Filter wird auf ein Testbild so oft angewendet, bis die Anzahl der Rausch-Pixel den Anteil der ursprünglichen Bild-Pixel übersteigt. Dies wird ca. bei einem Rausch-Anteil von über 50\% stattfinden. Da bei der Anwendung des Median-Filters immer der mittlerste Maskenwert herangezogen wird, kann bei einem Rausch-Anteil von über 50\% nur mehr Schwarz oder Weiß auftreten. Ab diesem Zeitpunkt kann der Median-Filter die Störsignale des Salt \& Pepper Filter nicht mehr korrigieren.
+
 
 
 
@@ -176,24 +185,40 @@ Der Salt \& Pepper Filter wird auf ein Testbild so oft angewendet, bis die Anzah
 %% ------------------------------------------- DRITTES BEISPIEL -----------------------------------------------------
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
-\section{Steuerung des Filtereffekts }
+\subsection{Steuerung des Filtereffekts }
 
-\subsection{Vergleich}
+\subsubsection{Vergleich}
 Das selbstgeschriebene Plugin \textit{FiltereffektEvaluierung\_} wurde geschrieben um die Laufzeiten der einzelnen Filter zu erfassen. Hierbei wurde darauf geachtet, dass mittels der Methode \textit{System.nanoTime()} im Gegensatz zu \textit{System.millis()} einge genauere Zeitmessung möglich ist. Als eine sehr große Maske wurde $  radius = 40 $ gewählt. Das Setzen der Größe $ sigma $ ist bei der Messung der Laufzeit irrelevant, da sie nur für das initiale Erstellen der Maske ausschlaggebend ist. \\
 
 Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt auch gut, dass eine große Filtermaske nicht unbedingt mit einem enormen Filtereffekt zu tun haben muss. Da hier ein kleines $sigma$ gewählt wurde, ist auch die Auswirkung des Filters nicht groß, aber deutlich von der des Filters mit der kleinen Maske unterscheidbar.
 
+
+Zusätzlich zur Klasse \textit{FiltereffektEvaluierung\_.java} werden auch viele der anderen in diesem Papier besprochenen Klassen benötigt.
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
+
+Die so gewonnenen Daten wurden in eine Excel Tabelle eingetragen und in Diagrammen dargestellt. 
 \begin{figure} [H]
   \centering
-  \includegraphics[width=7cm]{TimeEvaluationGraph_Mean.png}
+  \includegraphics[width=12cm]{TimeEvaluationGraph_Mean.png}
   \caption{Der Mean Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
-  \includegraphics[width=7cm]{TimeEvaluationGraph_Gauss.png}
+  \includegraphics[width=12cm]{TimeEvaluationGraph_Gauss.png}
   \caption{Der Gauss Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
-  \includegraphics[width=7cm]{TimeEvaluationGraph_Median.png}
-  \caption{Der Median Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
 \end{figure}
 
 
+
+3D Masken könnten neben dem Filtereffekt zum Beispiel bei einem RGB Bild auch Farbtöne verstärken/abschwächen. Dabei müsen aber im Falle des Median-Filters für jeden Pixel des dreidimensionalen Bildes alle 3 Dimensionen der Maske berechnet werden. Bei Mean- und Gauss-Filter hingegen reicht es einen zweidimensionalen Filter auf jede Ebene der dritten Dimension anzuwenden und die Ergebisse weiterzuverarbeiten. 
+
+
+\begin{center}
+	$t_{gP} ... time to get pixel value. Die Zeit einen Pixel aus der Berechnung mit einer 2D Maske  $ \\
+	$t_{cM} ... time to caluclate initial Mask$ \\
+	$t_{cMM} ... time to calculate MedianMask $ \\
+	$d ... Anzahl der Dimensionen$ \\
+\end{center}
+
+\subsubsection{Diskussion der Ergebnisse}
+Mehrmaliges Anwenden eines Filters ma
 \begin{figure} [H]
   \centering
   \begin{tabular}{| c | c | c | c |}
@@ -209,29 +234,13 @@ Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt
 	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR40S4v2.jpg} &
 	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR40S4v3.jpg} & 	
 	\includegraphics[width=3cm]{../testData/Gauss/SchachbrettR40S4v4.jpg} \\
+	\hline
   \end{tabular}
   \caption{Wiederholte Anwendung des Gauss Filters mit $ radius = 4 $ (oben) und $radius = 40 $ (unten)}
   \label{tab:wiederholterGauss}
 
+
 \end{figure}
-3D Masken könnten neben dem Filtereffekt zum Beispiel bei einem RGB Bild auch Farbtöne verstärken/abschwächen. Dabei müsen aber im Falle des Median-Filters für jeden Pixel des dreidimensionalen Bildes alle 3 Dimensionen der Maske berechnet werden. Bei Mean- und Gauss-Filter hingegen reicht es einen zweidimensionalen Filter auf jede Ebene der dritten Dimension anzuwenden und die Ergebisse weiterzuverarbeiten. 
-
-
-\subsection{Berechnung}
-
-\begin{center}
-	$t_{gP} ... time to get pixel value. Die Zeit einen Pixel aus der Berechnung mit einer 2D Maske  $ \\
-	$t_{cM} ... time to caluclate initial Mask$ \\
-	$t_{cMM} ... time to calculate MedianMask $ \\
-	$d ... Anzahl der Dimensionen$ \\
-\end{center}
-
-
-
-\subsection{Code}
-Zusätzlich zur Klasse \textit{FiltereffektEvaluierung\_.java} werden auch viele der anderen in diesem Papier besprochenen Klassen benötigt.
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
-\subsubsection{Tests}
 
 %% -------------------------------------------------------------------------------------------------------------------------
 %% ------------------------------------------- VIERTES BEISPIEL -----------------------------------------------------
