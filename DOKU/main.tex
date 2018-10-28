@@ -31,7 +31,7 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \section{Gauss Filter}
 Es wurde ein Gauss Filter als ImageJ Filter implementiert. Die Behandlung der Randpixel wurde aus der Lehrveranstaltung übernommen. Gemeinsam mit dem Vortragenden Gerald Zwettler wurde die Java Klasse \textit{ConvolutionFilter} erweitert um auch die Randbereiche eines Bildes angemessen zu behandeln. In Heimarbeit wurde die Klasse um die Methode \textit{GetGaussMask} erweitert. In dieser wird die Verteilung einer Gauss Kurve auf eine 2 dimensionale Maske übertragen. \\
 
-Anschlißend wurde eruiert welches Verhältnis von Sigma zum Radius der Maske eine klar zu erkennende Glocke darstellte. $ \frac{2}{4} $ hat die gewünschte Eigenschaft. 
+Anschließend wurde eruiert welches Verhältnis von Sigma zum Radius der Maske eine klar zu erkennende Glocke darstellte. $ \frac{2}{4} $ hat die gewünschte Eigenschaft. 
 \begin{table}[h]
   \centering
   \begin{tabular}{| c | c | c |}
@@ -98,7 +98,7 @@ Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels.Dieser
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
 \section{MedianFilter}
-Der MedianFilter kann leider nicht mittels der Klasse \textit{ConvolutionFilter} implementiert werden, da die Maske für dieses Vorgehen konstant sein müsste. Das Prinzip ist allerdings sehr ähnlich. Es wird ein Pixel in Mitten einer quadratischen Umgebung betrachtet. Dieses Pixel soll im resultierenden Bild als der Median Wert der Umgebung gesetzt werden. \\
+\subsection{a)}Der MedianFilter kann leider nicht mittels der Klasse \textit{ConvolutionFilter} implementiert werden, da die Maske für dieses Vorgehen konstant sein müsste. Das Prinzip ist allerdings sehr ähnlich. Es wird ein Pixel in Mitten einer quadratischen Umgebung betrachtet. Dieses Pixel soll im resultierenden Bild als der Median Wert der Umgebung gesetzt werden. \\
 Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung aus einer Kopie des Ursprungsbildes und anschließender Medianwertberechnung. 
 \subsubsection{Code}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Median_.java}
@@ -106,6 +106,9 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
 \begin{figure}[h]
 	\includegraphics[width=7cm]{../testData/Results/median.jpg}
 \end{figure}
+\subsection{b) Checkerboard}
+\subsection{c )Salt \& Pepper}
+Der Salt \& Pepper Filter wird auf ein Testbild so oft angewendet, bis die Anzahl der Rausch-Pixel den Anteil der ursprünglichen Bild-Pixel übersteigt. Dies wird ca. bei einem Rausch-Anteil von über 50\% stattfinden. Da bei der Anwendung des Median-Filters immer der mittlerste Maskenwert herangezogen wird, kann bei einem Rausch-Anteil von über 50\% nur mehr Schwarz oder Weiß auftreten. Ab diesem Zeitpunkt kann der Median-Filter die Störsignale des Salt \& Pepper Filter nicht mehr korrigieren.
 
 
 
@@ -197,36 +200,48 @@ Zusätzlich zur Klasse \textit{FiltereffektEvaluierung\_.java} werden auch viele
 Die Implementierung wurde anhand der folgenden drei Bilder getestet:
 \begin{enumerate}
 \item Strand: 
-Das Bild "Strand" enthält eine halbwegs gleichmäßige Verteilung der Grautöne. Nach Anwendung der Histogrammeinebnung kann man eine Verstärkung des Kontrastes erkennen.
+Das Bild "Strand" (siehe Figure \ref{fig:Strand01}) enthält eine halbwegs gleichmäßige Verteilung der Grautöne. Nach Anwendung der Histogrammeinebnung  (siehe Figure \ref{fig:Strand02}) kann man eine Verstärkung des Kontrastes erkennen.
 \begin{figure}[h!] \centering
 	\includegraphics[width=7cm]{../testData/Results/Strand/Strand.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Strand/Strand-histogram.png}
+	\caption{Original Test-Bild "Strand" mit dazugehörigem Histogramm}
+	 \label{fig:Strand01}
 \end{figure}
 \begin{figure}[h!] \centering
 	\includegraphics[width=7cm]{../testData/Results/Strand/Strand-equalized.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Strand/Strand-equalized-histogram.png}
+	\caption{Test-Bild "Strand" mit dazugehörigem Histogramm nach der Histogrammeinebnung}
+	 \label{fig:Strand02}
 \end{figure}
 
 \item Russland: 
-Das Bild "Russland" enthält sehr wenig Kontrast und viele der Grautöne sind im Histogram benachbart. Nach der Anwendung der Histogrammeinebnung verstärkt sich der Kontrast um ein vielfaches und selbst die Wokenformation sind nun detailliert sichtbar.
+Das Bild "Russland"  (siehe Figure \ref{fig:Russland01}) enthält sehr wenig Kontrast und viele der Grautöne sind im Histogram benachbart. Nach der Anwendung der Histogrammeinebnung  (siehe Figure \ref{fig:Russland02}) verstärkt sich der Kontrast um ein vielfaches und selbst die Wokenformation sind nun detailliert sichtbar.
 \begin{figure}[h!] \centering
 	\includegraphics[width=7cm]{../testData/Results/Russland/Russland.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Russland/Russland-histogram.png}
+	\caption{Original Test-Bild "Russland" mit dazugehörigem Histogramm}
+	 \label{fig:Russland01}
 \end{figure}
 \begin{figure}[h!] \centering
 	\includegraphics[width=7cm]{../testData/Results/Russland/Russland-equalized.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Russland/Russland-equalized-histogram.png}
+	\caption{Test-Bild "Russland" mit dazugehörigem Histogramm nach der Histogrammeinebnung}
+	 \label{fig:Russland02}
 \end{figure}
 
 \item Landschaft: 
-Das Bild "Landschaft" hat im Vergleich zu den ersten beiden Testbildern einen höheren Kontrast und ist dunkler. Bei der Anwendung der Histogrammeinebnung kann man nun beobachten, das aufgrund der Gleichverteilung der Grautöne Richtung den Maximalwert (255), das Bild sich aufhellt und der Kontrast erhalten bleibt.
+Das Bild "Landschaft"  (siehe Figure \ref{fig:Landschaft01}) hat im Vergleich zu den ersten beiden Testbildern einen höheren Kontrast und ist dunkler. Bei der Anwendung der Histogrammeinebnung  (siehe Figure \ref{fig:Landschaft02}) kann man nun beobachten, das aufgrund der Gleichverteilung der Grautöne Richtung den Maximalwert (255), das Bild sich aufhellt und der Kontrast erhalten bleibt.
 \begin{figure}[h!] \centering
 	\includegraphics[width=7cm]{../testData/Results/Landschaft/Landschaft.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Landschaft/Landschaft-histogram.png}
+	\caption{Original Test-Bild "Landschaft" mit dazugehörigem Histogramm}
+	 \label{fig:Landschaft01}
 \end{figure}
 \begin{figure}[h!] \centering
 	\includegraphics[width=7cm]{../testData/Results/Landschaft/Landschaft-equalized.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Landschaft/Landschaft-equalized-histogram.png}
+	\caption{Test-Bild "Landschaft" mit dazugehörigem Histogramm nach der Histogrammeinebnung}
+	 \label{fig:Landschaft02}
 \end{figure}
 
 
@@ -235,14 +250,18 @@ Das Bild "Landschaft" hat im Vergleich zu den ersten beiden Testbildern einen h�
 
 \pagebreak
 \subsection {b) Diskussion Histogrammeinebnung}
-Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogrammeinebnung zum Beispiel auf ein stark überbelichtetes Bild angewandt wird. Bei folgender Aufnahme einer Straße mit Fußgängern sieht man, dass der Großteil der Pixelintensitäten ca. über 200 liegt. Findet nun die Einebnung statt werden die Verläufe nicht mehr weich dargestellt. Die Unterschiede zwischen den Pixelintensitäten werden zu hoch und Teile des Bildes deshalb kantiger dargestellt.
+Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogrammeinebnung zum Beispiel auf ein stark überbelichtetes Bild angewandt wird. Bei dem Testbild "Straße mit Fußgängern"  (siehe Figure \ref{fig:Ueberbelichtung01}) sieht man, dass der Großteil der Pixelintensitäten ca. über 200 liegt. Findet nun die Einebnung  (siehe Figure \ref{fig:Ueberbelichtung02}) statt werden die Verläufe nicht mehr weich dargestellt. Die Unterschiede zwischen den Pixelintensitäten werden zu hoch und Teile des Bildes deshalb kantiger dargestellt.
 \begin{figure}[h!] \centering
 	\includegraphics[width=7cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-histogram.png}
+	\caption{Original Test-Bild "Überbelichtung" mit dazugehörigem Histogramm}
+	\label{fig:Ueberbelichtung01}
 \end{figure}
 \begin{figure}[h!] \centering
 	\includegraphics[width=7cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-equalized.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-equalized-histogram.png}
+	\caption{Test-Bild "Überbelichtung" mit dazugehörigem Histogramm nach der Histogrammeinebnung}
+	\label{fig:Ueberbelichtung02}
 \end{figure}
 \pagebreak
 \subsection{Code}
@@ -264,10 +283,10 @@ Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogramme
 	\item \textit{Process $\rightarrow$ FFT $\rightarrow$ inverse FFT}
 \end{itemize}
 
-\subsection{Beispiele}
+\subsection{a) Beispiele}
 
 \subsubsection{Auge}
-Es wurde ein Bild gewählt, welches (wie bei einem Plakatdruck) Punkte in regelmässigen Abständen aufweist. Die eigentliche Bildinformation steckt in der Dicke er Punkte. Eine FFT Transformation zeigt deutlich ein periodisches Muster. Will man nur die eigentliche Bildinformation gewinnen, müssen hochfrequente Anteile des Bildes entfernt werden. Tabelle \ref{tab:AuswertungAuge} zeigt deutlich dass durch ein Entfernen der Randbereiche (höhere Frequenzen) im FFT Bild und die anschließende Rücktransformation die eigentliche Bildinformation gewonnen werden konnte.
+Es wurde ein Bild gewählt, welches (wie bei einem Plakatdruck) Punkte in regelmässigen Abständen aufweist. Die eigentliche Bildinformation steckt in der Dicke der Punkte. Eine FFT zeigt deutlich ein periodisches Muster. Will man nun die eigentliche Bildinformation gewinnen, müssen hochfrequente Anteile des Bildes entfernt werden. Tabelle \ref{tab:AuswertungAuge} zeigt deutlich dass durch ein Entfernen der Randbereiche (höhere Frequenzen) im FFT Bild und die anschließende Rücktransformation die eigentliche Bildinformation gewonnen werden konnte.
 \begin{table}[h]
   \centering
   \begin{tabular}{c | c}
@@ -283,8 +302,9 @@ Es wurde ein Bild gewählt, welches (wie bei einem Plakatdruck) Punkte in regelm
 \end{table}
 
 
+
 \subsubsection{Elefant}
-In diesem Bild sind viele periodisch auftretende Elemente enthalten. Es wurde versucht die Schrift, die Gitterstäbe im Hintergrund und natürlich die beiden Tiere gut sichtbar zu erhalten. Da aber die Gitterstäbe selbst periodisch im Bild vorkommen und auch die Schrift sich wiederholende senkrechte Kanten hat, war dies nicht einfach. Ein Auslöschen der horizontalen und vertikalen Anteile aus dem Bild brachte in unseren Versuchen das beste Ergebnis. Hierbei ist aber zu beachten, dass das Zentrum des FFT Bildes die meiste Information enthält. Daher wurde diese bestehen gelassen. Auch die Randbereiche der FFT wurden belassen, da diese für scharfe Kanten im Bild verantwortlich sind. Ein Wegschneiden dieser Bereiche würde auch die Konturen des Elefanten und die Schrift unscharf machen.
+In diesem Bild sind viele periodisch auftretende Elemente enthalten. Es wurde versucht die Schrift, die Gitterstäbe im Hintergrund und natürlich die beiden Tiere gut sichtbar zu erhalten (siehe Tabelle \ref{tab:AuswertungElefant}). Da aber die Gitterstäbe selbst periodisch im Bild vorkommen und auch die Schrift sich wiederholende senkrechte Kanten hat, ist dies nicht einfach. Ein Auslöschen der horizontalen und vertikalen Anteile aus dem Bild brachte in unseren Versuchen das beste Ergebnis. Hierbei ist aber zu beachten, dass das Zentrum des FFT Bildes die meiste Information enthält. Daher wurde diese belassen. Auch die Randbereiche der FFT wurden belassen, da diese für scharfe Kanten im Bild verantwortlich sind. Ein Wegschneiden dieser Bereiche würde auch die Konturen des Elefanten und die Schrift unscharf machen.
 \begin{table}
   \centering
   \begin{tabular}{c | c}
@@ -296,11 +316,11 @@ In diesem Bild sind viele periodisch auftretende Elemente enthalten. Es wurde ve
     \includegraphics[width=4cm]{../testData/Results/Elefant/reducedElefant.jpg} & \includegraphics[width=4cm]{../testData/Results/Elefant/reducedFFT_of_Elefant.jpg} \\
   \end{tabular}
   \caption{Auswertung Elefant}
-  \label{tab: AuswertungElefant }
+  \label{tab:AuswertungElefant }
 \end{table}
 
 \subsubsection{Lochgitter}
-Hier handelt es sich um ein perspektivisch beläuchtetes Lochgitter. Die Löcher sind sechseckig. In der FFT erkennt man gut die Periodizität. Ein Wegschneiden der äusseren Bereiche der FFT und eine Rücktransformation zeigt deutlich die perspektivische Beläuchtung. Das Lochgitter konnte aber vollkommen entfernt werden. Interessant ist auch zu bemerken, dass im Rücktransformierten Bild eine Schrift \textit{"colourbox"} deutlich zu erkennen ist. Bei genauerer Betrachtung des Ursprungsbildes ist diese hinter dem Gitter zu erkennen.  
+Hier handelt es sich um ein perspektivisch beleuchtetes Lochgitter (siehe Tabelle \ref{tab:AuswertungLochgitter}). Die Löcher sind sechseckig. In der FFT erkennt man gut die Periodizität. Ein Wegschneiden der äusseren Bereiche der FFT und eine Rücktransformation zeigt deutlich die perspektivische Beleuchtung. Das Lochgitter konnte vollkommen entfernt werden. Es ist auch anzumerken, dass im rücktransformierten Bild eine Schrift \textit{"colourbox"} deutlich zu erkennen ist. Bei genauerer Betrachtung des Ursprungsbildes ist diese hinter dem Gitter zu erkennen.  
 \begin{table}
   \centering
   \begin{tabular}{c | c}
@@ -315,8 +335,13 @@ Hier handelt es sich um ein perspektivisch beläuchtetes Lochgitter. Die Löcher
   \label{tab:AuswertungLochgitter}
 \end{table}
 
-\subsection{Analyse eines Frequenzmusters}
-Ein sich wiederholendes Muster in einem Bild ist mittels \textit{FFT} gut vom eigentlichen Bildinhalt zu unterscheiden. So kann das Muster entfernt werden und das eigentliche Bild mittels \textit{inverseFFT} ermittelt werden. Leider sind reale Bilder meist nicht genau horizontal ausgerichtet. Auch kann man nicht davon ausgehen, dass sich wiederholende Elemente in der Realität unverzerrt in einem Bild dargestellt sind. Kanten werden nur in den seltensten Fällen genau durch einen Pixel des Bildes dargestellt. All diese Umstände machen es schwer aus einem Alltagsfoto wiederkehrende Elemente herauszufiltern.
+\subsection{b) Analyse eines Frequenzmusters}
+Ein sich wiederholendes Muster in einem Bild ist mittels \textit{FFT} gut vom eigentlichen Bildinhalt zu unterscheiden. So kann das Muster entfernt werden und das eigentliche Bild mittels \textit{inverseFFT} ermittelt werden.
+
+Leider sind reale Bilder meist nicht genau horizontal ausgerichtet. Auch kann man nicht davon ausgehen, dass  wiederholende Elemente in der Realität unverzerrt in einem Bild dargestellt sind. Kanten werden nur in den seltensten Fällen genau durch einen Pixel des Bildes dargestellt. All diese Umstände machen es schwer aus einem Alltagsfoto wiederkehrende Elemente herauszufiltern. 
+
+Um den Raster  möglichst gut zu entfernen sollten die Linien regelmäßig, in gleichen Abständen auf dem Bild vorhanden sein. Diese sollten auch sehr klar dargestellt werden, dann können diese möglichst exakt vom restlichen Bildinhalt getrennt werden.
+
 
 \section{Anhang}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../ConvolutionFilter.java}
