@@ -4,7 +4,7 @@
 \usepackage{inputenc}
 \usepackage{graphicx}
 \usepackage{float}
-
+\usepackage{array}
 \lstset{
 extendedchars=\true,
 language=JAVA,
@@ -78,6 +78,7 @@ Weiters wurde der Übergang von scharfen Kanten und Verläufen mit dem Gauss Fil
 	    \hline
     $ \frac{2}{4} $ &
 	\includegraphics[width=4cm]{../testData/Gauss/Regenbogen.jpg} & 	\includegraphics[width=4cm]{../testData/Gauss/RegenbogenR4S2.jpg} \\
+	\hline
   \end{tabular}
   \caption{Gauss Filter Evaluierung}
   \label{tab:GaussFilterEvaluierung}
@@ -88,16 +89,18 @@ Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels.Dieser
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|c  | c | c |}
-    
+	\begin{tabular}{| m{1cm} | c | c |}
     \hline
     $ \frac{sigma}{radius} $ & Gauss gefiltertes Bild & Median gefiltertes Bild \\
     \hline
     $ \frac{1}{4} $ &
-	\includegraphics[width=4cm]{../testData/Gauss/SchachbrettR4S2.jpg} & 	\includegraphics[width=4cm]{../testData/Median/SchachbrettR4.jpg} \\
-	    \hline
+    \centering \includegraphics[width=4cm]{../testData/Gauss/SchachbrettR4S2.jpg} &
+     \includegraphics[width=4cm]{../testData/Median/SchachbrettR4.jpg} \\
+     \hline
     $ \frac{2}{4} $ &
-	\includegraphics[width=4cm]{../testData/Gauss/RegenbogenR4S2.jpg} & 	\includegraphics[width=4cm]{../testData/Median/RegenbogenR4.jpg} \\
+	\includegraphics[width=4cm]{../testData/Gauss/RegenbogenR4S2.jpg} & 	
+	\includegraphics[width=4cm]{../testData/Median/RegenbogenR4.jpg} \\
+	\hline
   \end{tabular}
   \caption{Gauss Filter vs. Median Filter}
   \label{tab:GaussMedianFilterEvaluierung}
@@ -196,29 +199,62 @@ Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt
 Zusätzlich zur Klasse \textit{FiltereffektEvaluierung\_.java} werden auch viele der anderen in diesem Papier besprochenen Klassen benötigt.
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
 
-Die so gewonnenen Daten wurden in eine Excel Tabelle eingetragen und in Diagrammen dargestellt. 
+Die so gewonnenen Daten wurden in eine Excel Tabelle eingetragen und in als Figure  \ref{fig: multipleGauss} und \ref{fig: multipleMean} dargestellt.  Man erkennt gut den linearen Zusammenhang den eine mehrmalige Ausführung des Codes mit sich bringt. Zu beachten gilt auch dass Gauss und Mean Filter wie erwartet ähnliche Ergebnisse liefern da Sie auf den selben Methoden aufgebaut sind und lediglich die initiale Maskenerstellung die Filter unterscheidet. Unsere Messungen zeigten dass auch der selbst geschriebene Median Filter eine lineare Laufzeit aufweist. Diese ist aber deutlich höher als die von Mean und Gauss Filter.
+
 \begin{figure} [H]
   \centering
   \includegraphics[width=12cm]{TimeEvaluationGraph_Mean.png}
-  \caption{Der Mean Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
+  \caption{Mehrfachausführung des Mean Filters.}
+  \label{fig: multipleMean}
   \includegraphics[width=12cm]{TimeEvaluationGraph_Gauss.png}
-  \caption{Der Gauss Filter wirde mit verschiedenen Radien wiederholt Ausgeführt und dabei die Laufzeit gemessen.}
+  \caption{Mehrfachausführung des Gauss Filters.}
+  \label{fig: multipleGauss}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{TimeEvaluationGraph_allBig.png}
+	\caption{Zeitmessungen mit $radius = 40 $ }
+	\label{fig: timeOfBigMask}
+\end{figure}
+
+Ein Vergleich der Maskengrößen bei ergab auch hier einen Linearen zusammenhang bei allen 3 Filterarten. Siehe Figure \ref{fig: maskenGroessenVergleich}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{Maskengroessenvergleich.png}
+	\caption{Vergleich verschiedener Maskengrößen}
+	\label{fig: maskenGroessenVergleich}
+\end{figure}
+
+Allgemein würde ein mehrdimensionales Bild eine mehrfache Ausführung des 2D Filters erfordern. Dass dieser Zusammenhang linear ist wurde bereits gezeigt. 3D Masken könnten aber neben dem Filtereffekt zum Beispiel bei einem RGB Bild auch Farbtöne verstärken/abschwächen. Es könnte zum Beispiel der Rot-Ton abhängig vom Grün-Tom verwändert werden. Hierzu müsste für jeden Pixel im dreidimensionalen Bild die gesamte Information aller 3 Dimensionen im Bereich der Maske eingelesen und verarbeitet werden. Dies würde eine erhebliche Laufzeitsteigerung bedeuten. 
+
+\begin{figure}[H]
+\begin{tabular}{|l| l |}
+	\hline
+	$t_{gP}$ & time to get pixel value. Die Zeit einen Pixel aus der \\
+	& Berechnung mit einer 2D Maske \\
+	\hline	
+	$d  = dimensions - 1$ & Anzahl der zusätzlichen Einträge in der dritten Dimension \\
+	\hline	
+	$size = length  * width $ & Anzahl der Pixel im zweidimensionalen Bild \\
+	\hline	
+	$t_{2D} = size * t_{gP} $ & Laufzeit eines 2D Bildes:\\
+	\hline	
+	$t_{3D} = d * size * t_{gp} $ & Laufzeit eines 3D Bildes \\
+	\hline	
+	$t_{multible3D} = d * size * ( d * t_{gP} ) $ & quadratische Laufzeit da bei jedem Pixel alle Dimensionen\\
+	$               = d^2 *size * t_{gP}$       &  berücksichtigt werden müssen \\
+	\hline
+\end{tabular}
+\caption{Berechnung der Laufzeit bei 3D Bildern.}
+\label{calculation}
 \end{figure}
 
 
-
-3D Masken könnten neben dem Filtereffekt zum Beispiel bei einem RGB Bild auch Farbtöne verstärken/abschwächen. Dabei müsen aber im Falle des Median-Filters für jeden Pixel des dreidimensionalen Bildes alle 3 Dimensionen der Maske berechnet werden. Bei Mean- und Gauss-Filter hingegen reicht es einen zweidimensionalen Filter auf jede Ebene der dritten Dimension anzuwenden und die Ergebisse weiterzuverarbeiten. 
-
-
-\begin{center}
-	$t_{gP} ... time to get pixel value. Die Zeit einen Pixel aus der Berechnung mit einer 2D Maske  $ \\
-	$t_{cM} ... time to caluclate initial Mask$ \\
-	$t_{cMM} ... time to calculate MedianMask $ \\
-	$d ... Anzahl der Dimensionen$ \\
-\end{center}
-
 \subsubsection{Diskussion der Ergebnisse}
-Mehrmaliges Anwenden eines Filters ma
+Wie in Tabelle \ref{tab:wie2derholterGauss} gut erkennbar ist, kann durch wiederholtes Anwenden einer kleinen Maske nur sehr schwer das Ergebnis einer grpßen Maske erreicht werden. Es kommt daher darauf an, welchen optischen Effeckt man erzielen möchte.
+
 \begin{figure} [H]
   \centering
   \begin{tabular}{| c | c | c | c |}
@@ -238,8 +274,6 @@ Mehrmaliges Anwenden eines Filters ma
   \end{tabular}
   \caption{Wiederholte Anwendung des Gauss Filters mit $ radius = 4 $ (oben) und $radius = 40 $ (unten)}
   \label{tab:wiederholterGauss}
-
-
 \end{figure}
 
 %% -------------------------------------------------------------------------------------------------------------------------
@@ -248,9 +282,10 @@ Mehrmaliges Anwenden eines Filters ma
 \newpage
 \section{Histogrammeinebnung  }
 
-\subsubsection{a) Ablauf und Lösungsidee}
- Die Histogrammeinebnung wurde mit der, wie im Foliensatz beschriebenen, Formel durchgeführt. Die genaue Implementierung findet sich im Bereich "Code". 
-\subsubsection{a) Tests}
+\subsubsection{Implementierung}
+
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../HistogramEqualization_.java}
+
 Die Implementierung wurde anhand der folgenden drei Bilder getestet:
 \begin{enumerate}
 \item Strand: 
@@ -303,7 +338,7 @@ Das Bild "Landschaft"  (siehe Figure \ref{fig:Landschaft01}) hat im Vergleich zu
 
 
 \pagebreak
-\subsection {b) Diskussion Histogrammeinebnung}
+\subsubsection {Diskussion Histogrammeinebnung}
 Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogrammeinebnung zum Beispiel auf ein stark überbelichtetes Bild angewandt wird. Bei dem Testbild "Straße mit Fußgängern"  (siehe Figure \ref{fig:Ueberbelichtung01}) sieht man, dass der Großteil der Pixelintensitäten ca. über 200 liegt. Findet nun die Einebnung  (siehe Figure \ref{fig:Ueberbelichtung02}) statt werden die Verläufe nicht mehr weich dargestellt. Die Unterschiede zwischen den Pixelintensitäten werden zu hoch und Teile des Bildes deshalb kantiger dargestellt.
 \begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung.jpg}
@@ -318,17 +353,14 @@ Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogramme
 	\label{fig:Ueberbelichtung02}
 \end{figure}
 \pagebreak
-\subsection{Code}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../HistogramEqualization_.java}
-
 
 
 %% -------------------------------------------------------------------------------------------------------------------------
 %% ------------------------------------------- FÜNFTES BEISPIEL -----------------------------------------------------
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
-\section{ Raster-Entfernung im Frequenzraum}
-\subsection{Workflow}
+\subsection{Raster-Entfernung im Frequenzraum}
+\subsubsection{Entfernen von horizontalen und vertikalen Balken}
 \begin{itemize}
 	\item Starten von \textit{imageJ.exe}
 	\item Öffnen eines Bildes
@@ -337,27 +369,11 @@ Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogramme
 	\item \textit{Process $\rightarrow$ FFT $\rightarrow$ inverse FFT}
 \end{itemize}
 
-\subsection{a) Beispiele}
-
-\subsubsection{Auge}
-Es wurde ein Bild gewählt, welches (wie bei einem Plakatdruck) Punkte in regelmässigen Abständen aufweist. Die eigentliche Bildinformation steckt in der Dicke der Punkte. Eine FFT zeigt deutlich ein periodisches Muster. Will man nun die eigentliche Bildinformation gewinnen, müssen hochfrequente Anteile des Bildes entfernt werden. Tabelle \ref{tab:AuswertungAuge} zeigt deutlich dass durch ein Entfernen der Randbereiche (höhere Frequenzen) im FFT Bild und die anschließende Rücktransformation die eigentliche Bildinformation gewonnen werden konnte.
-\begin{table}[H]
-  \centering
-  \begin{tabular}{c | c}
-    \hline
-    Bild & FFT \\
-    \hline
-	\includegraphics[width=4cm]{../testData/Auge.jpg} & \includegraphics[width=4cm]{../testData/Results/Auge/FFT_of_Auge.jpg} \\
-    \hline
-    \includegraphics[width=4cm]{../testData/Results/Auge/reduced_Auge.jpg} & \includegraphics[width=4cm]{../testData/Results/Auge/reduced_FFT_of_Auge.jpg} \\
-  \end{tabular}
-  \caption{Auswertung Auge}
-  \label{tab:AuswertungAuge}
-\end{table}
 
 
 
-\subsubsection{Elefant}
+
+
 In diesem Bild sind viele periodisch auftretende Elemente enthalten. Es wurde versucht die Schrift, die Gitterstäbe im Hintergrund und natürlich die beiden Tiere gut sichtbar zu erhalten (siehe Tabelle \ref{tab:AuswertungElefant}). Da aber die Gitterstäbe selbst periodisch im Bild vorkommen und auch die Schrift sich wiederholende senkrechte Kanten hat, ist dies nicht einfach. Ein Auslöschen der horizontalen und vertikalen Anteile aus dem Bild brachte in unseren Versuchen das beste Ergebnis. Hierbei ist aber zu beachten, dass das Zentrum des FFT Bildes die meiste Information enthält. Daher wurde diese belassen. Auch die Randbereiche der FFT wurden belassen, da diese für scharfe Kanten im Bild verantwortlich sind. Ein Wegschneiden dieser Bereiche würde auch die Konturen des Elefanten und die Schrift unscharf machen.
 \begin{table}[H]
   \centering
@@ -373,8 +389,32 @@ In diesem Bild sind viele periodisch auftretende Elemente enthalten. Es wurde ve
   \label{tab:AuswertungElefant }
 \end{table}
 
-\subsubsection{Lochgitter}
-Hier handelt es sich um ein perspektivisch beleuchtetes Lochgitter (siehe Tabelle \ref{tab:AuswertungLochgitter}). Die Löcher sind sechseckig. In der FFT erkennt man gut die Periodizität. Ein Wegschneiden der äusseren Bereiche der FFT und eine Rücktransformation zeigt deutlich die perspektivische Beleuchtung. Das Lochgitter konnte vollkommen entfernt werden. Es ist auch anzumerken, dass im rücktransformierten Bild eine Schrift \textit{"colourbox"} deutlich zu erkennen ist. Bei genauerer Betrachtung des Ursprungsbildes ist diese hinter dem Gitter zu erkennen.  
+
+
+\subsection{Analyse eines Frequenzmusters}
+Ein sich wiederholendes Muster in einem Bild ist mittels \textit{FFT} gut vom eigentlichen Bildinhalt zu unterscheiden. So kann das Muster entfernt werden und das eigentliche Bild mittels \textit{inverseFFT} ermittelt werden.
+
+Leider sind reale Bilder meist nicht genau horizontal ausgerichtet. Auch kann man nicht davon ausgehen, dass  wiederholende Elemente in der Realität unverzerrt in einem Bild dargestellt sind. Kanten werden nur in den seltensten Fällen genau durch einen Pixel des Bildes dargestellt. All diese Umstände machen es schwer aus einem Alltagsfoto wiederkehrende Elemente herauszufiltern. 
+
+Um den Raster  möglichst gut zu entfernen sollten die Linien regelmäßig, in gleichen Abständen auf dem Bild vorhanden sein. Diese sollten auch sehr klar dargestellt werden, dann können diese möglichst exakt vom restlichen Bildinhalt getrennt werden.
+
+Zu Testzwecken wurde ein Bild gewählt, welches (wie bei einem Plakatdruck) Punkte in regelmässigen Abständen aufweist. Die eigentliche Bildinformation steckt in der Dicke der Punkte. Eine FFT zeigt deutlich ein periodisches Muster. Will man nun die eigentliche Bildinformation gewinnen, müssen hochfrequente Anteile des Bildes entfernt werden. Tabelle \ref{tab:AuswertungAuge} zeigt deutlich dass durch ein Entfernen der Randbereiche (höhere Frequenzen) im FFT Bild und die anschließende Rücktransformation die eigentliche Bildinformation gewonnen werden konnte.
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c | c}
+    \hline
+    Bild & FFT \\
+    \hline
+	\includegraphics[width=4cm]{../testData/Auge.jpg} & \includegraphics[width=4cm]{../testData/Results/Auge/FFT_of_Auge.jpg} \\
+    \hline
+    \includegraphics[width=4cm]{../testData/Results/Auge/reduced_Auge.jpg} & \includegraphics[width=4cm]{../testData/Results/Auge/reduced_FFT_of_Auge.jpg} \\
+  \end{tabular}
+  \caption{Auswertung Auge}
+  \label{tab:AuswertungAuge}
+\end{table}
+
+
+Als weiteres Beispiel wirde ein perspektivisch beleuchtetes Lochgitter herangezogen (siehe Tabelle \ref{tab:AuswertungLochgitter}). Die Löcher sind sechseckig. In der FFT erkennt man gut die Periodizität. Ein Wegschneiden der äusseren Bereiche der FFT und eine Rücktransformation zeigt deutlich die perspektivische Beleuchtung. Das Lochgitter konnte vollkommen entfernt werden. Es ist auch anzumerken, dass im rücktransformierten Bild eine Schrift \textit{"colourbox"} deutlich zu erkennen ist. Bei genauerer Betrachtung des Ursprungsbildes ist diese hinter dem Gitter zu erkennen.  
 \begin{table}[H]
   \centering
   \begin{tabular}{c | c}
@@ -389,15 +429,9 @@ Hier handelt es sich um ein perspektivisch beleuchtetes Lochgitter (siehe Tabell
   \label{tab:AuswertungLochgitter}
 \end{table}
 
-\subsection{b) Analyse eines Frequenzmusters}
-Ein sich wiederholendes Muster in einem Bild ist mittels \textit{FFT} gut vom eigentlichen Bildinhalt zu unterscheiden. So kann das Muster entfernt werden und das eigentliche Bild mittels \textit{inverseFFT} ermittelt werden.
-
-Leider sind reale Bilder meist nicht genau horizontal ausgerichtet. Auch kann man nicht davon ausgehen, dass  wiederholende Elemente in der Realität unverzerrt in einem Bild dargestellt sind. Kanten werden nur in den seltensten Fällen genau durch einen Pixel des Bildes dargestellt. All diese Umstände machen es schwer aus einem Alltagsfoto wiederkehrende Elemente herauszufiltern. 
-
-Um den Raster  möglichst gut zu entfernen sollten die Linien regelmäßig, in gleichen Abständen auf dem Bild vorhanden sein. Diese sollten auch sehr klar dargestellt werden, dann können diese möglichst exakt vom restlichen Bildinhalt getrennt werden.
 
 
-\section{Anhang}
+\subsection{Anhang}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../ConvolutionFilter.java}
 
 
