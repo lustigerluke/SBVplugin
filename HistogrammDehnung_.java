@@ -1,11 +1,6 @@
 import ij.*;
 import ij.plugin.filter.PlugInFilter;
 import ij.process.*;
-import ij.gui.GenericDialog;
-import java.awt.Rectangle;
-import java.util.Arrays;
-
-import com.sun.net.httpserver.Authenticator.Success;
 
 public class HistogrammDehnung_ implements PlugInFilter {
 

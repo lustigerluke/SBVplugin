@@ -3,11 +3,6 @@ import ij.*;
 import ij.plugin.filter.PlugInFilter;
 import ij.process.*;
 
-import java.awt.*;
-
-import ij.gui.GenericDialog;
-
-
 public class FilterTemplate_ implements PlugInFilter {
   
    public int setup(String arg, ImagePlus imp) {
