@@ -72,13 +72,11 @@ Weiters wurde der Übergang von scharfen Kanten und Verläufen mit dem Gauss Fil
   \centering
   \begin{tabular}{| c | c | c |}
     \hline
-    $ \frac{sigma}{radius} $ & Masken Surface Plot & gefiltertes Bild \\
+    Originalbild & gefiltertes Bild \\
     \hline
-    $ \frac{1}{4} $ &
-	\includegraphics[width=4cm]{../testData/Gauss/Schachbrett.jpg} & 	\includegraphics[width=4cm]{../testData/Gauss/SchachbrettR4S2.jpg} \\
-	    \hline
-    $ \frac{2}{4} $ &
-	\includegraphics[width=4cm]{../testData/Gauss/Regenbogen.jpg} & 	\includegraphics[width=4cm]{../testData/Gauss/RegenbogenR4S2.jpg} \\
+	\includegraphics[width=5cm]{../testData/Gauss/Schachbrett.jpg} & 	\includegraphics[width=5cm]{../testData/Gauss/SchachbrettR4S2.jpg} \\
+	\hline
+	\includegraphics[width=5cm]{../testData/Gauss/Regenbogen.jpg} & 	\includegraphics[width=5cm]{../testData/Gauss/RegenbogenR4S2.jpg} \\
 	\hline
   \end{tabular}
   \caption{Gauss Filter Evaluierung}
@@ -95,12 +93,12 @@ Interessant ist der Unterschied zum Median-Filter des nächsten Beispiels. Diese
     $ \frac{sigma}{radius} $ & Gauss gefiltertes Bild & Median gefiltertes Bild \\
     \hline
     $ \frac{1}{4} $ &
-    \centering \includegraphics[width=4cm]{../testData/Gauss/SchachbrettR4S2.jpg} &
-     \includegraphics[width=4cm]{../testData/Median/SchachbrettR4.jpg} \\
+    \centering \includegraphics[width=5cm]{../testData/Gauss/SchachbrettR4S2.jpg} &
+     \includegraphics[width=5cm]{../testData/Median/SchachbrettR4.jpg} \\
      \hline
     $ \frac{2}{4} $ &
-	\includegraphics[width=4cm]{../testData/Gauss/RegenbogenR4S2.jpg} & 	
-	\includegraphics[width=4cm]{../testData/Median/RegenbogenR4.jpg} \\
+	\includegraphics[width=5cm]{../testData/Gauss/RegenbogenR4S2.jpg} & 	
+	\includegraphics[width=5cm]{../testData/Median/RegenbogenR4.jpg} \\
 	\hline
   \end{tabular}
   \caption{Gauss Filter vs. Median Filter}
@@ -126,7 +124,7 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
     \hline
  	 Median gefiltertes Schachbrett & Median gefilterte Bild "Lena" \\
     \hline
-	\includegraphics[width=4cm]{../testData/Median/SchachbrettR4.jpg} & 	\includegraphics[width=4cm]{../testData/Median/LenaMedian.jpg} \\
+	\includegraphics[width=5cm]{../testData/Median/SchachbrettR4.jpg} & 	\includegraphics[width=5cm]{../testData/Median/LenaMedian.jpg} \\
 	\hline
   \end{tabular}
   \caption{Median Filter}
@@ -146,7 +144,7 @@ Implementiert wurde dies durch das Herausschneiden der interessanten Umgebung au
     \hline
  	 Originalbild & gefiltertes Bild $radius = 8$ \\
     \hline
-	\includegraphics[width=4cm]{../testData/Lena.jpg} & 	\includegraphics[width=4cm]{../testData/Median/LenaMedianR8.jpg} \\
+	\includegraphics[width=5cm]{../testData/Lena.jpg} & 	\includegraphics[width=5cm]{../testData/Median/LenaMedianR8.jpg} \\
 	\hline
 	Mean: 127.46 & Mean: 127.45 \\
 	StdDev: 46.6 & StdDev: 44.1 \\
@@ -230,8 +228,9 @@ Ein Vergleich der Maskengrößen ergab auch hier einen linearen Zusammenhang bei
 
 Allgemein würde ein mehrdimensionales Bild eine mehrfache Ausführung des 2D Filters erfordern. Das dieser Zusammenhang linear ist wurde bereits gezeigt. 3D Masken könnten aber neben dem Filtereffekt zum Beispiel bei einem RGB Bild auch Farbtöne verstärken/abschwächen. Es könnte zum Beispiel der Rot-Ton abhängig vom Grün-Ton verändert werden. Hierzu müsste für jeden Pixel im dreidimensionalen Bild die gesamte Information aller 3 Dimensionen im Bereich der Maske eingelesen und verarbeitet werden. Dies würde eine erhebliche Laufzeitsteigerung bedeuten. 
 
-\begin{figure}[H]
-\begin{tabular}{|l| l |}
+
+\begin{table}
+\begin{tabular}{| l | l |}
 	\hline
 	$t_{gP}$ & time to get pixel value. Die Zeit einen Pixel aus der \\
 	& Berechnung mit einer 2D Maske \\
@@ -247,10 +246,12 @@ Allgemein würde ein mehrdimensionales Bild eine mehrfache Ausführung des 2D Fi
 	$t_{multible3D} = d * size * ( d * t_{gP} ) $ & quadratische Laufzeit da bei jedem Pixel alle Dimensionen\\
 	$               = d^2 *size * t_{gP}$       &  berücksichtigt werden müssen \\
 	\hline
+	
 \end{tabular}
+
 \caption{Berechnung der Laufzeit bei 3D Bildern.}
 \label{calculation}
-\end{figure}
+\end{table}
 
 
 \subsubsection{Diskussion der Ergebnisse}
@@ -340,7 +341,9 @@ Das Bild "Landschaft"  (siehe Figure \ref{fig:Landschaft01}) hat im Vergleich zu
 
 \pagebreak
 \subsubsection {Diskussion Histogrammeinebnung}
-Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogrammeinebnung zum Beispiel auf ein stark überbelichtetes Bild angewandt wird. Bei dem Testbild "Straße mit Fußgängern"  (siehe Figure \ref{fig:Ueberbelichtung01}) sieht man, dass der Großteil der Pixelintensitäten ca. über 200 liegt. Findet nun die Einebnung  (siehe Figure \ref{fig:Ueberbelichtung02}) statt werden die Verläufe nicht mehr weich dargestellt. Die Unterschiede zwischen den Pixelintensitäten werden zu hoch und Teile des Bildes deshalb kantiger dargestellt.
+Es kann zu einer Verschlechterung der Bildqualität kommen, wenn die Histogrammeinebnung zum Beispiel auf ein stark überbelichtetes Bild angewandt wird. Bei dem Testbild "Straße mit Fußgängern"  (siehe Figure \ref{fig:Ueberbelichtung01}) sieht man, dass der Großteil der Pixelintensitäten ca. über 200 liegt. Findet nun die Einebnung  (siehe Figure \ref{fig:Ueberbelichtung02}) statt werden die Verläufe nicht mehr weich dargestellt. Die Unterschiede zwischen den Pixelintensitäten werden zu hoch und Teile des Bildes deshalb kantiger dargestellt.\\
+In den von uns getesteten Bildern konnte dieser Effekt immer wieder beobachtet werden. Was aber für das menschliche Auge unschön und kantig wirkt, kann sehr hilfreich bei der digitalen Analyse von Bildern sein. Hier kann unter Umständen eine Histogrammdehnung und der damit verbundene Kontrastanstieg für die Weiterverarbeitung (Kantendetektion) wesentlich sein.
+
 \begin{figure}[H] \centering
 	\includegraphics[width=7cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung.jpg}
 	\includegraphics[width=4cm]{../testData/Results/Ueberbelichtung/Ueberbelichtung-histogram.png}
