@@ -34,7 +34,8 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \subsection{Gauss Filter}
 \subsubsection{Implementierung}
 \label{sec:Gausfilterimplementierung}
-Es wurde ein Gauss Filter als ImageJ Filter implementiert. Die Behandlung der Randpixel wurde aus der Lehrveranstaltung übernommen. Gemeinsam mit dem Vortragenden Gerald Zwettler wurde die Java Klasse \textit{ConvolutionFilter} erweitert um auch die Randbereiche eines Bildes angemessen zu behandeln. In Heimarbeit wurde die Klasse um die Methode \textit{GetGaussMask} erweitert. In dieser wird die Verteilung einer Gauss Kurve auf eine 2 dimensionale Maske übertragen. \\
+Es wurde ein Gauss Filter als ImageJ Filter implementiert. Die Behandlung der Randpixel wurde aus der Lehrveranstaltung übernommen. Gemeinsam mit dem Vortragenden Gerald Zwettler wurde die Java Klasse \textit{ConvolutionFilter} erweitert um auch die Randbereiche eines Bildes angemessen zu behandeln. In Heimarbeit wurde die Klasse um die Methode \textit{GetGaussMask} erweitert. In dieser wird die Verteilung einer Gauss Kurve auf eine 2 dimensionale Maske übertragen. 
+Das Verhältnis von Sigma zur Masken-Abmessung wird detailliert in Punkt B beschrieben.\\
 
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../Gauss_.java}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../ConvolutionFilter.java}
