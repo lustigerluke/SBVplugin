@@ -26,18 +26,22 @@ endfor
 
 'plot plain data'
 fig1 = figure();
-subplot(2,1,1);
+subplot(3,1,1);hold on;
 xlabel("time in ms");
-ylabel("acceleration, velocity");
-hold on
-plot(acceleration(:,1),acceleration(:,2),"-r;acceleration in m/s^2;");
-plot(acceleration(:,1),velocity,"-g;velocity in m/2;")
-subplot(2,1,2);
+ylabel("acceleration");
+grid on
+plot(acceleration(:,1),acceleration(:,2),"-b;acceleration in m/s^2;");
+subplot(3,1,2);hold on;
+xlabel("time in ms");
+ylabel("velocity");
+grid on
+plot(acceleration(:,1),velocity,"-b;velocity in m;")
+subplot(3,1,3);hold on;
 xlabel("time in ms");
 ylabel("way");
-hold on
+grid on
 plot(acceleration(:,1),way,"-b;distance;")
-
+legend("location","southeast");
 
 'begin CORRECTION'
 # ACCELERATION CORRECTION#############################################################################
@@ -72,8 +76,8 @@ endfor
 
 # find indizes of actual movement in accelerator data
 nonzeroIndizes = find(correctedAcceleration(:)); # find nonzero data
-lastPrecedentZeroIndex = min(nonzeroIndizes) # get first nonzero index
-lastNonZeroIndex = max(nonzeroIndizes) # get last nonzero index
+lastPrecedentZeroIndex = min(nonzeroIndizes); # get first nonzero index
+lastNonZeroIndex = max(nonzeroIndizes); # get last nonzero index
 
 # calculate line from first meaningful data to the last
 k = correctedVelocity(length(correctedVelocity))/(lastNonZeroIndex - lastPrecedentZeroIndex);
@@ -96,15 +100,25 @@ distance = max(way)
 correctedDistance = max(correctedWay)
 
 figure()
-subplot(2,1,1)
+subplot(3,1,1)
 grid on
 hold on
-plot(time,acceleration(:,2),"-r;acceleration;");
-plot(time,correctedAcceleration,"-b;corrected acceleration;");
-plot(time,correctedVelocity(:),"-c;corrected velocity;");
-subplot(2,1,2)
+xlabel("time in ms");
+ylabel("acceleration");
+plot(acceleration(:,1),acceleration(:,2),"-.;acceleration in m/s^2;");
+plot(time,correctedAcceleration,"-;corrected acceleration;");
+subplot(3,1,2)
 hold on
 grid on
-plot(time,way,"-c;distance;");
-plot(time,correctedWay(:),"-r;corrected distance;");
+xlabel("time in ms");
+ylabel("velocity");
+plot(acceleration(:,1),velocity,"-.;velocity in m;")
+plot(time,correctedVelocity,"-;corrected velocity;");
+subplot(3,1,3)
+hold on
+grid on
+plot(time,way,"-.;distance;");
+plot(time,correctedWay,"-;corrected distance;");
 legend("location","southeast");
+xlabel("time in ms");
+ylabel("way");
