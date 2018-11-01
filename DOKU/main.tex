@@ -43,7 +43,7 @@ Das Verhältnis von Sigma zur Masken-Abmessung wird detailliert in Punkt B besch
 
 
 \subsubsection{Darstellung der Gauss-Maske mittels Surface-Plot}
-Anschließend wurde eruiert welches Verhältnis von Sigma zum Radius der Maske eine klar zu erkennende Glocke darstellte. $ \frac{2}{4} $ hat die gewünschte Eigenschaft. 
+Anschließend wurde eruiert welches Verhältnis von Sigma zum Radius der Maske eine klar zu erkennende Glocke darstellt. $ \frac{2}{4} $ hat die gewünschte Eigenschaft. 
 \begin{table}[H]
   \centering
   \begin{tabular}{| c | c | c |}
@@ -195,7 +195,7 @@ Das selbstgeschriebene Plugin \textit{FiltereffektEvaluierung\_} wurde geschrieb
 Ein Vergrößern der Maske steigert die benötigte Rechenzeit enorm. Man erkennt auch gut, dass eine große Filtermaske nicht unbedingt mit einem enormen Filtereffekt zu tun haben muss. Da hier ein kleines $sigma$ gewählt wurde, ist auch die Auswirkung des Filters nicht groß, aber deutlich von der des Filters mit der kleinen Maske unterscheidbar (siehe Figure \ref{tab:wiederholterGauss}).
 
 
-Zusätzlich zur Klasse \textit{FiltereffektEvaluierung\_.java} werden auch viele der anderen in diesem Papier besprochenen Klassen benötigt.
+Zusätzlich zur Klasse \textit{FiltereffektEvaluierung\_.java} werden auch viele der anderen in dieser Hausübung besprochenen Klassen benötigt.
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../FiltereffektEvaluierung_.java}
 
 Die so gewonnenen Daten wurden in eine Excel Tabelle eingetragen und in  Figure \ref{fig: multipleMean} und \ref{fig: multipleGauss} dargestellt.  Man erkennt gut den linearen Zusammenhang den eine mehrmalige Ausführung des Codes mit sich bringt. Zu beachten gilt auch dass Gauss und Mean Filter wie erwartet ähnliche Ergebnisse liefern da Sie auf den selben Methoden aufgebaut sind und lediglich die initiale Maskenerstellung die Filter unterscheidet. Unsere Messungen zeigten, dass auch der selbst geschriebene Median Filter eine lineare Laufzeit aufweist. Diese ist aber deutlich höher als die von Mean und Gauss Filter.
@@ -255,7 +255,7 @@ Allgemein würde ein mehrdimensionales Bild eine mehrfache Ausführung des 2D Fi
 
 
 \subsubsection{Diskussion der Ergebnisse}
-Wie in Tabelle \ref{tab:wiederholterGauss} gut erkennbar ist, kann durch wiederholtes Anwenden einer kleinen Maske nur sehr schwer das Ergebnis einer großen Maske erreicht werden. Es kommt daher darauf an, welchen optischen Effekt man erzielen möchte.
+Wie in Figure \ref{tab:wiederholterGauss} gut erkennbar ist, kann durch wiederholtes Anwenden einer kleinen Maske nur sehr schwer das Ergebnis einer großen Maske erreicht werden. Es kommt daher darauf an, welchen optischen Effekt man erzielen möchte.
 
 \begin{figure} [H]
   \centering
@@ -282,10 +282,10 @@ Wie in Tabelle \ref{tab:wiederholterGauss} gut erkennbar ist, kann durch wiederh
 %% ------------------------------------------- VIERTES BEISPIEL -----------------------------------------------------
 %% -------------------------------------------------------------------------------------------------------------------------
 \newpage
-\subsection{Histogrammeinebnung  }
-To-Do Lisa
-\subsubsection{Implementierung}
+\subsection{Histogrammeinebnung }
 
+\subsubsection{Implementierung}
+Zur Histogrammeinebnung muss das Bild zuerst in ein eindimensionales Array umgewandelt werden. Außerdem muss wieder das Histogramm ermittelt werden. Dann iteriereren wir in \texttt{GetHistogramEqualizationTF2} alle Intesitätswerte beziehungsweise Einträge im Histogramm und wenden die Formel aus den Vorlesungsfolien an. Die "Warscheinlichkeits-Summe" wächst dabei ständig an und führt dazu, dass sich die Werte gleichmäßiger verteilt werden. Die somit generierte Transferfunktion wenden wir schlussendlich auf das Bild an und geben dieses dann aus.
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../HistogramEqualization_.java}
 
 Die Implementierung wurde anhand der folgenden drei Bilder getestet:
