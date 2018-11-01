@@ -71,14 +71,15 @@ N = length(time);
 for j=2:N
   correctedVelocity(j) = correctedAcceleration(j) + correctedVelocity(j-1);   
 endfor
+correctedTmpVelocity = correctedVelocity;
 
 # VELOCITY CORRECTION
-
 # find indizes of actual movement in accelerator data
 nonzeroIndizes = find(correctedAcceleration(:)); # find nonzero data
 lastPrecedentZeroIndex = min(nonzeroIndizes); # get first nonzero index
 lastNonZeroIndex = max(nonzeroIndizes); # get last nonzero index
 
+# increasing offset correction
 # calculate line from first meaningful data to the last
 k = correctedVelocity(length(correctedVelocity))/(lastNonZeroIndex - lastPrecedentZeroIndex);
 d = - k * lastPrecedentZeroIndex;
@@ -88,7 +89,7 @@ for j=lastPrecedentZeroIndex:lastNonZeroIndex-1
   correctedVelocity(j) = correctedVelocity(j) + abs(k * j + d);   
 endfor
 
-
+# DISTANCE CALCULATION
 correctedWay(1) = 0; # assume the way to be zero at the beginning
 for j=2:N
   correctedWay(j) = correctedVelocity(j) + correctedWay(j-1);   
@@ -113,7 +114,8 @@ grid on
 xlabel("time in ms");
 ylabel("velocity");
 plot(acceleration(:,1),velocity,"-.;velocity in m;")
-plot(time,correctedVelocity,"-;corrected velocity;");
+plot(time,correctedTmpVelocity,"-;corrected velocity;");
+plot(time,correctedVelocity,"-;corrected velocity with linear shift;");
 subplot(3,1,3)
 hold on
 grid on
