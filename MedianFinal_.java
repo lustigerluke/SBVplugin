@@ -5,7 +5,7 @@ import ij.gui.GenericDialog;
 import java.awt.Rectangle;
 import java.util.Arrays;
 
-public class Median_ implements PlugInFilter {
+public class MedianFinal_ implements PlugInFilter {
 
 	public int setup(String arg, ImagePlus imp) {
 		if (arg.equals("about")) {
@@ -21,7 +21,6 @@ public class Median_ implements PlugInFilter {
 		int width = ip.getWidth();
 		int height = ip.getHeight();
 
-
 		int radius = getUserInputRadius(4);
 		// int radius = 2; // default value for debugging
 
@@ -30,53 +29,12 @@ public class Median_ implements PlugInFilter {
 		}
 
 		double[][] resultImage = runFilter(ip, radius);
-		
+
 		System.out.println("Now show the result image!");
 		ImageJUtility.showNewImage(resultImage, width, height, "mean with kernel r=" + radius);
 		System.out.println("SUCCESS: MEDIAN FILTER DONE.");
-		
-		System.out.println("Now plot 4x4 to see filtereffect.");
-
-		plot4x4(ip, resultImage);
 
 	} // run
-
-	private void plot4x4(ImageProcessor ip, double[][] filteredImg) {
-		int segments = 4;
-		
-		byte[] pixels = (byte[]) ip.getPixels();
-		int width = ip.getWidth();
-		int height = ip.getHeight();
-		int[][] inArr = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
-		double[][] resultImg = ImageJUtility.convertToDoubleArr2D(inArr, width, height);
-
-		
-		int xCaroLength = width / segments;
-		int yCaroLength = height / segments;
-		
-		// for every region
-		for (int i = 0; i < segments; i++) {
-			for (int j = 0; j < segments; j++) {
-				if ((i+j) % 2 == 0) {
-					int xIndex = i*xCaroLength;
-					int yIndex = j*yCaroLength;
-					// calculate region
-					Rectangle roi = new Rectangle(xIndex, yIndex, xCaroLength, yCaroLength);
-					double[][] tmpImg = ImageJUtility.cropImage(filteredImg, roi.width, roi.height, roi);
-					
-					// copy region to result image
-					for (int x = 0; x < xCaroLength; x++) {
-						for (int y = 0; y < yCaroLength; y++) {
-							resultImg[xIndex + x][yIndex + y] =  tmpImg[x][y];
-						}
-					}			
-				}
-			}
-		}
-		
-		ImageJUtility.showNewImage(resultImg, width, height, "4x4 caro for filter effect evaluation");
-		
-	}
 
 	public static double[][] runFilter(ImageProcessor ip, int radius) {
 		byte[] pixels = (byte[]) ip.getPixels();
@@ -119,27 +77,25 @@ public class Median_ implements PlugInFilter {
 		int xsize = 2 * radius + 1;
 		int ysize = 2 * radius + 1;
 
-		
 		// special behaviour
 		if (x - radius < 0) {
 			xsize = xsize - (radius - x);
 			x = radius;
-		}// set minimum x
+		} // set minimum x
 		if (y - radius < 0) {
 			ysize = ysize - (radius - y);
 			y = radius;
 		} // set minimum y
-		
-		
+
 		if (x + radius >= width) {
 			int d = (radius - (width - x));
-			xsize = xsize - d - 1 ;
-		}// set maximum x
+			xsize = xsize - d - 1;
+		} // set maximum x
 		if (y + radius >= height) {
 			int d = (radius - (height - y));
-			ysize = ysize - d - 1 ;
+			ysize = ysize - d - 1;
 		} // set maximum y
-		
+
 		return new Rectangle(x - radius, y - radius, xsize, ysize);
 	}
 
@@ -158,7 +114,7 @@ public class Median_ implements PlugInFilter {
 
 		// sort array
 		Arrays.sort(arr);
-		return arr[(int) (size / 2 + 1)];
+		return arr[(int) (size / 2 - 1)];
 	}
 
 	/**
