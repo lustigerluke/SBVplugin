@@ -58,12 +58,14 @@ Es gibt unterschiedliche Methoden, wie Stress aus einer EKG Messung bzw. der Her
 \label{sec:Geschwindigkeitsermittlung}
 \subsubsection{Ermittlung von Geschwindigkeit und Distanz}
 \textit Aufgabenstellung:
-Zu untersuchen war ein Datensatz, der mit Daten eines Beschleunigungssensors gefüllt war. Bekannt war, dass es sich um die Daten einer geradlinigen Bewegung entlang einer Tischkante handelte die etwa 2 m lang war. Neben den Daten des Sensors waren auch Zeitstempel enthalten. In Figure \ref{fig:plainData} ist gut zu erkennen, dass die Werte des Datensatzes bereits bearbeitet wurden. Diese Tatsache wurde in der Vorlesung erwähnt. Unseres Wissens wurde eine Baseline - Korrektur durchgeführt und alle Werte der Messung bis zur zu beobachtenden Bewegung wurden 0 gesetzt. 
+Zu untersuchen war ein Datensatz, der mit Daten eines Beschleunigungssensors gefüllt war. Bekannt war, dass es sich um die Daten einer geradlinigen Bewegung entlang einer Tischkante handelte die etwa 2 m lang war. Neben den Daten des Sensors waren auch Zeitstempel enthalten. 
+
+\textit Annahmen:
+In Figure \ref{fig:plainData} ist gut zu erkennen, dass die Werte des Datensatzes bereits bearbeitet wurden. Diese Tatsache wurde in der Vorlesung erwähnt. Unseres Wissens wurde eine Baseline - Korrektur durchgeführt und alle Werte der Messung bis zur zu beobachtenden Bewegung wurden 0 gesetzt. 
 
 \textit Idee:
-
-Eine ersten Auswertung der Daten mittels Octave zeigt Figure \ref{fig:plainData}. Ein reines Aufsummieren der Werte vermittelte einen ersten Eindruck.
-Die Summe der Messungen (im Folgenden "Geschwindigkeit" genannt) ist an diesem Punkt aber negativ. Da wir von einer Ruhelage des Objekts am Ende der Bewegung ausgehen gilt es diesen Wert zu korrigieren. 
+Eine erste Auswertung der Daten mittels Octave zeigt Figure \ref{fig:plainData}. Ein reines Aufsummieren der Werte vermittelt einen ersten Eindruck der Geschwindigkeit.
+Diese ist am Ende aber negativ. Da wir von einer Ruhelage des Objekts am Ende der Bewegung ausgehen gilt es diesen Umstand zu korrigieren. 
 
 \begin{figure}[H]
 	\centering
@@ -77,7 +79,7 @@ Die Summe der Messungen (im Folgenden "Geschwindigkeit" genannt) ist an diesem P
 Die Beschleunigungsdaten werden mittels eines gleitenden Mittelwerts gefiltert. Jeder Wert unter einem gewissen Threshold wird zu 0 gesetzt. Weil am Ende der Messung nur leichtes Rauschen erkennbar ist, können diese Werte zu 0 gesetzt werden was ein Erkennen des Bereichs der interessanten Bewegung möglich macht. 
 Nach dem Aufsummieren der Beschleunigungsdaten muss sich nun darum gekümmert werden, dass die Geschwindigkeit am Anfang und Ende der Messung 0 ist. Da die anfänglichen Daten sowieso 0 sind muss nur das Ende betrachtet werden. Hier erkennt man eine wesentliche Abweichung. Es wird ein linearer Fehler angenommen, den es zu korrigieren gilt, wesshalb eine linear ansteigende Korrektor des Offset implementiert wurde. 
 Aus den so gewonnenen Geschwindigkeitsdaten konnte wiederum der zurückgelegte Weg durch Summation berechnet werden.
-Eine Abbildung der bearbeiteten Daten zeigt Figure \ref{fig:filteredData}. Die Auswertung ergibt, dass der mittels bearbeiteten Daten errechnete Weg ( $ 15866$mm ) viel weiter als der durch die gefilterten Daten errechnete Weg ( $21412.68931$mm ) von der Annahme einer Bewegung über $2$ m Distanz abweicht.
+Eine Abbildung der bearbeiteten Daten zeigt Figure \ref{fig:filteredData}. Die Auswertung ergibt, dass der mittels ungefilterter Daten aufsummierte Weg ( $ 15866$mm ) viel weiter als der durch die gefilterten Daten errechnete Weg ( $21412.68931$mm ) von der Annahme einer Bewegung über $2$ m Distanz abweicht.
 
 \begin{figure}[H]
 	\centering
