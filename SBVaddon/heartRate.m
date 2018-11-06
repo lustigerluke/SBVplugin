@@ -22,11 +22,13 @@ for i=1:2 # for debugging
   plainSignal = data(4:length(data),3);
   
   #calculate mean
-  wndw = length(plainSignal)/10;                                      %# sliding window size
-  #meanVec = filter(ones(wndw,1)/wndw, 1, plainSignal); %# moving average
-  meanVec = movavg(plainSignal,wndw-1,wndw);
-  
+  wndw = length(plainSignal)/10;            %# sliding window size
+  meanVec = movavg(plainSignal,wndw-1,wndw);%# moving average
+
   resultSignal = plainSignal - meanVec;
+  
+  
+  
   
   fig1 = figure();
   subplot(2,1,1);hold on; # first subplot
