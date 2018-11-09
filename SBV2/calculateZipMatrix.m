@@ -13,11 +13,13 @@ searchPath = [folderPath , '*']
 files = glob(searchPath)
 for i=2:numel(files)
   'get current file name'
-  [~, name] = fileparts (files{i})
-  files{i}
+  [path, name] = fileparts (files{i});
+  fullpath = files{i};
+  fullpath(ismember(fullpath,['\'])) = '/'
+  #data = load(files{i}); #load data 
   cd(folderPath);
-  zip('1.zip',files{i})
-
+  zip('1.zip',folderPath)
+  
 endfor
 
 'SUCCESS'
