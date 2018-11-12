@@ -8,7 +8,7 @@ languages = {"de","en","fr","es","po","un","bo","ne"};
 
 # constants
 # please note if copy-pasting windows paths: there are no backslashes int he path 
-folderPath = 'testData/';
+folderPath = 'ntestData/';
 
 
 searchPathDict = [folderPath , '*_top*'];
