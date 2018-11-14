@@ -1,0 +1,20 @@
+Ce document confirme que la combinaison du développement technologique de la numérisation
+avec la réserve de cours établie, le service est possible conformément au droit d'auteur
+Allemagne et conduit à une valeur ajoutée pour toutes les parties prenantes dans le processus. Cette recherche est
+basé sur une analyse comparative de la littérature. Un processus de référence contenant le stratégique
+et le niveau opérationnel du service de réserve électronique est développé à l'aide de la solution
+Notation de modélisation de processus (BPMN), d’où l’avantage supplémentaire du nouveau pr
+o-
+pour tous les participants. Différentes options de mise en œuvre pour les tâches associées sont disponibles.
+e
+solutions logicielles indépendantes disponibles sur le marché. En outre, l'étude
+identifie des approches universelles d'intégration au sein de l'université. Un autre aspect ou
+t
+La ligne suivante est l’identification du potentiel de coopération interuniversitaire. L'étude est terminée
+en développant une procédure pour mettre en œuvre le nouveau processus dans le contexte spécifique des conditions
+à la TU Berlin.
+Le processus de référence peut être utilisé pour la mise en œuvre de services de réserve de cours à tout moment.
+autre université. Pour sa mise en œuvre, les paramètres individuels ont été analysés
+L
+En fin de compte, le niveau technique du modèle de processus doit être complété et sa procédure
+angepasst.

@@ -1,0 +1,379 @@
+GooglePrivacy & Terms
+
+    Pregled
+    Politika privatnosti
+    Uslovi korištenja
+    Tehnologije
+    FAQ
+    Google nalog
+
+        Uvod
+        Google prikuplja podatke
+        Zašto Google prikuplja podatke
+        Vaše kontrole privatnosti
+        Deljenje informacija
+        Cuvanje informacija sigurno
+        Izvoz i brisanje informacija
+        Uskladenost i saradnja sa regulatorima
+        O ovoj politici
+        Povezane prakse privatnosti
+    Okviri prenosa podataka
+    Kljucni termini
+    Partneri
+    Ažuriranja
+
+Google politika privatnosti
+
+Kada koristite naše usluge, verujete nam u informaciju. Mi shvatamo da je ovo velika odgovornost i naporno raditi kako biste zaštitili svoje podatke i stavili pod kontrolu.
+
+Ova politika privatnosti ce vam pomoci da razumete koje podatke sakupljamo, zašto sakupljamo i kako možete ažurirati, upravljati, izvoziti i obrisati vaše informacije.
+Efektivno 25. maja 2018 Arhivirane verzije | Preuzmite PDF
+
+Mi gradimo niz usluga koje svakodnevno pomažu milionima ljudi da istražuju i interakciju sa svetom na nove nacine. Naše usluge ukljucuju:
+
+    Google aplikacije, lokacije i uredaje, kao što su Pretraživanje, YouTube i Google Home
+    Platforme poput Chrome pregledaca i Android operativnog sistema
+    Proizvodi koji su integrisani u aplikacije i sajtove nezavisnih proizvodaca, kao što su oglasi i ugradene Google mape
+
+Naše usluge možete koristiti na razlicite nacine za upravljanje vašom privatnošcu. Na primer, možete se prijaviti za Google nalog ako želite da kreirate i upravljate sadržajem kao što su e-pošte i fotografije ili vidite relevantnije rezultate pretrage. I vi možete koristiti mnoge Google usluge kada ste odjavljeni ili uopšte ne kreirate nalog, kao što je pretraživanje na Google-u ili gledanje YouTube video snimaka. Takode možete izabrati da pretraživate veb privatno koristeci Chrome u režimu incognito. I preko naših usluga, možete podesiti svoje postavke privatnosti kako biste kontrolisali ono što prikupljamo i kako se vaše informacije koriste.
+
+Da bismo pomogli u što jasnijoj objašnjavanju stvari, dodali smo primere, video objašnjenja i definicije za kljucne termine. I ako imate bilo kakva pitanja o ovoj Politici privatnosti, možete nas kontaktirati.
+Google prikuplja podatke
+
+Želimo da razumijete vrste informacija koje sakupljamo dok koristite naše usluge
+
+Sakupljamo informacije kako bismo pružili bolje usluge svim našim korisnicima - od pronalaženja osnovnih stvari poput jezika na kome govorite, do složenijih stvari poput onih oglasa koje cete naci najkorisnije, ljudi koji su najbitnije za vas na mreži, ili koji YouTube video snimci možda bi vam se dopalo. Informacije koje Google prikuplja i kako se one koriste, zavisi od toga kako koristite naše usluge i kako upravljate svojim kontrolama privatnosti.
+
+Kada niste prijavljeni na Google nalog, mi cuvamo informacije koje sakupljamo sa jedinstvenim identifikatorima vezanim za pretraživac, aplikaciju ili uredaj koji koristite. Ovo nam pomaže da uradimo stvari kao što su održavanje vaših preferenci jezika tokom sesija pretraživanja.
+
+Kada ste prijavljeni, mi takode prikupljamo informacije koje cuvamo pomocu vašeg Google naloga, koje mi tretiramo kao licne podatke.
+Stvari koje nam stvarate ili nam pružate
+
+Kada kreirate Google nalog, pružite nam licne podatke koji ukljucuju vaše ime i lozinku. Takode možete izabrati da dodate broj telefona ili podatke o placanju na svoj racun. Cak i ako niste prijavljeni na Google nalog, možete odabrati da nam date informacije - kao e-adresu kako biste primili ispravke o našim uslugama.
+
+Takode prikupljamo sadržaj koji kreirate, otpremate ili primate od drugih kada koristite naše usluge. Ovo ukljucuje stvari poput e-pošte koje pišete i primate, fotografije i video snimke koje sacuvate, dokumente i tabelarne tablice koje napravite i komentare koje ste napravili na YouTube video snimcima.
+Informacije koje sakupljamo dok koristite naše usluge
+Vaše aplikacije, pregledaci i uredaji
+
+Sakupljamo informacije o aplikacijama, pregledacima i uredajima koje koristite za pristup uslugama Google-a, što nam pomaže u pružanju funkcija kao što su automatska ažuriranja proizvoda i zatamnjujuci vaš ekran ako se baterija spusti.
+
+Podaci koje sakupljamo ukljucuju jedinstvene identifikatore, tip pretraživaca i podešavanja, tip uredaja i postavke, operativni sistem, informacije o mobilnoj mreži ukljucujuci naziv nosioca i broj telefona i broj verzije aplikacije. Takode prikupljamo informacije o interakciji vaših aplikacija, pretraživaca i uredaja sa našim uslugama, ukljucujuci IP adresu, izveštaje o oštecenjima, sistemsku aktivnost i datum, vreme i referentni URL vašeg zahteva.
+
+Sakupljamo ove informacije kada Google usluga na vašem uredaju kontakti našim serverima - na primjer, kada instalirate aplikaciju iz Play prodavnice ili kada servis provjerava automatske ispravke. Ako koristite Android uredaj sa Google aplikacijama, uredaj se povremeno kontaktira sa Google serverima kako bi pružio informacije o vašem uredaju i povezivanje sa našim uslugama. Ove informacije ukljucuju stvari kao što su tip uredaja, naziv operatera, izveštaji o oštecenjima i koje aplikacije ste instalirali.
+Vaša aktivnost
+
+Sakupljamo informacije o vašoj aktivnosti u našim uslugama, koje koristimo da radimo stvari kao što preporucujemo YouTube video koji vam se možda dopada. Informacije o aktivnostima koje sakupljamo mogu ukljucivati:
+
+    Uslovi koje tražite
+    Video snimke koje gledate
+    Pogledi i interakcije sa sadržajem i oglasima
+    Informacije o glasu i zvuku kada koristite audio funkcije
+    Kupovna aktivnost
+    Osobe sa kojima komunicirate ili delite sadržaj
+    Aktivnost na sajtovima trecih strana i aplikacijama koje koriste naše usluge
+    Istorija pregledanja Chrome-a ste sinhronizovali sa Google nalogom
+
+Ako koristite naše usluge za upucivanje i primanje poziva ili slanje i primanje poruka, možemo prikupiti informacije o telefonskom telefonu kao što su broj telefona, broj pozivaoca, broj primaoca, brojevi za prosledivanje, vrijeme i datum poziva i poruka, trajanje pozive, informacije o rutiranju i vrste poziva.
+
+Možete posetiti Google nalog kako biste pronašli i upravljali informacijama o aktivnostima koje su sacuvane na vašem nalogu.
+
+Idite na Google nalog
+Vaše informacije o lokaciji
+
+Prikupljamo informacije o vašoj lokaciji kada koristite naše usluge, što nam pomaže da ponudimo funkcije kao što su uputstva za vožnju za bicikliste ili prikazivanje filmova koji se igraju blizu vas.
+
+Vaša lokacija se može odrediti sa razlicitim stepenom tacnosti:
+
+    GPS
+    IP adresa
+    Podaci senzora sa vašeg uredaja
+    Informacije o stvarima blizu vašeg uredaja, kao što su Wi-Fi pristupne tacke, celijske kule i uredaji sa omogucenim Bluetoothom
+
+Tipovi podataka o lokaciji koje sakupljamo delom zavise od vašeg uredaja i postavki naloga. Na primer, možete da ukljucite ili iskljucite lokaciju svog Android uredaja pomocu aplikacije za podešavanja uredaja. Takode možete ukljuciti Istoriju lokacija ako želite da sacuvate i upravljate informacijama o lokaciji u vašem nalogu.
+
+U nekim okolnostima, Google takode prikuplja informacije o vama iz javno dostupnih izvora. Na primer, ako se vaše ime pojavljuje u vašem lokalnom novinama, Googleov pretraživac može indeksirati taj clanak i prikazati ga drugim ljudima ako traže svoje ime. Takode možemo prikupljati informacije o vama od pouzdanih partnera, ukljucujuci i marketinške partnere koji nam pružaju informacije o potencijalnim kupcima naših poslovnih usluga i partnerima sigurnosti koji nam pružaju informacije za zaštitu od zloupotrebe. Takode dobijamo informacije od oglašivaca da pruže usluge oglašavanja i istraživanja u njihovo ime.
+
+Koristimo razne tehnologije za sakupljanje i skladištenje informacija, ukljucujuci kolacice, oznake piksela, lokalno skladištenje, kao što su web skladište pregledaca ili kesi podataka aplikacija, baze podataka i evidencije servera.
+Zašto Google prikuplja podatke
+
+Mi koristimo podatke za izgradnju boljih usluga
+
+Mi koristimo informacije koje sakupljamo iz svih naših usluga u sledece svrhe:
+Pružite naše usluge
+
+Vaše podatke koristimo za isporuku naših usluga, kao što su obrada termina koje tražite da biste povratili rezultate ili vam pomogli da dijelite sadržaj tako što cete predložiti primaocima iz svojih kontakata.
+Održavajte i poboljšajte naše usluge
+
+Takode koristimo vaše informacije kako bismo osigurali da naše usluge funkcionišu prema namjerama, kao što su otkazi pracenja ili problemi sa rješavanjem problema koje nam prijavite. I mi koristimo vaše informacije da poboljšamo naše usluge - na primer, razumevanje koje su pojmovi za pretragu najcešce pogrešno napisani pomaže nam da poboljšamo funkcije za provjeru pravopisa koje se koriste u našim uslugama.
+Razviti nove usluge
+
+Mi koristimo informacije koje sakupljamo u postojecim službama kako bismo pomogli da razvijemo nove. Na primer, razumevanje nacina na koji su ljudi organizovali svoje fotografije u Picasa-u, Google-ova prva aplikacija za fotografije, pomogla nam je da dizajniramo i pokrenemo Google Photos.
+Pružite personalizovane usluge, ukljucujuci sadržaj i oglase
+
+Mi koristimo informacije koje sakupljamo kako bismo prilagodili naše usluge za vas, ukljucujuci pružanje preporuka, personalizovanog sadržaja i prilagodenih rezultata pretrage. Na primer, Security Checkup pruža bezbednosne savete prilagodene nacinu na koji koristite Google proizvode. I Google Play koristi informacije poput aplikacija koje ste vec instalirali i video snimaka koje ste gledali na YouTube-u kako biste predložili nove aplikacije koje biste možda želeli.
+
+U zavisnosti od vaših podešavanja, možemo vam takode prikazati prilagodene oglase na osnovu vaših interesa. Na primer, ako pretražujete "planinske bicikle", možete videti oglas za sportsku opremu kada pretražujete sajt koji prikazuje oglase koje Google služi. Možete da kontrolišete koje informacije koristimo za prikazivanje oglasa tako što cete posetiti podešavanja oglasa.
+
+    Ne prikazujemo vam prilagodene oglase zasnovane na osetljivim kategorijama, kao što su rasa, religija, seksualna orijentacija ili zdravlje.
+    Mi ne delimo informacije koje vas licno identifikuju sa oglašavacima, kao što su vaše ime ili e-pošta, osim ako nas pitate. Na primjer, ako vidite oglas u obližnjoj cvjetnoj radnji i odaberete dugme "dodirni za pozivanje", povezalicemo vaš poziv i dijeliti vaš telefonski broj u cvecaru.
+
+Idite na Ad Settings
+Mjerite performanse
+
+Mi koristimo podatke za analitiku i merenje kako bismo razumeli kako se naše usluge koriste. Na primer, analiziramo podatke o vašim posjetama na našim sajtovima kako bismo uradili stvari poput optimizacije dizajna proizvoda. I takode koristimo podatke o oglasima s kojima saradujete kako bi pomogli oglašivacima da razumeju ucinak svojih oglasnih kampanja. Za to radimo razlicite alate, ukljucujuci Google analitiku. Kada posetite sajtove koji koriste Google analitiku, Google i korisnik Google analitike mogu povezati informacije o vašoj aktivnosti sa tog sajta sa aktivnostima na drugim sajtovima koji koriste naše usluge oglasa.
+Komunicirajte s vama
+
+Mi koristimo informacije koje sakupljamo, kao i vašu e-adresu, da direktno komuniciramo sa vama. Na primer, možemo vam poslati obaveštenje ako otkrijemo sumnjivu aktivnost, kao što je pokušaj prijavljivanja na Google nalog sa neobicne lokacije. Ili cemo vam obavijestiti o predstojecim promjenama ili poboljšanjima naših usluga. A ako kontaktirate Google, zadržacemo evidenciju vašeg zahteva kako bismo pomogli u rešavanju svih problema sa kojima se možda suocavate.
+Zaštitite Google, naše korisnike i javnost
+
+Koristimo informacije kako bi poboljšali sigurnost i pouzdanost naših usluga. To ukljucuje otkrivanje, sprecavanje i odgovaranje na prevare, zloupotrebe, sigurnosne rizike i tehnicka pitanja koja mogu štetiti Google-u, našim korisnicima ili javnosti.
+
+Mi koristimo razlicite tehnologije za obradu vaših informacija u ove svrhe. Koristimo automatizovane sisteme koji analiziraju vaš sadržaj kako bi vam pružili stvari kao što su prilagodeni rezultati pretraživanja, personalizovani oglasi ili druge funkcije prilagodene kako koristite naše usluge. I analiziramo vaš sadržaj kako bismo otkrili zloupotrebe kao što su spam, malver i ilegalni sadržaj. Takode koristimo algoritme za prepoznavanje šablona u podacima. Na primer, Google Translate pomaže ljudima da komuniciraju na svim jezicima otkrivajuci obicne jezicke obrasce u frazama koje tražite da prevode.
+
+Možemo kombinirati informacije koje sakupljamo medu našim uslugama i preko vaših uredaja za gore opisane svrhe. Na primer, ako gledate video snimke gitarista na YouTube-u, možda cete videti oglas za casove gitare na sajtu koji koristi naše proizvode za oglase. U zavisnosti od postavki vašeg naloga, vaša aktivnost na drugim sajtovima i aplikacijama može biti povezana sa vašim licnim podacima kako biste poboljšali Google usluge i oglase koje je poslao Google.
+
+Ako drugi korisnici vec imaju svoju e-adresu ili druge informacije koje vas identifikuju, mi cemo vam pokazati svoje javno vidljive podatke o Google nalogu, kao što su vaše ime i fotografija. Ovo pomaže ljudima da identifikuju e-mail koji dolazi od vas, na primjer.
+
+Zahtevat cemo vašu saglasnost pre korišcenja vaših podataka u svrhu koja nije obuhvacena ovom Politikom privatnosti.
+Vaše kontrole privatnosti
+
+Imate izbore u vezi s informacijama koje sakupljamo i kako se koriste
+
+Ovaj odeljak opisuje kljucne kontrole za upravljanje vašom privatnošcu preko naših usluga. Takode možete posetiti pregled privatnosti, koji pruža mogucnost pregledanja i prilagodavanja važnih postavki privatnosti. Pored ovih alata, nudimo i odredene postavke privatnosti u našim proizvodima - možete više saznati u Vodicu o privatnosti proizvoda.
+
+Idite na Proveru privatnosti
+Upravljanje, pregled i ažuriranje vaših informacija
+
+Kada ste prijavljeni, uvek možete pregledati i ažurirati informacije tako što cete posetiti usluge koje koristite. Na primer, Photos and Drive su dizajnirane da vam pomognu da upravljate odredenim vrstama sadržaja koji ste sacuvali sa Google-om.
+
+Takode smo napravili mesto za pregled i kontrolu informacija sacuvanih na Google nalogu. Vaš Google racun ukljucuje:
+Kontrole privatnosti
+Kontrole aktivnosti
+
+Odlucite koje vrste aktivnosti želite da sacuvate na svom nalogu. Na primjer, možete ukljuciti istoriju lokacija ako želite predvidanja prometa za vašu svakodnevnu vožnju, ili možete sacuvati svoju istoriju gledanja YouTube-a kako biste dobili bolje predloge o video zapisima.
+
+Idite na Kontrole aktivnosti
+Podešavanja oglasa
+
+Upravljajte svojim preferencama o oglasima koji su vam prikazani na Google-u i na sajtovima i aplikacijama koje partneri sa Google-om radi prikazivanja oglasa. Možete da izmenite svoje interese, odaberite da li se vaši licni podaci koriste da bi vaši oglasi bili relevantniji za vas i ukljucili ili iskljucili odredene reklamne usluge.
+
+Idite na Ad Settings
+O tebi
+
+Kontrolišite šta drugi vide o vama preko Google usluga.
+
+Idi na O Tebe
+Zajednicka podrška
+
+Izaberite da li se vaše ime i fotografija pojavljuju pored vaše aktivnosti, kao što su recenzije i preporuke koje se pojavljuju u oglasima.
+
+Idite na Zajednicka potvrda
+Informacije koje delite
+
+Kontrolišite koga delite sa informacijama putem naloga na Google+.
+
+Idite na Informacije koje delite
+Nacini da pregledate i ažurirate svoje podatke
+Moja aktivnost
+
+Moja aktivnost vam omogucava da pregledate i kontrolišete podatke koji su kreirani kada koristite Google usluge, kao što su pretrage koje ste obavili ili posete Google Play-u. Možete pretraživati ??po datumu i po temi i obrišite deo ili celu svoju aktivnost.
+
+Idite u Moju aktivnost
+Google Dashboard
+
+Google Dashboard vam omogucava da upravljate informacijama vezanim za odredene proizvode.
+
+Idite na Dashboard
+Vaše licne informacije
+
+Upravljajte svojim kontaktnim informacijama, kao što su vaše ime, e-mail i telefonski broj.
+
+Idite na Licne informacije
+
+Kada ste odjavljeni, možete upravljati informacijama povezanim sa vašim pregledacem ili uredajem, ukljucujuci:
+
+    Personalizirana pretraga za pretragu: Izaberite da li se vaša aktivnost pretrage koristi da vam ponudi više relevantnih rezultata i preporuka.
+    Postavke YouTube-a: pauzirajte i obrišite svoju istoriju pretrage YouTube-a i svoju istoriju gledanja YouTube-a.
+    Podešavanja oglasa: Upravljajte svojim preferencama o oglasima koji su vam prikazani na Google-u i na sajtovima i aplikacijama koje su partneri sa Google-om za prikazivanje oglasa.
+
+Izvoz, uklanjanje i brisanje informacija
+
+Možete kopirati sadržaj na Google nalogu ako ga želite rezervisati ili koristiti sa uslugom izvan Google-a.
+
+Izvozite podatke
+
+Takode možete zatražiti da uklonite sadržaj iz odredenih Google usluga na osnovu važeceg zakona.
+
+Da biste izbrisali svoje podatke, možete:
+
+    Obrišite svoj sadržaj iz odredenih Google usluga
+    Potražite i zatim izbrišite odredene stavke iz vašeg naloga koristeci Moju aktivnost
+    Izbrišite odredene Google proizvode, ukljucujuci i vaše informacije povezane sa tim proizvodima
+    Obrišite ceo Google nalog
+
+Izbrišite svoje podatke
+
+I na kraju, Inactive Account Manager vam omogucava da nekome drugom pristupite dijelovima Google naloga u slucaju da neocekivano ne možete da koristite svoj nalog.
+
+Postoje i drugi nacini za kontrolu informacija koje Google prikuplja bez obzira da li ste prijavljeni na Google nalog, ukljucujuci:
+
+    Podešavanja pregledaca: Na primer, možete da konfigurišete svoj pretraživac da biste naznacili kada je Google postavio kolacic u pregledacu. Takode možete konfigurirati svoj pregledac da blokira sve kolacice iz odredenog domena ili svih domena. Ali zapamtite da se naše usluge oslanjaju na kolacice da pravilno funkcionišu, za stvari poput pamcenja vaših jezika.
+    Podešavanja nivoa uredaja: Vaš uredaj može imati kontrole koje odreduju informacije koje sakupljamo. Na primer, možete promeniti postavke lokacije na Android uredaju.
+
+Deljenje informacija
+Kada delite svoje podatke
+
+Mnoge naše usluge omogucavaju vam da delite informacije sa drugim ljudima i imate kontrolu nad onim što delite. Na primjer, možete javno dijeliti video zapise na YouTube-u ili možete odluciti da zadržite svoje video snimke privatnim. Zapamtite, kada delite informacije javno, vaš sadržaj može postati dostupan preko pretraživaca, ukljucujuci i Google pretragu.
+
+Kada ste prijavljeni i interaktivni sa nekim Google uslugama, kao što su ostavljanje komentara na YouTube-u ili pregledanje pesme u Play-u, vaše ime i fotografija se pojavljuju pored vaše aktivnosti. Takode možemo prikazati ove informacije u oglasima u zavisnosti od podešavanja zajednickog upozorenja.
+Kada Google deli vaše podatke
+
+Vaše licne informacije ne dijelimo sa kompanijama, organizacijama ili pojedincima van Google-a, osim u sledecim slucajevima:
+Sa vašom saglasnošcu
+
+Mi cemo dijeliti licne informacije van Google-a kada imamo vašu saglasnost. Na primjer, ako koristite Google pocetak kako biste zatražili vožnju iz usluge za razmjenu vožnje, dobilicemo vam dozvolu prije nego što dijelite svoju adresu tom uslugom. Tražimo vašu eksplicitnu saglasnost da podelite sve osetljive licne informacije.
+Sa administratorima domena
+
+Ako ste student ili rad za organizaciju koja koristi Google usluge (kao što je G Suite), administrator domene i preprodaci koji upravljaju vašim nalogom imaju pristup vašem Google nalogu. Možda ce moci:
+
+    Pristupite i zadržite informacije sacuvane na vašem nalogu, kao što je vaša e-pošta
+    Pregledajte statisticke podatke o vašem nalogu, kao i koliko aplikacija instalirate
+    Promenite lozinku svog naloga
+    Prekinite ili prekinite pristup nalogu
+    Primite informacije o vašem racunu kako biste zadovoljili važeci zakon, regulativu, pravni proces ili izvršni vladin zahtev
+    Ostavite svoju mogucnost da obrišete ili izmenite svoje podatke ili postavke privatnosti
+
+Za vanjsku obradu
+
+Mi pružamo licne podatke našim podružnicama i drugim poverenim preduzecima ili osobama koje to obraduju za nas, na osnovu naših uputstava iu skladu s našom Politikom privatnosti i svim drugim odgovarajucim mjerama poverljivosti i sigurnosti. Na primjer, mi koristimo usluge provajdera koji nam pomažu u podršci korisnicima.
+Iz pravnih razloga
+
+Mi cemo dijeliti licne informacije van Google-a ako imamo veru uverenja da je pristup, korišcenje, cuvanje ili objavljivanje informacija razumno neophodno da:
+
+    Ispunite bilo koji važeci zakon, regulativu, pravni proces ili izvršni vladin zahtev. Mi dijelimo informacije o broju i vrsti zahteva koje primimo od vlada u našem Izvještaju o transparentnosti.
+    Usvojite primenjive uslove korišcenja usluge, ukljucujuci istraživanje potencijalnih kršenja.
+    Otkrijte, sprecite ili na drugi nacin rešavate prevare, bezbednost ili tehnicka pitanja.
+    Zaštitite od štete za prava, imovinu ili sigurnost Google-a, naših korisnika ili javnosti kako je to zahtevano ili dozvoljeno zakonom.
+
+Možemo javno i sa našim partnerima - kao što su izdavaci, oglašivaci, programeri ili vlasnici prava - deliti informacije koje nisu licni. Na primjer, javno dijelimo informacije kako bismo pokazali trendove o opštoj upotrebi naših usluga. Takode dozvoljavamo odredenim partnerima da prikupljaju informacije iz vašeg pregledaca ili uredaja za svrhe oglašavanja i mjerenja koristeci svoje vlastite kolacice ili slicne tehnologije.
+
+Ako je Google ukljucen u spajanje, kupovinu ili prodaju imovine, nastavicemo da obezbedimo poverljivost vaših licnih podataka i da obavestimo oštecene korisnike pre nego što se licni podaci prenose ili postanu predmet druge politike privatnosti.
+Cuvanje informacija sigurno
+
+Sagradimo sigurnost u naše usluge kako bismo zaštitili vaše informacije
+
+Svi Google proizvodi su napravljeni sa jakim sigurnosnim funkcijama koje kontinuirano štite Vaše informacije. Uvidi koje smo dobili od održavanja naših usluga nam pomažu da otkrijete i automatski blokirate bezbednosne prijetnje koje vas ikada dostižu. A ako otkrijemo nešto rizicno za koje mislimo da bi trebalo da znate, obaveštavamo vas i pomažemo vam da kroz korake budete bolje zašticeni.
+
+Trudimo se da zaštitimo vas i Google od neovlašcenog pristupa, izmene, objelodanjivanja ili uništavanja informacija koje držimo, ukljucujuci:
+
+    Koristimo šifrovanje da vaši podaci budu privatni tokom tranzita
+    Nudimo niz sigurnosnih funkcija, poput Safe Browsing, Security Checkup i 2 Step Verification, koji ce vam pomoci da zaštitite svoj racun
+    Pregledamo naše prakse prikupljanja, skladištenja i obrade, ukljucujuci mere fizickog obezbedenja kako bismo sprecili neovlašceni pristup našim sistemima
+    Mi ogranicavamo pristup licnim informacijama zaposlenima u Google-u, ugovaracima i agencijama kojima su potrebne informacije kako bi ih obradili. Svako sa ovim pristupom podleže strogim ugovornim obavezama poverljivosti i može se disciplinovati ili prekinuti ako ne ispune ove obaveze.
+
+Izvoz i brisanje informacija
+
+Možete kopirati svoje podatke ili ih izbrisati sa Google naloga u bilo koje vrijeme
+
+Možete kopirati sadržaj na Google nalogu ako ga želite rezervisati ili koristiti sa uslugom izvan Google-a.
+
+Izvozite podatke
+
+Da biste izbrisali svoje podatke, možete:
+
+    Obrišite svoj sadržaj iz odredenih Google usluga
+    Potražite i zatim izbrišite odredene stavke iz vašeg naloga koristeci Moju aktivnost
+    Izbrišite odredene Google proizvode, ukljucujuci i vaše informacije povezane sa tim proizvodima
+    Obrišite ceo Google nalog
+
+Izbrišite svoje podatke
+
+U nekim slucajevima zadržavamo podatke za ogranicene periode kada ih treba držati u legitimnim poslovnim ili zakonskim svrhama. Možete procitati o Googleovim periodima zadržavanja podataka, ukljucujuci koliko dugo traje da izbrišemo vaše podatke.
+
+Pokušavamo da obezbedimo da naše usluge štite informacije od slucajnog ili zlonamernog brisanja. Zbog ovoga može doci do kašnjenja izmedu kada nešto izbrišete i kada se kopiraju iz naših aktivnih i rezervnih sistema.
+Uskladenost i saradnja sa regulatorima
+
+Redovno preispitamo ovu Politiku privatnosti i vodimo racuna da obradimo vaše informacije na nacin koji je u skladu sa njim.
+Prenos podataka
+
+Mi održavamo servere širom svijeta i vaše informacije se mogu obradivati ??na serverima koji se nalaze izvan zemlje u kojoj živite. Zakoni o zaštiti podataka variraju medu zemljama, a neki pružaju više zaštite od drugih. Bez obzira na to gde se vaše informacije obraduju, primenjujemo istu zaštitu opisanu u ovoj politici. Takode smo u skladu sa odredenim pravnim okvirima koji se odnose na prenos podataka, kao što su Okviri štita za zaštitu privatnosti EU-US i Švajcarske-SAD.
+
+Kada primimo formalne pismene prigovore, mi odgovorimo kontaktiranjem osobe koja je podnela žalbu. Radimo sa odgovarajucim regulatornim organima, ukljucujuci lokalne organe za zaštitu podataka, da riješimo bilo kakve žalbe u vezi sa prijenosom podataka koje ne možemo riješiti direktno s vama.
+Evropski zahtevi
+
+Ako se zakon o zaštiti podataka Evropske unije (EU) primjenjuje na obradu vaših podataka, mi damo kontrole opisane u ovoj politici tako da možete iskoristiti svoje pravo da zatražite pristup, ažuriranje, uklanjanje i ogranicavanje obrade vaših informacija. Takode imate pravo da uložite prigovor na obradu vaših informacija ili izvozite svoje podatke na drugu uslugu.
+
+Obradimo vaše podatke u svrhe opisane u ovoj politici, na osnovu sledecih zakonskih osnova:
+Sa vašom saglasnošcu
+
+Tražimo vaš saglasnost da obradujete svoje podatke u odredene svrhe i imate pravo da povucete vašu saglasnost u bilo koje vrijeme. Na primjer, tražimo vašu saglasnost da Vam pružimo personalizovane usluge kao što su oglasi. Takode tražimo vašu saglasnost da sakupljamo svoje glasovne i audio aktivnosti za prepoznavanje govora. Ovu postavku možete upravljati na Google nalogu.
+Kada se bavimo legitimnim interesima
+
+Obradjujemo vaše informacije za naše legitimne interese i one trece strane prilikom primjene odgovarajucih zaštitnih mjera koje štite vašu privatnost. To znaci da obradimo vaše informacije za stvari kao što su:
+
+    Obezbedivanje, održavanje i unapredenje naših usluga kako bi zadovoljili potrebe naših korisnika
+    Razvijanje novih proizvoda i funkcija koje su korisne za naše korisnike
+    Razumijevanje kako ljudi koriste naše usluge kako bi osigurali i poboljšali performanse naših usluga
+    Prilagodite naše usluge da vam pružimo bolje korisnicko iskustvo
+    Marketing da informiše korisnike o našim uslugama
+    Pružanje reklama da bi mnoge naše usluge bile slobodne za korisnike
+    Otkrivanje, sprecavanje ili na drugi nacin rešavanje prevara, zloupotreba, sigurnosti ili tehnickih problema sa našim uslugama
+    Zaštititi od štete po pravima, imovini ili sigurnosti Google-a, naših korisnika ili javnosti kako je to zahtevano ili dozvoljeno zakonom
+    Izvodenje istraživanja koja poboljšava naše usluge za naše korisnike i koristi javnosti
+    Ispunjavanje obaveza prema našim partnerima kao što su programeri i vlasnici prava
+    Sprovodenje pravnih zahteva, ukljucujuci istraživanje potencijalnih kršenja važecih uslova usluge
+
+Kada pružamo uslugu
+
+Obradujemo vaše podatke kako bismo pružili uslugu koju ste tražili po ugovoru. Na primjer, obradujemo vaše podatke o placanju kada kupujete dodatni prostor za Google Drive.
+Kada se pridržavamo zakonskih obaveza
+
+Mi cemo obraditi vaše podatke kada imamo zakonsku obavezu da to ucinimo, na primjer, ako odgovaramo na pravni proces ili izvršni vladin zahtjev.
+
+Ako imate pitanja, možete se obratiti Google-u i našoj službi za zaštitu podataka. I možete kontaktirati vašu lokalnu službu za zaštitu podataka ako imate zabrinutost u vezi sa vašim pravima prema lokalnom zakonu.
+O ovoj politici
+Kada se primenjuje ova politika
+
+Ova Politika privatnosti se odnosi na sve usluge koje nudi Google LLC i njegovi partneri, ukljucujuci YouTube, Android i usluge koje se nude na sajtovima trecih strana, kao što su reklamne usluge. Ova Politika privatnosti se ne odnosi na usluge koje imaju zasebne smernice o privatnosti koje ne ukljucuju ovu Politiku privatnosti.
+
+Ova Politika privatnosti se ne primenjuje na:
+
+    Informacione prakse drugih kompanija i organizacija koje reklamiraju naše usluge
+    Usluge koje nude druge kompanije ili pojedinci, ukljucujuci proizvode ili sajtove koji mogu ukljucivati ??Google usluge, bice vam prikazani u rezultatima pretrage ili ce biti povezani sa našim uslugama
+
+Promjene ove politike
+
+S vremena na vreme ovu Politiku privatnosti mijenjamo. Necemo smanjiti vaša prava prema ovoj Politici privatnosti bez vašeg izricitog pristanka. Uvek ukazujemo na datum objavljivanja poslednjih izmena i nudimo pristup arhiviranim verzijama za vašu recenziju. Ako su promjene znacajne, mi cemo dati više vidljivog obavještenja (ukljucujuci, za odredene usluge, e-poštu obavijestiti o promjeni privatnosti).
+Povezane prakse privatnosti
+Specificne Google usluge
+
+Sledeca obaveštenja o privatnosti pružaju dodatne informacije o nekim Google uslugama:
+
+    Chrome i Chrome operativni sistem
+    Play Books
+    Placanja
+    Fiber
+    Project Fi
+    G Suite za obrazovanje
+    YouTube Kids
+    Google nalozi upravljani sa porodicnom vezom
+
+Drugi korisni izvori
+
+Sledece veze oznacavaju korisne resurse da biste saznali više o našim praksama i postavkama privatnosti.
+
+    Vaš Google nalog je vecina postavki koje možete koristiti za upravljanje nalogom
+    Provera privatnosti vas vodi kroz kljucne postavke privatnosti za vaš Google nalog
+    Google-ov centar za sigurnost nudi savjete o tome da ostanu sigurni i sigurni
+    Google-ova stranica za privatnost pruža više informacija o tome kako smo vaše informacije privatne i sigurne
+    Privatnost i uslovi pružaju više konteksta u vezi sa ovom Politikom privatnosti i našim uslovima usluge
+    Tehnologije i principi ukljucuju više informacija o:
+        Kako Google koristi kolacice
+        Tehnologije koje se koriste za oglašavanje
+        Kako Google koristi prepoznavanje uzoraka da prepoznaje stvari poput lica na fotografijama
+        Stranica koja objašnjava koji podaci dele sa Googleom kada posetite veb lokacije koje koriste naše oglašavanje, analize i društvene proizvode.
+        Kako Google koristi podatke kada koristite naše partnere ili aplikacije
+
+Promijeni jezik:
+
+    GoogleOn GooglePrivacyTerms
