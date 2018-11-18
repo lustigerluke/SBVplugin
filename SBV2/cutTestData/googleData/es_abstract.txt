@@ -1,0 +1,304 @@
+GooglePrivacidad y Condiciones
+
+    Descripción general
+    Política de Privacidad
+    Condiciones de Servicio
+    Tecnologías
+    Preguntas frecuentes
+    Cuenta de Google
+
+        Introducción
+        Información que recoge Google
+        Por qué recoge Google estos datos
+        Tus controles de privacidad
+        Compartir tu información
+        Proteger tu información
+        Exportar y eliminar tu información
+        Cumplimiento y cooperación con autoridades reguladoras
+        Información sobre esta política
+        Prácticas de privacidad relacionadas
+    Marcos para la transferencia de datos
+    Términos clave
+    Partners
+    Actualizaciones
+
+Política de Privacidad de Google
+
+Al utilizar nuestros servicios, nos confías tus datos. Entendemos que es una gran responsabilidad y nos esforzamos al máximo para proteger tu información y permitirte controlarla.
+
+El objetivo de esta Política de Privacidad es informarte sobre qué datos recogemos, por qué los recogemos y cómo puedes actualizarlos, gestionarlos, exportarlos y eliminarlos.
+Fecha de entrada en vigor: 25 de mayo de 2018 | Versiones archivadas | Descargar PDF
+
+Google desarrolla una variedad de servicios que permiten que millones de usuarios exploren el mundo e interactúen con él de forma diferente a diario. Estos servicios incluyen:
+
+    Aplicaciones, sitios web y dispositivos de Google, como la Búsqueda de Google, YouTube y Google Home
+    Plataformas, como el navegador Chrome y el sistema operativo Android
+    Productos que se integran en aplicaciones y sitios web de terceros, como anuncios y mapas insertados de Google Maps
+
+Puedes utilizar nuestros servicios de diferentes formas para gestionar tu privacidad. Por ejemplo, si quieres crear y gestionar contenido, como correos electrónicos y fotos, o consultar resultados de búsqueda más relevantes, puedes registrarte para obtener una cuenta de Google. Asimismo, puedes utilizar diversos servicios de Google una vez que hayas cerrado sesión en tu cuenta o sin que hayas siquiera creado una como, por ejemplo, realizando una búsqueda en Google o visualizando vídeos en YouTube. También puedes navegar por Internet de forma privada en Chrome con el modo incógnito. Además, puedes ajustar la configuración de privacidad en todos nuestros servicios para controlar la información que recogemos y cómo la utilizamos.
+
+Para ayudarte a entender este documento lo mejor posible, hemos añadido ejemplos, vídeos explicativos y definiciones a los términos clave. Si tienes alguna pregunta sobre esta Política de Privacidad, puedes ponerte en contacto con nosotros.
+Información que recoge Google
+
+Queremos informarte del tipo de datos que recogemos cuando utilizas nuestros servicios
+
+Recogemos información para proporcionar los mejores servicios a todos nuestros usuarios: desde determinar información básica, como el idioma que hablas, hasta datos más complejos, como los anuncios que te resultarán más útiles, las personas que más te interesan online o los vídeos de YouTube que te pueden gustar. El tipo de información que recoge Google y cómo se utiliza esa información depende del uso que hagas de nuestros servicios y de cómo administres los controles de privacidad.
+
+Si no has iniciado sesión en una cuenta de Google, almacenamos la información que recogemos con identificadores únicos vinculados al navegador, la aplicación o el dispositivo que utilices. Esto nos permite, por ejemplo, mantener tus preferencias de idioma en todas las sesiones de navegación.
+
+Si has iniciado sesión, también recogemos información que almacenamos en tu cuenta de Google y que tratamos como información personal.
+Información que creas o nos proporcionas
+
+Al crear una cuenta de Google, nos proporcionas información personal que incluye tu nombre y una contraseña. También puedes añadir un número de teléfono o datos de pago a tu cuenta. Aunque no hayas iniciado sesión en una cuenta de Google, también puedes proporcionarnos información como, por ejemplo, una dirección de correo electrónico para recibir actualizaciones sobre nuestros servicios.
+
+También recogemos el contenido que creas, subes o recibes de otros usuarios cuando utilizas nuestros servicios. Entre estos datos se incluyen los correos electrónicos que escribes y recibes, las fotos y los vídeos que guardas, los documentos y las hojas de cálculo que creas y los comentarios que publicas en los vídeos de YouTube.
+Información que recogemos cuando utilizas nuestros servicios
+Tus aplicaciones, navegadores y dispositivos
+
+Recogemos información sobre las aplicaciones, los navegadores y los dispositivos que utilizas para acceder a los servicios de Google. Esto nos permite ofrecerte funciones, como actualizaciones automáticas de productos, y atenuar la pantalla de tu dispositivo si tiene poca batería.
+
+Entre la información que recogemos se incluyen los identificadores únicos, el tipo de navegador y su configuración, el tipo de dispositivo y su configuración, el sistema operativo, información sobre la red móvil (como el nombre del operador y el número de teléfono) y el número de versión de la aplicación. También recogemos información sobre la interacción de tus aplicaciones, navegadores y dispositivos con nuestros servicios, como la dirección IP, informes sobre fallos, actividad del sistema, así como la fecha, la hora y la URL de referencia de tu petición.
+
+Recogemos esta información cuando un servicio de Google de tu dispositivo establece conexión con nuestros servidores. Por ejemplo, esto se produce cuando instalas una aplicación de Play Store o cuando un servicio comprueba si existen actualizaciones automáticas. Si utilizas un dispositivo Android con aplicaciones de Google, el dispositivo establece conexión periódicamente con los servidores de Google para proporcionar información sobre tu dispositivo y la conexión a nuestros servidores. Entre los datos que se recogen se incluyen el tipo de dispositivo, el nombre del operador, informes sobre fallos y las aplicaciones que has instalado.
+Tu actividad
+
+Recogemos información sobre tu actividad en nuestros servicios, que utilizamos para realizar acciones como recomendarte vídeos de YouTube que pueden gustarte. A continuación, te indicamos la información de actividad que podemos recoger:
+
+    Los términos que buscas
+    Los vídeos que ves
+    Las visualizaciones y las interacciones con el contenido y los anuncios
+    Información sobre voz y audio cuando utilizas funciones de audio
+    Actividad de compra
+    Usuarios con los que te comunicas o compartes contenido
+    Actividad en sitios web y aplicaciones de terceros que utilizan nuestros servicios
+    Historial de navegación de Chrome que has sincronizado con tu cuenta de Google
+
+Si utilizas nuestros servicios para hacer o recibir llamadas o para enviar y recibir mensajes, es posible que recojamos información del registro telefónico, como tu número de teléfono, el número de la persona que realiza la llamada, el número de la persona que recibe la llamada, números de desvío de llamada, la fecha y la hora de las llamadas y los mensajes, la duración de las llamadas, información de enrutamiento y los tipos de llamadas.
+
+Puedes acceder a tu cuenta de Google para buscar y gestionar la información de actividad que está guardada en ella.
+
+Acceder a la cuenta de Google
+La información de tu ubicación
+
+Recogemos información sobre tu ubicación cuando utilizas nuestros servicios para poder ofrecerte funciones, como indicaciones para llegar a tu destino de escapada de fin de semana o los horarios de películas de cines cercanos.
+
+Para determinar tu ubicación con diferentes niveles de precisión, utilizamos las siguientes herramientas:
+
+    GPS
+    Dirección IP
+    Datos del sensor de tu dispositivo
+    Información sobre elementos cercanos a tu dispositivo como, por ejemplo, puntos de acceso Wi-Fi, antenas de servicio de telefonía móvil y dispositivos con el Bluetooth activado
+
+El tipo de datos de ubicación que recogemos depende en parte de la configuración de tu dispositivo y de tu cuenta. Por ejemplo, puedes activar o desactivar la ubicación de tu dispositivo Android mediante la aplicación de ajustes del dispositivo. También puedes activar el historial de ubicaciones si quieres guardar y gestionar la información de ubicación en tu cuenta.
+
+En algunos casos, Google también recoge información sobre los usuarios a partir de fuentes de acceso público. Por ejemplo, si tu nombre aparece en un periódico local, el motor de búsqueda de Google puede indexar ese artículo y mostrárselo a otros usuarios si realizan una búsqueda a partir de tu nombre. También podemos recoger información personal a partir de partners de confianza, como partners de marketing, que nos proporcionan información sobre posibles clientes de nuestros servicios empresariales, y partners de seguridad, que nos ofrecen información para proporcionar protección frente a abusos. También recibimos información de anunciantes para que proporcionemos servicios publicitarios y de investigación en su nombre.
+
+Utilizamos diversas tecnologías para recoger y almacenar la información, entre las que se incluyen cookies, etiquetas de píxel, almacenamiento local (como el almacenamiento web del navegador o las cachés de datos de aplicaciones), bases de datos y registros de servidor.
+Por qué recoge Google estos datos
+
+Utilizamos los datos para crear y mejorar los servicios
+
+Utilizamos la información que recogemos de todos nuestros servicios con las siguientes finalidades:
+Prestar nuestros servicios
+
+Utilizamos tu información para prestar nuestros servicios como, por ejemplo, procesamos los términos que buscas para poder devolverte resultados o te ayudamos a compartir contenido sugiriéndote destinatarios a partir de tus contactos.
+Mantener y mejorar nuestros servicios
+
+También usamos tu información para garantizar que nuestros servicios funcionan correctamente como, por ejemplo, realizar un seguimiento de las interrupciones de red o solucionar los problemas de los que nos informas. También utilizamos tu información para mejorar nuestros servicios. Por ejemplo, conocer los términos de búsqueda que se escriben mal con más frecuencia nos ayuda a mejorar las funciones de revisión ortográfica que se utilizan en todos nuestros servicios.
+Desarrollar nuevos servicios
+
+Utilizamos la información que recogemos de los servicios actuales para desarrollar otros nuevos. Por ejemplo, saber cómo organizaban los usuarios las fotos en Picasa (la primera aplicación de fotos de Google) nos ayudó a diseñar y lanzar Google Fotos.
+Ofrecer servicios personalizados, incluido el contenido y los anuncios
+
+Utilizamos la información que recogemos para ofrecerte servicios personalizados, como recomendaciones, contenido personalizado y resultados de búsqueda personalizados. Por ejemplo, la revisión de seguridad ofrece consejos de seguridad adaptados a la forma en que utilizas los productos de Google, o Google Play utiliza información, como las aplicaciones que ya has instalado y los vídeos que has visto en YouTube, para sugerirte nuevas aplicaciones que pueden gustarte.
+
+Según la configuración que establezcas, también podemos mostrarte anuncios personalizados en función de tus intereses. Por ejemplo, si buscas "bicis de montaña", puede que aparezca un anuncio de material deportivo cuando visites un sitio web que muestre anuncios publicados por Google. Puedes controlar la información que utilizamos para mostrarte anuncios en la configuración de anuncios.
+
+    No te mostramos anuncios personalizados basados en categorías sensibles como, por ejemplo, la raza, la religión, la orientación sexual o la salud.
+    No compartimos información que te identifique personalmente (como tu nombre o tu dirección de correo electrónico) con los anunciantes, a menos que nos lo solicites. Por ejemplo, si ves un anuncio de una floristería cercana y seleccionas el botón para llamar al negocio, conectaremos tu llamada y puede que compartamos tu número de teléfono con la floristería.
+
+Ir a Configuración de anuncios
+Medir el rendimiento
+
+Utilizamos datos en herramientas de análisis y mediciones para comprender cómo se utilizan nuestros servicios. Por ejemplo, analizamos los datos de las visitas que realizas a nuestros sitios web con el objetivo de optimizar el diseño del producto. También utilizamos los datos sobre los anuncios con los que interactúas para ayudar a los anunciantes a conocer el rendimiento de sus campañas publicitarias. Para ello, utilizamos diferentes herramientas, como Google Analytics. Cuando accedes a sitios web que utilizan Google Analytics, es posible que Google y el cliente de Google Analytics vinculen información sobre tu actividad en ese sitio web con la actividad de otros sitios web que usan nuestros servicios publicitarios.
+Comunicarnos contigo
+
+Utilizamos la información que recogemos, como tu dirección de correo electrónico, para interactuar directamente contigo. Por ejemplo, podemos enviarte una notificación si detectamos alguna actividad sospechosa, como un intento de inicio de sesión en tu cuenta de Google desde una ubicación inusual. También podemos informarte sobre próximos cambios o mejoras en nuestros servicios. Si te pones en contacto con Google, guardaremos un registro de tu solicitud para ayudarte a solucionar los posibles problemas que puedas tener.
+Proteger a Google, a nuestros usuarios y al público en general
+
+Utilizamos la información para ayudar a mejorar la seguridad y fiabilidad de nuestros servicios. Esto incluye detectar, prevenir y responder frente a fraudes, abusos, riesgos de seguridad y problemas técnicos que puedan dañar a Google, a nuestros usuarios o al público en general.
+
+Utilizamos diferentes tecnologías para procesar tu información con estos objetivos. Empleamos sistemas automatizados que analizan tu contenido para ofrecerte resultados de búsqueda personalizados, anuncios personalizados u otras funciones adaptadas a la forma en que utilizas nuestros servicios. Asimismo, analizamos tu contenido para poder detectar abusos, como spam, software malicioso y contenido ilegal. También utilizamos algoritmos para reconocer patrones en datos. Por ejemplo, el Traductor de Google ayuda a los usuarios a comunicarse en diferentes idiomas mediante la detección de patrones de lenguaje habituales en las frases que le pides traducir.
+
+Podemos combinar la información que recogemos a través de nuestros servicios y de todos tus dispositivos para las finalidades anteriores. Por ejemplo, si reproduces vídeos de guitarristas en YouTube, puede que te mostremos un anuncio de clases de guitarra en un sitio web que utilice nuestros productos publicitarios. En función de la configuración de tu cuenta, es posible que tu actividad en otros sitios web y otras aplicaciones se asocie a tu información personal para mejorar los servicios de Google y los anuncios que te mostramos.
+
+Si otros usuarios ya tienen tu dirección de correo electrónico u otra información que te identifique, podemos mostrarles la información de tu Cuenta de Google que sea visible públicamente como, por ejemplo, tu nombre y tu foto. Esto permite, por ejemplo, que los usuarios identifiquen los correos electrónicos que les envíes.
+
+Te pediremos tu consentimiento antes de utilizar tu información con una finalidad que no se incluya en esta Política de Privacidad.
+Tus controles de privacidad
+
+Puedes elegir qué información recogemos y cómo la utilizamos
+
+En esta sección, se describen los controles principales que te permiten gestionar la privacidad en todos nuestros servicios. También puedes acceder a la revisión de privacidad para comprobar y modificar las opciones de privacidad importantes. Además de estas herramientas, ofrecemos funciones de privacidad específicas en nuestros productos. Puedes obtener más información en la guía sobre privacidad en los productos de Google.
+
+Ir a la revisión de privacidad
+Gestionar, revisar y actualizar tu información
+
+Si has iniciado sesión, puedes revisar y actualizar la información siempre que quieras accediendo a los servicios que utilizas. Por ejemplo, Fotos y Drive están diseñados para ayudarte a gestionar tipos concretos de contenido que has guardado en Google.
+
+También hemos creado un espacio donde revisar y controlar la información que has guardado en tu Cuenta de Google. Tu Cuenta de Google incluye:
+Controles de privacidad
+Controles de actividad
+
+Decide el tipo de actividad que quieres guardar en tu cuenta. Por ejemplo, puedes activar el historial de ubicaciones si quieres obtener predicciones de tráfico para tu trayecto diario al trabajo, o puedes guardar el historial de reproducciones de YouTube para recibir mejores sugerencias de vídeos.
+
+Ve a Controles de la actividad de tu cuenta
+Configuración de anuncios
+
+Gestiona las preferencias de los anuncios que se muestran en Google o en sitios web y en aplicaciones asociados con Google para publicar anuncios. Puede modificar tus intereses, decidir si tu información personal se utiliza para mostrarte anuncios más relevantes y activar o desactivar determinados servicios publicitarios.
+
+Ir a Configuración de anuncios
+Sobre ti
+
+Controla la información que otros usuarios ven sobre ti en los servicios de Google.
+
+Ir a Sobre ti
+Recomendaciones compartidas
+
+Decide si quieres que tu nombre y tu foto aparezcan junto a tu actividad, como las opiniones y las recomendaciones que se muestran en los anuncios.
+
+Ir a Recomendaciones compartidas
+Datos compartidos por ti
+
+Controla con quién compartes información a través de tu cuenta en Google+.
+
+Ir a Información que compartes
+Formas de revisar y actualizar tu información
+Mi Actividad
+
+Mi Actividad te permite revisar y controlar los datos que se crean cuando utilizas los servicios de Google, como las búsquedas realizadas o las visitas a Google Play. Puedes consultar por fecha o por tema y eliminar la actividad de forma parcial o por completo.
+
+Ir a Mi Actividad
+Panel de Control de Google
+
+Panel de Control de Google te permite gestionar la información asociada a productos específicos.
+
+Ir a Panel de Control
+Tu información personal
+
+Gestiona tu información de contacto, como el nombre, la dirección de correo electrónico y el número de teléfono.
+
+Ir a Información personal
+
+Al cerrar sesión, puedes gestionar la información asociada a tu navegador o tu dispositivo, incluida la siguiente:
+
+    Personalización de búsquedas sin iniciar sesión: Decide si quieres que tu actividad de búsqueda se utilice para ofrecerte resultados y recomendaciones más relevantes.
+    Configuración de YouTube: Pausa y elimina tu historial de búsqueda de YouTube y tu historial de reproducciones de YouTube.
+    Configuración de anuncios: Gestiona tus preferencias sobre los anuncios que aparecen en Google y en los sitios web y las aplicaciones que se asocian con Google para mostrar anuncios.
+
+Exportar, retirar y eliminar tu información
+
+Puedes exportar una copia del contenido de tu cuenta de Google si quieres realizar una copia de seguridad o utilizarla con un servicio externo a Google.
+
+Exportar tus datos
+
+También puedes solicitar que se retire contenido de determinados servicios de Google de acuerdo con las leyes aplicables.
+
+Para eliminar tu información, puedes:
+
+    Eliminar tu contenido de servicios específicos de Google.
+    Buscar elementos específicos y eliminarlos de tu cuenta mediante Mi Actividad.
+    Eliminar productos concretos de Google, incluida tu información asociada a esos productos.
+    Eliminar tu Cuenta de Google por completo.
+
+Eliminar tu información
+
+Por último, puedes utilizar Administrador de cuentas inactivas para permitir a otros usuarios acceso a partes de tu cuenta de Google en caso de que no puedas utilizarla de forma inesperada.
+
+Puedes utilizar otros métodos para controlar la información que Google recoge tanto si has iniciado sesión en una Cuenta de Google como si no, por ejemplo:
+
+    Configuración del navegador: Por ejemplo, puedes configurar el navegador para que te indique cuándo Google ha establecido una cookie en tu navegador. También puedes configurar el navegador para que bloquee todas las cookies de un dominio específico o de todos los dominios. No obstante, debes tener en cuenta que nuestros servicios utilizan las cookies para funcionar correctamente, por ejemplo, para poder recordar las preferencias de idioma.
+    Configuración del dispositivo: Tu dispositivo puede tener controles que determinen el tipo de información que recogemos. Por ejemplo, puedes modificar los ajustes de ubicación en tu dispositivo Android.
+
+Compartir tu información
+Cuando compartes tu información
+
+Muchos de nuestros servicios te permiten compartir información con otros usuarios y controlar cómo se comparte. Por ejemplo, puedes compartir vídeos en YouTube públicamente o decidir que sean privados. Ten en cuenta que, al compartir información públicamente, tu contenido puede ser accesible a través de motores de búsqueda, incluida la Búsqueda de Google.
+
+Cuando inicias sesión e interactúas con algunos servicios de Google como, por ejemplo, cuando dejas comentarios en un vídeo de YouTube o das tu opinión sobre una canción en Play, tu nombre y tu foto aparecen junto a tu actividad. También puede que mostremos esta información en anuncios, según los ajustes de recomendaciones compartidas que establezcas.
+Cuando Google comparte tu información
+
+No compartimos tu información personal con empresas, organizaciones o individuos ajenos a Google excepto en los siguientes casos:
+Consentimiento
+
+Compartiremos información personal de forma externa a Google si contamos con tu consentimiento. Por ejemplo, si utilizas Google Home para solicitar un viaje a un servicio de coche compartido, te pediremos permiso antes de compartir tu dirección con ese servicio. Te solicitaremos tu consentimiento explícito para compartir cualquier información personal sensible.
+Administradores de dominio
+
+Si eres un estudiante o trabajas para una organización que utiliza servicios de Google (como G Suite), el administrador de dominio y los distribuidores que gestionen tu cuenta tendrán acceso a tu cuenta de Google. Podrán hacer lo siguiente:
+
+    Acceder a información almacenada en tu cuenta y conservarla como, por ejemplo, tu correo electrónico.
+    Consultar estadísticas sobre tu cuenta, como el número de aplicaciones que tienes instaladas.
+    Cambiar la contraseña de tu cuenta.
+    Suspender o cancelar el acceso a tu cuenta.
+    Recibir información de tu cuenta para cumplir con cualquier requisito previsto en la ley o la normativa aplicables o para atender un proceso legal o un requerimiento de una autoridad competente.
+    Restringir la posibilidad de que elimines o edites tu información o tu configuración de privacidad.
+
+Tratamiento externo
+
+Proporcionamos información personal a nuestros afiliados y a otras empresas y personas de confianza para que la traten en nuestro nombre de acuerdo con las instrucciones que les proporcionamos y de conformidad con nuestra Política de Privacidad y otras medidas de seguridad y confidencialidad aplicables. Por ejemplo, utilizamos proveedores de servicios para ofrecer nuestro servicio de asistencia.
+Motivos legales
+
+Compartiremos información personal de forma externa a Google si consideramos de buena fe que es razonablemente necesario acceder a esos datos o utilizarlos, conservarlos o revelarlos con los siguientes propósitos:
+
+    Cumplir con cualquier requisito previsto en la ley o la normativa aplicables o para atender un proceso legal o un requerimiento de una autoridad competente. Puede consultar la información sobre el número y el tipo de solicitudes que recibimos de autoridades en el Informe de transparencia.
+    Cumplir las condiciones de servicio aplicables, incluida la investigación de posibles infracciones.
+    Detectar, prevenir o solucionar de otra forma fraudes o problemas de seguridad o técnicos.
+    Proteger a Google, a nuestros usuarios y al público en general de daños a sus derechos y bienes o a su seguridad en la medida exigida o permitida por la ley.
+
+Es posible que compartamos información personal no identificable públicamente y con nuestros partners, como editores, anunciantes, desarrolladores o titulares de derechos. Por ejemplo, compartimos información públicamente para mostrar las tendencias sobre el uso general de nuestros servicios. También permitimos que determinados partners recojan información de tu navegador o dispositivo para fines de medición y publicitarios mediante sus propias cookies o tecnologías similares.
+
+Si Google participa en una fusión, adquisición o venta de activos, seguiremos garantizando la confidencialidad de tu información personal y avisaremos a los usuarios afectados antes de transferir esta información o antes de que quede sometida a una política de privacidad diferente.
+Proteger tu información
+
+Integramos la seguridad en nuestros servicios para proteger la información de nuestros usuarios
+
+Todos los productos de Google incluyen funciones de seguridad sólidas que protegen constantemente tu información. Mantener nuestros servicios nos ofrece información que nos ayuda a detectar y bloquear automáticamente amenazas de seguridad para que nunca te afecten. Si detectamos algún riesgo que consideramos que debes conocer, nos pondremos en contacto contigo y te indicaremos los pasos que debes seguir para mejorar tu protección.
+
+Nos esforzamos al máximo por proteger a Google y a nuestros usuarios de cualquier alteración, divulgación o destrucción no autorizadas de los datos que conservamos o del acceso no autorizado a esta información. Para ello:
+
+    Utilizamos cifrado con el objetivo de mantener la privacidad de los datos de los usuarios mientras están en tránsito.
+    Contamos con diferentes funciones de seguridad, como Navegación Segura, la revisión de seguridad y la verificación en dos pasos, para ayudarte a proteger tu cuenta.
+    Revisamos nuestras prácticas de recogida, almacenamiento y tratamiento de datos (incluidas las medidas de seguridad físicas) para evitar el acceso no autorizado a nuestros sistemas.
+    Restringimos el acceso a la información personal para que solo puedan acceder a ella aquellos empleados, contratistas y agentes de Google que necesitan dicha información para procesarla. Todos los que tengan acceso a esta información están sujetos a estrictas obligaciones contractuales de confidencialidad y pueden ser sancionados o despedidos si no las cumplen.
+
+Exportar y eliminar tu información
+
+Puedes exportar una copia de su información o eliminarla de tu cuenta de Google en cualquier momento
+
+Puedes exportar una copia del contenido de tu cuenta de Google si quieres realizar una copia de seguridad o utilizarla con un servicio externo a Google.
+
+Exportar tus datos
+
+Para eliminar tu información, puedes:
+
+    Eliminar tu contenido de servicios específicos de Google.
+    Buscar elementos específicos y eliminarlos de tu cuenta mediante Mi Actividad.
+    Eliminar productos concretos de Google, incluida tu información asociada a esos productos.
+    Eliminar tu Cuenta de Google por completo.
+
+Eliminar tu información
+
+En algunos casos, conservamos los datos durante periodos limitados para finalidades legales o comerciales legítimas. Puedes consultar los periodos de retención de datos de Google, incluido cuánto tardamos en eliminar tu información.
+
+Intentamos garantizar que nuestros servicios eviten que la información se elimine de forma accidental o maliciosa. Por este motivo, es posible que se produzcan retrasos desde que eliminas contenido hasta que las copias desaparecen de nuestros sistemas activos y nuestros sistemas de copia de seguridad.
+Cumplimiento y cooperación con autoridades reguladoras
+
+Revisamos periódicamente esta Política de Privacidad y nos aseguramos de tratar la información de conformidad con ella.
+Transferencias de datos
+
+Contamos con servidores por todo el mundo, por lo que tu información puede tratarse en servidores que se encuentran fuera de tu país de residencia. Las normativas de protección de datos varían en función del país, por lo que algunas ofrecen más protección que otras. Independientemente de dónde se trate la información, implementamos las mismas medidas de protección que se describen en esta política. También cumplimos determinados marcos legales relacionados con la transferencia de datos como, por ejemplo, los marcos del Privacy Shield UE - EE. UU. y de Suiza - EE. UU.
+
+Cuando recibimos reclamaciones formales por escrito, nos ponemos en contacto con la persona que ha hecho la reclamación. Asimismo, trabajamos con las autoridades reguladoras competentes, incluidas autoridades locales de protección de datos, para resolver cualquier reclamación relacionada con la transferencia de datos que no hayamos podido solucionar directamente con los usuarios.
+Requisitos europeos
+
+Si la normativa de protección de datos 
