@@ -44,21 +44,22 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \subsubsection{Klassifizierung von Texten}
 
 \textbf{Idee}
-Aus Texten in 8 verschiedenen Sprachen soll mittels Kompression eine Klassifizierung stattfinden. Dazu wurden folgende Datensätze vorbereitet:
+
+Aus Texten in 8 verschiedenen Sprachen soll mittels Kompression eine Klassifizierung stattfinden. Dazu wurden folgende Datensätze als \" *.txt \" Datein vorbereitet:
 
 \begin{itemize}
 	\item Abstract einer wissenschaftlichen Arbeit. Diese hatte den Vorteil dass es eine deutsche und englische Übersetzung gab. Alle weiteren Sprachen wurden aus der englischen Version mittels \textit{google translate} generiert.
 	\item Wörterbuch mit 10000 deutschen Wörtern. Dieser Datensatz wurde mittels \textit{google translate} in alle anderen Sprachen übersetzt.
-	\item Die erste Seite der Datenschutzrichtlinien von Facebook. Da die Datenschutzrichtlinien in sämtlichen Sprachen abruf bar sind, konnte für alle Sprachen ein passender Datensatz gefunden werden.
+	\item Die erste Seite der Datenschutzrichtlinien von Facebook. Da die Datenschutzrichtlinien in sämtlichen Sprachen abrufbar sind, konnte für alle Sprachen ein passender Datensatz gefunden werden.
 	\item Die erste Seite der Datenschutzrichtlinien von Google. Auch hier waren Daten in allen Sprachen verfügbar.
-	\item Ein Witz der aus dem deutschen in alle andern Sprachen übersetzt wurde.
+	\item Ein Witz der aus dem deutschen mittels \textit{google translate} in alle andern Sprachen übersetzt wurde.
 \end{itemize}
 
-Da nach einer Übersetzung die Texte in verschiedenen Sprachen ungleich viele Buchstaben beinhalten ist auch die Dateigröße unterschiedlich. Dies könnte eventuell rechnerisch berücksichtigt werden. Viel einfacher aber ist es, die letzten Buchstaben jedes langen Textes zu ignorieren und so eine einheitliche Länge des Textes zu gewährleisten. Dies wurde mittels eines shell-Skripts erreicht, welches die ersten $n$ Bytes eines Files speichert. So konnte für jeden Text eine Datei erzeugt werden die in allen Sprachen den selben Speicherbedarf hat. Da es um Klassifizierung geht ist der Verlust der letzten Buchstaben bzw Wörter nicht wesentlich. 
+Da nach einer Übersetzung die Texte in verschiedenen Sprachen ungleich viele Buchstaben beinhalten ist auch die Dateigröße unterschiedlich. Dies könnte eventuell rechnerisch berücksichtigt werden. Viel einfacher aber ist es, die letzten Buchstaben jedes langen Textes zu ignorieren und so eine einheitliche Länge des Textes zu gewährleisten. Dies wurde mittels eines shell-Skripts erreicht, welches nur die ersten $n$ Bytes eines Files speichert. So konnte für jeden Text eine Datei erzeugt werden die in allen Sprachen den selben Speicherbedarf hat. Der Verlust der letzten Byte ist bei einer Klassifizierung unwesentlich. 
 
 \lstinputlisting[frame=single,language=MATLAB,breaklines=true]{../cutData.sh}
 
-Nach einer solchen Normierung der Texte können diese miteinander verglichen werden. Dazu wurde ein Programm in \textit{Octave} geschrieben, welches die Texte der einzelnen Datensätze miteinander vergleicht und in einer Matrix darstellt. 
+Nach einer solchen Normierung der Texte können diese miteinander verglichen werden. Dazu wurde ein Programm in \textit{Octave} geschrieben (siehe Listing \ref{fig: calculateMatrixOctaveCode}  , welches die Texte der einzelnen Datensätze miteinander vergleicht und in einer Matrix darstellt. Eine qualitativ hochwertige Aussage ob die Ergebisse statistische Aussagekraft haben, kann mit $5$ Datensätzen nicht getroffen werden. Es ist aber sicherlich ein Trend erkennbar.
 
 
 \begin{figure}[H]
@@ -68,7 +69,10 @@ Nach einer solchen Normierung der Texte können diese miteinander verglichen wer
 	\label{fig: zipDataMatrix}
 \end{figure}
 
-\lstinputlisting[frame=single,language=MATLAB,breaklines=true]{../calculateZipMatrix.m}
+\newpage
+\lstinputlisting[frame=single,language=MATLAB,breaklines=true,caption = Octave Script zur Darstellung der einzelnen Kompressionsraten.]{../calculateZipMatrix.m}
+\label{fig: calculateMatrixOctaveCode}
+
 
 \subsubsection{OPTIONAL – nur für Interessierte/Experten}
 
@@ -78,11 +82,10 @@ Nach einer solchen Normierung der Texte können diese miteinander verglichen wer
 Figure \ref{fig: manualLemperZivPdf} zeigt die händische Berechnung der Lemper Ziv Kompression. Beim Übertragen ins Protokoll wurde allerdings ein Fehler entdeckt, der in Tabelle \ref{tab:Level Ziv Kompression} korrigiert wurde.
 
 
-\begin{figure}[H]
-	\includepdf[scale=0.4]{images/lemperZiv.pdf}
-	\label{fig: manualLemperZivPdf}
-	\caption{fig: manualLemperZivPdf}
-\end{figure}
+
+\includepdf[scale=0.4]{images/lemperZiv.pdf}
+\label{fig: manualLemperZivPdf}
+
 
 \begin{table}[H]
   \centering
