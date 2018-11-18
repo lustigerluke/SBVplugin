@@ -47,34 +47,37 @@ public class Resample_ implements PlugInFilter {
 		newHeight = (int)(height * tgtScaleFactor + 0.5);
 		
 		
-		// variante A
+		// variant A of transformation of coordinates
 		//double scaleFactorX = newWidth / (double)(width);
 		//double scaleFactorY = newHeight / (double)(height);
 		
-		// variante B
+		// variant B of transformation of coordinates
 		double scaleFactorX = (double)(newWidth - 1.0) / (double)(width - 1.0);
 		double scaleFactorY = (double)(newHeight - 1.0) / (double)(height - 1.0);
 		
+		//information output
 		System.out.println("tgtScale: " + tgtScaleFactor + ", sX: " + scaleFactorX + ", sY: " + scaleFactorY);
 		System.out.println("new width: " + newWidth + ", new height: " + newHeight);
 		
 		int[][] scaledImage = new int[newWidth][newHeight];
 		
+		//iterate over all pixel of the scaled image
 		for(int x = 0; x < newWidth; x++) {
 			for (int y = 0 ; y < newHeight; y++) {
+				//calculate new scaled x and y coordinates
 				double newX = (double)(x) / scaleFactorX;
 				double newY = (double)(y) / scaleFactorY;
 				
+				//calculate new result value
 				int resultVal = GetNNinterpolatedValue(inDataArrInt, newX, newY, width, height);
-
+				
+				//set new value
 				scaledImage[x][y] = resultVal;
 				
 			}
 		}
 		
-		
-        //
-        //                  
+		//show new image                
         ImageJUtility.showNewImage(scaledImage, newWidth, newHeight, "scaled img");
                         
 	} //run
@@ -86,6 +89,7 @@ public class Resample_ implements PlugInFilter {
 	
 	
 	public int GetNNinterpolatedValue(int[][] inImg, double x, double y, int width, int height) {
+		//round x and y position
 		int xPos = (int) (x + 0.5);
 		int yPos = (int) (y + 0.5);
 		
@@ -97,16 +101,9 @@ public class Resample_ implements PlugInFilter {
 	}
 	
 	public int GetBilinearinterpolatedValue(int[][] inImg, double x, double y, int width, int height) {
-		//TODO
-		// how to get the 4 coordinate points for e.g. (3.7, 12.2)
-		//P0: (3,12)
-		//P1: (4,12)
-		//P2: (3,13)
-		//P3: (4,13)
-		
-		//imagecalculator macht diff Images
+		//implemented in separate java file
 		
 	}
 	
-} //class FilterTemplate_
+} //class Resample_
 

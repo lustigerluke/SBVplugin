@@ -35,6 +35,7 @@ public class ResampleBilineareInterpolation_ implements PlugInFilter {
 			return;
 		}
 
+		//get user input of scale factor
 		double tgtScaleFactor = dialog.getNextNumber();
 
 		// check range
@@ -42,32 +43,37 @@ public class ResampleBilineareInterpolation_ implements PlugInFilter {
 			return;
 		}
 
-		newWidth = (int) (width * tgtScaleFactor + 0.5); // typecast int rundet ab, +0.5 --> arithmetisches runden
+		//calculate new width and height with scale factor
+		newWidth = (int) (width * tgtScaleFactor + 0.5);
 		newHeight = (int) (height * tgtScaleFactor + 0.5);
 
-		// calc scale factor per dimension; (variante a)
+		// calculate scale factor per dimension (variant a)
 		double scaleFactorX = newWidth / ((double) width);
 		double scaleFactorY = newHeight / ((double) height);
+		
+		//information output
 		System.out.println("tgtScale = " + tgtScaleFactor + "sX=" + scaleFactorX + "sY=" + scaleFactorY);
 		System.out.println("new width = " + newWidth + "new height = " + newHeight);
 
 		int[][] scaledImg = new int[newWidth][newHeight];
 
-		// fill new result image --> iterate over result image (backward mapping, geht
-		// bei vergrößern und verkleinern)
+		// fill new result image --> iterate over result image
 		for (int x = 0; x < newWidth; x++) {
 			for (int y = 0; y < newHeight; y++) {
 				// calculate new coordinate
 				double newX = x / scaleFactorX;
 				double newY = y / scaleFactorY;
 
+				//get bilinear interpolated value
 				double resultVal = GetBilinearInterpolatedValue(inDataArrInt, newX, newY, width, height);
-
+				
+				//set new rounded value for current location
 				scaledImg[x][y] = (int) (resultVal + 0.5);
 
 			}
 		}
 
+		//show new image
 		ImageJUtility.showNewImage(scaledImg, newWidth, newHeight, "scaled img (bilinear interpolation");
 
 	} // run
@@ -78,13 +84,16 @@ public class ResampleBilineareInterpolation_ implements PlugInFilter {
 		double deltaX = x - Math.floor(x);
 		double deltaY = y - Math.floor(y);
 
+		// set calculation fregment
 		int xPlus1 = (int) x + 1;
 		int yPlus1 = (int) y + 1;
 
+		//handling of image edge for x
 		if (x + 1 >= width) {
 			xPlus1 = (int) x;
 		} 
 		
+		//handling of image edge for y
 		if (y + 1 >= height) {
 			yPlus1 = (int) y;
 		}
@@ -106,4 +115,4 @@ public class ResampleBilineareInterpolation_ implements PlugInFilter {
 		IJ.showMessage("About Template_...", "this is a PluginFilter template\n");
 	} // showAbout
 
-} // class Resample_
+} // class ResampleBilinearInterpolation_
