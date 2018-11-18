@@ -130,7 +130,53 @@ In der korrigierten Version ergibt die resultierende Zeichenkette:
 
 \subsubsection{Transformation einer Sequenz}
 
-\subsubsection{Kompression einer Sequenz}
+\subsubsection{Komprimierung einer Sequenz mittels Runlength Coding}
+\textit{Berechnung der Kompressionsrate} 
+
+Die nachfolgende Sequenz soll anhand von Runlength Coding händisch komprimiert und die Kompressionsrate ausgegeben werden:
+
+010101111100000111100010101111 (30 Stellen, n=2 Symbole:0,1) \\
+
+Die Sequenz wird von links nach rechts codiert, und anstatt der eigentlichen Zeichen die Häufigkeit dieser ausgegeben. Nach der händischen Komprimierung weist die Frequenz folgende Lauflänge auf:
+
+11111554311114 (14 Stellen)\\
+
+
+Daraus ergibt sich folgende Kompressionsrate:
+
+30/14 = \textbf{ 2,14}\\
+
+\textit{Erweiterung der Symbolmenge}\\
+Die Komprimierung von Sequenzen anhand der RLC ist am effektivsten, je homogener der Informationsgehalt ist. Das bedeutet, das bei einer Steigerung der unterschiedlichen Zeichen die Komprimierungsmethode in manchen Fällen nicht mehr sinnvoll angewandt werden kann. Bei sehr kurzen Sequenzen kann es sogar zu einer Erhöhung der Zeichenanzahl in dieser kommen.\\
+
+Wird nun die Anzahl der Symbole erhöht, muss beachtet werden, dass zusätzlich zu der Häufigkeit des Zeichens noch ein Trennsymbol, eine ID bzw. das Zeichen selbst mitgegeben werden muss. Dies wird anhand eines selbst gewählten Beispiels demonstriert.\\
+
+Folgende Sequenz wird anhand von RLC komprimiert:
+
+AABBBBBBBBCCCCCCCDEEEEEEEFFGHIIJJJKLMNNN\\ (40 Stellen, n=13 Symbole:A,B,C,D,E,F,G,H,I,J,K,L,M,N)\\
+
+Die komprimierte Sequenz lautet:
+
+A2B8C7D1E7F2H1I2J3K1L1M1N3 (26 Stellen)\\
+
+Daraus ergibt sich folgende Kompressionsrate:
+
+40/26=\textbf{1,54}\\
+
+Wird eine sehr kurze Sequenz mit einer hohen Anzahl an Zeichen wiederholt, kann es aufgrund einer niedrigen Homogenität des Informationsgehalts dazu kommen, dass die codierte Sequenz länger ist, als die Originale.\\
+
+
+Folgende Sequenz wird anhand von RLC komprimiert:
+
+ABBCDEEFFFGHIIJJJKLLLMNOPQRSTU\\ (30 Stellen, n=21 Symbole:A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U)\\
+
+Die komprimierte Sequenz lautet:
+
+A1B2C1D1E2F3G1H1I2J3K1L3M1N1O1P1Q1R1S1T1U1 (42 Stellen)\\
+
+Daraus ergibt sich folgende Kompressionsrate:
+
+30/42=\textbf{0,71}\\
 
 \subsubsection{Entropieberechnung}
 \end{document}
