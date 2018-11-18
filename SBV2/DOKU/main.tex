@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{array}
+\usepackage{pdfpages}
+
 \lstset{
 extendedchars=\true,
 language=JAVA,
@@ -72,7 +74,59 @@ Nach einer solchen Normierung der Texte können diese miteinander verglichen wer
 
 
 \subsection{Kompression und Code-Transformation}
-\subsubsection{Kompression einer Sequenz}
+\subsubsection{Lempel-Ziv Kompression einer Sequenz}
+Figure \ref{fig: manualLemperZivPdf} zeigt die händische Berechnung der Lemper Ziv Kompression. Beim Übertragen ins Protokoll wurde allerdings ein Fehler entdeckt, der in Tabelle \ref{tab:Level Ziv Kompression} korrigiert wurde.
+
+
+\begin{figure}[H]
+	\includepdf[scale=0.4]{images/lemperZiv.pdf}
+	\label{fig: manualLemperZivPdf}
+	\caption{fig: manualLemperZivPdf}
+\end{figure}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c | c | c | c | c |}
+    \hline
+   	aktuelles  & nächstes  & Ausgabe  & ins & Speicher \\
+   	 Zeichen &  Zeichen &  (im Wörterbuch?) & Wörterbuch! &  \\
+	a & b & N $ \rightarrow $ a & ab & 256 \\
+	b & a & N $ \rightarrow $ b & ba & 257 \\
+	a & b & Y $ \rightarrow $ 256 & aba & 258 \\
+	a & b & Y $ \rightarrow $ 256 & abb & 259 \\
+	b & b & N $ \rightarrow $ b & bb & 260 \\
+	b & a & Y $ \rightarrow $ 257 & baa & 261 \\
+	a & a & N $ \rightarrow $ a & aa & 262 \\
+	a & a & Y $ \rightarrow $ 256 & aab & 263 \\
+	b & a & Y $ \rightarrow $ 257 & bab & 264 \\
+	b & a & Y (257), Y $ \rightarrow $ 264 & babc & 265 \\
+	c & c & N $ \rightarrow $ c & cc & 266 \\
+	c & d & N $ \rightarrow $ c & cd & 267 \\
+	d & d & N $ \rightarrow $ d & dd & 268 \\
+	d & d & Y $ \rightarrow $ 268 & dda & 269 \\
+	a &   & N $ \rightarrow $ a &     &   \\ 
+   	
+  \end{tabular}
+  \caption{Level Ziv Kompression}
+  \label{tab:Level Ziv Kompression}
+\end{table}
+
+In der korrigierten Version ergibt die resultierende Zeichenkette: 
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c | c | c | c |}
+    \hline
+    97 & 98& 256 & 256 & 98 & 257 & 97 & 262 & 257 & 264 & 99 & 99 & 100 & 268 & 269 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+\begin{equation}[H]
+ Kompressionsrate C = \frac{23}{15} = 1.5334	
+\end{equation}
+
 
 \subsubsection{Transformation einer Sequenz}
 
