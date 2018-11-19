@@ -37,7 +37,7 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \section{Übungsaufgaben II}
 \subsection{Resampling und Interpolation}
 \subsubsection{Implementierung Resampling}
-Die Implementierung des Resampling Filters wurde in diesem Abschnitt anhand der Nearest Neighbour Interpolation umgesetzt. Bevor der Filter ausgeführt wird, wird zuerst der Skalierungsfaktor bei dem Benutzer abgefragt. Gibt der Benutzer einen positiven Wert ein, der über dem Default-Wert von 2.0 liegt, wird das Bild vergrößert. Gibt er einen negativen Wert ein wird das Eingangsbild verkleinert.
+Die Implementierung des Resampling Filters wurde in diesem Abschnitt anhand der Nearest Neighbour Interpolation umgesetzt. Bevor der Filter ausgeführt wird, wird zuerst der Skalierungsfaktor bei dem Benutzer abgefragt. Gibt der Benutzer einen Wert ein, der über 1.0 liegt, wird das Bild vergrößert. Gibt er einen Wert ein, der unter 1.0 liegt wird das Eingangsbild verkleinert.
 
 In dieser Implementierung wird die Umrechnung der Koordinaten anhand der Variante B umgesetzt. Dies bedeutet, dass der Skalierungsfaktor bereits vor der Neuberechnung der Koordinaten angepasst wird, in dem von diesem 1 subtrahiert wird. Das heißt, die neue Koordinate vom skalierten Bild B wird mit der Koordinate aus dem Originalbild A um den adaptierten Skalierungsfaktor s' multipliziert. Dies hat zur Folge, dass sich die Indizes in der Mitte zentrieren. Der Anfang bzw. das Ende des Bild Arrays bleibt hierbei aber weiterhin unterrepräsentiert.\\
 
@@ -48,13 +48,23 @@ Die Implementierung des Resamplings Filters wurde in diesem Abschnitt anhand der
 
 Danach wird die neue Höhe und Breite des Eingangsbildes anhand des Skalierungsfaktor berechnet. Zusätzlich wird der Skalierungsfaktor für die x und y Koordinaten separat berechnet und gespeichert. Anschließend wird anhand einer for-Schleife über alle Pixel des neu angelegten Arrays des skalierten Bildes iteriert. 
 
-TODO: Das mit den vier Pixel suchen beschreiben und weniger details.
-
-Neben der neuen Koordinate wird der Pixelwert anhand der Methode GetBilinearInterpolatedValue() berechnet. Hierbei werden für die Berechnung des Wertes zuerst Teile der Kalkulation in Variablen gespeichert. In diesem Fall das deltaX, deltaY, sowie die Offset-Werte. Anschließend werden noch die Offset-Werte wieder auf ihren ursprünglichen Wert gesetzt, wenn die Iteration über alle Pixel an den Bildrändern ankommt. 
+Neben der neuen Koordinate wird der Pixelwert anhand der Methode GetBilinearInterpolatedValue() berechnet. In dieser werden unterschiedliche Fragemente für die Berechnung des gewichteten Mittelwert aufbereitet. Damit der neue skalare Wert berechnet werden kann, müssen zuerst 4 benachbarten Pixel aus dem Originalbild ermittelt werden. Die Nachbarpixel sind folgende: p1(x+1,y), p2(x,y+t1), p3(x+1, y+1) und p4(x,y). 
 
 
-Um den gewichtet Mittelwert für diesen Pixel zu erhalten, werden zuerst die skalaren Werte der 4 benachbarten Pixel in Variablen gespeichert. Anhand der Kalkulationsfragmente, den benachbarten skalaren Werte kann nun der gewichtete Mittelwert berechnet werden. Anschließend wird dieser Wert an die Methode retourniert und im skalierten Bild an der aktuellen Koordinate eingefügt.
+Um den gewichtet Mittelwert für diesen Pixel zu erhalten werden anhand der Kalkulationsfragmente, den benachbarten skalaren Werten (p1-p4) der gewichtete Mittelwert berechnet werden. Anschließend wird dieser Wert an die Methode retourniert und im skalierten Bild an der aktuellen Koordinate eingefügt.\\
 
+\textit{Test der Implementierung}
+
+Um die Implementierung des Resampling Filters anhand der bi-linearen Interpolation zu prüfen, wurden zwei Testbilder inklusive Differenzbilder generiert.
+
+Folgendes Bild wurde um den Faktor 3.0 vergrößert:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{images/scaled-img-bilinear-interpolation-3.jpg}
+	\caption{Skalierung anhand Faktor 3.0}
+	\label{fig:resultResamplingBilinearInterpolation-3.0}
+\end{figure}
 TODO: Testbild einfügen
 
 TODO: Differenzbild einfügen (Image J Funktionalität)
@@ -229,14 +239,35 @@ Daraus ergibt sich folgende Kompressionsrate:
 \subsubsection{Entropieberechnung}
 Folgende Sequenz zur Entropieberechnung ist gegeben:
 
-111122661112233334564511211111 (n=6 Symbole: 1,2,3,4,5,6)\\
+111122661112233334564511211111 (30 Stellen, n=6 Symbole: 1,2,3,4,5,6)\\
 
-\textit{Minimale und Maximale Entropie}\\
-Bei welcher 10-stelligen Sequenz ist die Entropie maximal bzw. bei welcher 10-stelligen Sequenz ist die Entropie minimal? 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{images/entropieBerechnung.jpg}
+	\caption{manuelle Entropieberechnung}
+	\label{fig:resultEntropie}
+\end{figure}
+
+Nachdem die Häufigkeiten der Symbole erfasst wurde, wurde die Formel der Shannon-Entropie angewandt. Das Ergebnis der Berechnung lautet \textbf{2,1846}. \\
+
+\textit{Minimale und Maximale Entropie}
+
+Bei foglender 10-stelliger Sequenz ist die Entropie minimal:
+
+Sequenz: 1111111111 (10 Stellen, n=1 Symbol: 1)
+
+H = 0\\
+
+Bei folgender 10-stelliger Sequenz ist die Entropie maximal:
+
+Sequenz: 0123456789 (10 Stellen, n=10 Symbole: 0,1,2,3,4,5,6,7,8,9)
+
+H = 3,32\\
 
 \textit{Auswirkung auf Kompressionsrate}\\
-Welche Auswirkungen hat die Entropie in Bezug auf die erzielbare Kompression?
-Ist für die erzielbare Kompressionsrate dabei immer lediglich die Auftrittswahrscheinlichkeit entscheidend?
+
+Eine geringe Entropie bewirkt, dass die Sequenz besser komprimierbar ist.  Je höher die Entropie, desto schlechter ist die Sequenz komprimierbar. Nicht nur die Auftrittswahrscheinlichkeit hat eine Auswirkung auf die erzielbare Kompressionsrate. Auch die Länge der Sequenz, sowie die Anzahl der Zeichen spielt eine wesentliche Rolle. Je größer diese Faktoren, desto schlechter ist eine Sequenz durch unterschiedliche Kompressionsverfahren bearbeitbar.
+
 
 
 \end{document}
