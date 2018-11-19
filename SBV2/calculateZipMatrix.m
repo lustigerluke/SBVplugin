@@ -4,6 +4,8 @@ clc
 clear all
 close all
 
+pkg load statistics
+
 # in this example we will use following languages
 # languages = {"de","en","fr","es","po","un","bo","ne"};
 
@@ -45,10 +47,10 @@ for x=1:numel(folders)
         zip(firstZipName,[tmpFolderPath,'/*']);
         #get zip size 
         [info, err, msg] = stat (firstZipName);
-        file1file2ZipSize = info.size;
+        file1ZipSize = info.size;
         
         # calculate compression rate
-        file1CompressionRate = file1file2ZipSize / file1Size;
+        file1CompressionRate =  file1Size / file1ZipSize;
         
         #delete zip and folder as we just need the size for calculation
         delete([tmpFolderPath,'/',nameI,'.txt']);
@@ -83,8 +85,8 @@ for x=1:numel(folders)
           expectedfile2ZipSize = file2Size * file1CompressionRate;
           
           %Matrix(i,j) = (expectedfile2ZipSize - file2ZipSize) /  file2ZipSize;
-          kompressionDict = (file1Size -file1file2ZipSize) / file1Size;
-          kompressionBoth = (file2Size - file2ZipSize) / file2Size;
+          kompressionDict = file1Size / file1ZipSize;
+          kompressionBoth = file2Size / file2ZipSize;
           kompressionsDelta = abs(kompressionBoth - kompressionDict);
           Matrix(i,j) = kompressionsDelta;
           
@@ -98,7 +100,21 @@ for x=1:numel(folders)
         endfor
       endfor
 
+
       resultMatrix = resultMatrix .+ Matrix;
+	      
+		h=figure()
+		imagesc(Matrix)
+		view(2)
+		xlabel("name of dict language");
+		ylabel("name of text language");
+		zlabel("compression rates matrix");
+		
+		tmpImageFolderName = ["images",nameI,nameJ];
+		mkdir(tmpImageFolderName);
+		cd(tmpImageFolderName);
+		saveas(h, [int2str(y),".jpg"],"jpg")
+		cd("..");
       
     else # dont calculate anything if the folders are the same
       ["skip " folders{x}]
