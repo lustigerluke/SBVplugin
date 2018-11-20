@@ -14,7 +14,7 @@ pkg load statistics
 folderPath = 'cutTestData/*';
 
 # initialize result matrix
-resultMatrix =zeros(8);
+resultMatrix =ones(8);
 
 
 # loop through data folders
@@ -102,7 +102,8 @@ for x=1:numel(folders)
 
 
       resultMatrix = resultMatrix .+ Matrix;
-	      
+	    #resultMatrix = (resultMatrix.* Matrix);
+	     
 		h=figure()
 		imagesc(Matrix)
 		view(2)
@@ -124,11 +125,12 @@ for x=1:numel(folders)
   endfor
 endfor
 
-    figure()
-    surf(resultMatrix)
+    g=figure()
+    imagesc(resultMatrix)
     view(2)
     xlabel("name of dict language");
     ylabel("name of text language");
     zlabel(" diff of compression rates");
+    saveas(g, "resultMatrix.jpg","jpg")
     'SUCCESS'
 
