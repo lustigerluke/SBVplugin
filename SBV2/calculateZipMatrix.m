@@ -20,12 +20,12 @@ resultMatrix =zeros(8);
 # loop through data folders
 folders = glob(folderPath)
 for x=1:numel(folders)
-  [~, nameI] = fileparts (folders{x})
+  [~, folderNameI] = fileparts (folders{x})
   for y=1:numel(folders)
-    [~, nameI] = fileparts (folders{y})
+    [~, folderNameJ] = fileparts (folders{y})
     
     # just calculate matrix for different data sets
-    if (!strcmp(folders{x},folders{y}))
+ #   if (!strcmp(folders{x},folders{y}))
       
       folderPath1 = [folders{x} , '/*'];
       folderPath2 = [folders{y} , '/*'];
@@ -79,7 +79,7 @@ for x=1:numel(folders)
           file2ZipSize = info.size;
 
           #calculate compression rate
-          compressionRate = file2ZipSize / file2Size ;
+          compressionRate = file2Size / file2ZipSize  ;
           
           #calculate exprected rate
           expectedfile2ZipSize = file2Size * file1CompressionRate;
@@ -110,15 +110,15 @@ for x=1:numel(folders)
 		ylabel("name of text language");
 		zlabel("compression rates matrix");
 		
-		tmpImageFolderName = ["images",nameI,nameJ];
+		tmpImageFolderName = ["images/",folderNameI];
 		mkdir(tmpImageFolderName);
 		cd(tmpImageFolderName);
-		saveas(h, [int2str(y),".jpg"],"jpg")
-		cd("..");
+		saveas(h, [folderNameJ,".jpg"],"jpg")
+		cd("../..");
       
-    else # dont calculate anything if the folders are the same
-      ["skip " folders{x}]
-    endif
+#    else # dont calculate anything if the folders are the same
+#      ["skip " folders{x}]
+#    endif
     
     
   endfor
