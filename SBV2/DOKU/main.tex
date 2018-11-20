@@ -141,6 +141,55 @@ Da nach einer Übersetzung die Texte in verschiedenen Sprachen ungleich viele Bu
 
 Nach einer solchen Normierung der Texte können diese miteinander verglichen werden. Dazu wurde ein Programm in \textit{Octave} geschrieben (siehe Listing \ref{fig: calculateMatrixOctaveCode}  , welches die Texte der einzelnen Datensätze miteinander vergleicht und in einer Matrix darstellt. Eine qualitativ hochwertige Aussage ob die Ergebisse statistische Aussagekraft haben, kann mit $5$ Datensätzen nicht getroffen werden. Es ist aber sicherlich ein Trend erkennbar.
 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| l | c | c | c | c | c |}
+	\hline
+	Datensätze & Abstract & Dictionary & Facebook & Google & Witz \\ 
+    \hline
+    Abstract &
+    \includegraphics[width=2.5cm]{../images/abstractData/abstractData.jpg} &
+    \includegraphics[width=2.5cm]{../images/abstractData/dictData.jpg} &
+    \includegraphics[width=2.5cm]{../images/abstractData/facebookData.jpg} &
+    \includegraphics[width=2.5cm]{../images/abstractData/googleData.jpg} &
+    \includegraphics[width=2.5cm]{../images/abstractData/witzData.jpg} \\
+    \hline
+    Dictionary &
+    \includegraphics[width=2.5cm]{../images/dictData/abstractData.jpg} &
+    \includegraphics[width=2.5cm]{../images/dictData/dictData.jpg} &
+    \includegraphics[width=2.5cm]{../images/dictData/facebookData.jpg} &
+    \includegraphics[width=2.5cm]{../images/dictData/googleData.jpg} &
+    \includegraphics[width=2.5cm]{../images/dictData/witzData.jpg} \\   
+    \hline
+    Facebook &
+    \includegraphics[width=2.5cm]{../images/facebookData/abstractData.jpg} &
+    \includegraphics[width=2.5cm]{../images/facebookData/dictData.jpg} &
+    \includegraphics[width=2.5cm]{../images/facebookData/facebookData.jpg} &
+    \includegraphics[width=2.5cm]{../images/facebookData/googleData.jpg} &
+    \includegraphics[width=2.5cm]{../images/facebookData/witzData.jpg} \\
+    \hline
+    Google &
+    \includegraphics[width=2.5cm]{../images/googleData/abstractData.jpg} &
+    \includegraphics[width=2.5cm]{../images/googleData/dictData.jpg} &
+    \includegraphics[width=2.5cm]{../images/googleData/facebookData.jpg} &
+    \includegraphics[width=2.5cm]{../images/googleData/googleData.jpg} &
+    \includegraphics[width=2.5cm]{../images/googleData/witzData.jpg} \\
+    \hline
+    Witz &
+    \includegraphics[width=2.5cm]{../images/witzData/abstractData.jpg} &
+    \includegraphics[width=2.5cm]{../images/witzData/dictData.jpg} &
+    \includegraphics[width=2.5cm]{../images/witzData/facebookData.jpg} &
+    \includegraphics[width=2.5cm]{../images/witzData/googleData.jpg} &
+    \includegraphics[width=2.5cm]{../images/witzData/witzData.jpg} \\
+    \hline
+  \end{tabular}
+  \caption{Auswertung der Datensätze}
+  \label{tab:datenAuswertungText}
+\end{table}
+
+
+Eine Datenauswertung wie in Table \ref{tab:datenAuswertungText} lässt deutlich erkennen, dass trivialer Weise eine Symmetrie um die Diagonale besteht und Laufzeit gespart werden könnte wenn diese ausgenutzt würde. In unserer Implementierung wurde darauf aber nicht geachtet. 
+
 
 \begin{figure}[H]
 	\centering
@@ -169,7 +218,7 @@ Figure \ref{fig: manualLemperZivPdf} zeigt die händische Berechnung der Lemper 
 
 \begin{table}[H]
   \centering
-  \begin{tabular}{c | c | c | c | c |}
+  \begin{tabular}{| c | c | c | c | c |}
     \hline
    	aktuelles  & nächstes  & Ausgabe  & ins & Speicher \\
    	 Zeichen &  Zeichen &  (im Wörterbuch?) & Wörterbuch! &  \\
