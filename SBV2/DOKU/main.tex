@@ -112,7 +112,7 @@ Theoretische Überlegung: Aufgrund der Verwendung eines komplexeren Algorythmus 
 
 \textbf{Idee}
 
-Aus Texten in 8 verschiedenen Sprachen soll mittels Kompression eine Klassifizierung stattfinden. Dazu wurden folgende Datensätze als \" *.txt \" Datein vorbereitet:
+Aus Texten in 8 verschiedenen Sprachen soll mittels Kompression eine Klassifizierung stattfinden. Zur Testzwecken wurden folgende Datensätze als \textit{ *.txt}  Datein in deutsch, englisch, französisch, spanisch, polnisch, ungarisch, bosnisch, und niederländisch vorbereitet:
 
 \begin{itemize}
 	\item Abstract einer wissenschaftlichen Arbeit. Diese hatte den Vorteil dass es eine deutsche und englische Übersetzung gab. Alle weiteren Sprachen wurden aus der englischen Version mittels \textit{google translate} generiert.
@@ -120,6 +120,19 @@ Aus Texten in 8 verschiedenen Sprachen soll mittels Kompression eine Klassifizie
 	\item Die erste Seite der Datenschutzrichtlinien von Facebook. Da die Datenschutzrichtlinien in sämtlichen Sprachen abrufbar sind, konnte für alle Sprachen ein passender Datensatz gefunden werden.
 	\item Die erste Seite der Datenschutzrichtlinien von Google. Auch hier waren Daten in allen Sprachen verfügbar.
 	\item Ein Witz der aus dem deutschen mittels \textit{google translate} in alle andern Sprachen übersetzt wurde.
+\end{itemize}
+
+Zur Weiterverarbeitung wurden den Sprachen Nummern zugeordnet die man folgender Liste entnehmen kann.
+
+\begin{itemize}
+	\item 1 = bosnisch
+	\item 2 = deutsch
+	\item 3 = englisch
+	\item 4 = spanisch
+	\item 5 = französisch
+	\item 6 = niederländisch
+	\item 7 = polnisch
+	\item 8 = ungarisch
 \end{itemize}
 
 Da nach einer Übersetzung die Texte in verschiedenen Sprachen ungleich viele Buchstaben beinhalten ist auch die Dateigröße unterschiedlich. Dies könnte eventuell rechnerisch berücksichtigt werden. Viel einfacher aber ist es, die letzten Buchstaben jedes langen Textes zu ignorieren und so eine einheitliche Länge des Textes zu gewährleisten. Dies wurde mittels eines shell-Skripts erreicht, welches nur die ersten $n$ Bytes eines Files speichert. So konnte für jeden Text eine Datei erzeugt werden die in allen Sprachen den selben Speicherbedarf hat. Der Verlust der letzten Byte ist bei einer Klassifizierung unwesentlich. 
