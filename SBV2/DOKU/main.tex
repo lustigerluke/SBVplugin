@@ -38,38 +38,32 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \newpage
 \section{Übungsaufgaben II}
 \subsection{Resampling und Interpolation}
+Die Implementierung des Resampling Filters und der Checkerboard Darstellung wurde in einem Java-File durchgeführt. Der Code für die Implementierung wird aufgrund der Lesbarkeit nur einmal in Punkt a)  im Dokument ausgegeben. Bei einer Ausführung des Filters wird der Skalierungsfaktor und die Größe des Checkerboards in einem Dialog abgefragt. Liegt der Wert des Skalierungsfaktors über 1.0 wird das Bild vergrößert. Liegt der Wert darunter wird dieses verkleinert.
+
+ Nach dem der User die Eingaben bestätigt, wird ein skaliertes Bild der Nearest Neighbor- und der Bi-linearen Interpolation ausgegeben. Zusätzlich wird ein Checkerboard ausgegeben, dass beide Interpolationsstrategien zum Vergleich setzt. Die Anzahl der möglichen Segemente pro Reihe wurde auf 20 beschränkt. In den Abschnitten a) - c) werden die jeweils geforderten Abschnitte beschrieben. Die Implementierung findet sich jedoch nur in einem Java-File.
+
 \subsubsection{Implementierung Resampling}
-Die Implementierung des Resampling Filters wurde in diesem Abschnitt anhand der Nearest Neighbour Interpolation umgesetzt. Bevor der Filter ausgeführt wird, wird zuerst der Skalierungsfaktor bei dem Benutzer abgefragt. Gibt der Benutzer einen Wert ein, der über 1.0 liegt, wird das Bild vergrößert. Gibt er einen Wert ein, der unter 1.0 liegt wird das Eingangsbild verkleinert.
+In diesem Abschnitt wird die Implementierung des Resampling Filters mit der Nearest Neighbour Interpolation beschrieben (siehe Code Dokumentation GetNNinterpolatedValue()). Bei dieser Methode wird der näheste Pixelwert berechnet und als neuer skalarer Wert eingefügt.
 
 In dieser Implementierung wird die Umrechnung der Koordinaten anhand der Variante B umgesetzt. Dies bedeutet, dass der Skalierungsfaktor bereits vor der Neuberechnung der Koordinaten angepasst wird, in dem von diesem 1 subtrahiert wird. Das heißt, die neue Koordinate vom skalierten Bild B wird aus der Multiplikation der Koordinate aus dem Originalbild A um den adaptierten Skalierungsfaktor s' berechnet. Dies hat zur Folge, dass sich die Indizes in der Mitte zentrieren. Der Anfang bzw. das Ende des Bild Arrays bleibt hierbei aber weiterhin unterrepräsentiert.\\
 
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../Resample_.java}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../ResampleInterpolation_.java}
 
-\subsubsection{Implementierung Bi-Lineare Interpolation}
-Die Implementierung des Resamplings Filters wurde in diesem Abschnitt anhand der Bilinearen Interpolation umgesetzt. Bevor der Filter ausgeführt wird, wird zuerst der Skalierungsfaktor bei dem Benutzer abgefragt. Gibt der Benutzer einen positiven Wert ein, der über 1.0 liegt, wird das Bild vergrößert. Gibt er einen darunterliegenden Wert ein wird das Eingangsbild verkleinert.
+\subsubsection{Implementierung biineare Interpolation}
+In diesem Abschnitt wird die Implementierung des Resampling Filters mit der bilinearen Interpolation beschrieben (siehe Code Dokumentation GetBilinearinterpolatedValue()). 
 
-Danach wird die neue Höhe und Breite des Eingangsbildes anhand des Skalierungsfaktor berechnet. Zusätzlich wird der Skalierungsfaktor für die x und y Koordinaten separat berechnet und gespeichert. Anschließend wird anhand einer for-Schleife über alle Pixel des neu angelegten Arrays des skalierten Bildes iteriert. 
+Nach der Eingabe des User Inputs wird die neue Höhe und Breite des Eingangsbildes anhand des Skalierungsfaktor berechnet. Zusätzlich wird der Skalierungsfaktor für die x und y Koordinaten separat berechnet und gespeichert. Anschließend wird anhand einer for-Schleife über alle Pixel des neu angelegten Arrays des skalierten Bildes iteriert. 
 
-Neben der neuen Koordinate wird der Pixelwert anhand der Methode GetBilinearInterpolatedValue() berechnet. In dieser werden unterschiedliche Fragemente für die Berechnung des gewichteten Mittelwert aufbereitet. Damit der neue skalare Wert berechnet werden kann, müssen zuerst 4 benachbarten Pixel aus dem Originalbild ermittelt werden. Die Nachbarpixel sind folgende: p1(x+1,y), p2(x,y+t1), p3(x+1, y+1) und p4(x,y). 
+Neben der neuen Koordinate wird der Pixelwert anhand der Methode GetBilinearInterpolatedValue() berechnet. In dieser werden unterschiedliche Fragmente für die Berechnung des gewichteten Mittelwert aufbereitet. Damit der neue skalare Wert berechnet werden kann, müssen zuerst 4 benachbarten Pixel aus dem Originalbild ermittelt werden. Die Nachbarpixel sind folgende: p1(x+1,y), p2(x,y+t1), p3(x+1, y+1) und p4(x,y). 
 
 
-Um den gewichtet Mittelwert für diesen Pixel zu erhalten werden anhand der Kalkulationsfragmente, den benachbarten skalaren Werten (p1-p4) der gewichtete Mittelwert berechnet werden. Anschließend wird dieser Wert an die Methode retourniert und im skalierten Bild an der aktuellen Koordinate eingefügt.\\
+Um den gewichtet Mittelwert für diesen Pixel zu erhalten werden anhand der Kalkulationsfragmente und den benachbarten skalaren Werten (p1-p4) der gewichtete Mittelwert berechnet . Daraufhin wird dieser Wert an die Methode retourniert und im skalierten Bild an der aktuellen Koordinate eingefügt.\\
 
 \textit{Test der Implementierung}
 
-Um die Implementierung des Resampling Filters anhand der bi-linearen Interpolation zu prüfen, wurden zwei Testbilder inklusive Differenzbilder generiert.
+Um die Implementierung des Resampling Filters (beider Interpolationsstrategien) zu prüfen, wurden zwei Testbilder inklusive Differenzbilder generiert.\\
 
-Folgendes Bild wurde um den Faktor 3.0 vergrößert:
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=12cm]{images/scaled-img-bilinear-interpolation-3.jpg}
-	\caption{Skalierung anhand Faktor 3.0}
-	\label{fig:resultResamplingBilinearInterpolation-3.0}
-\end{figure}
-TODO: Testbild einfügen
-
-Testbild zur bilinearen Interpolation (Skalierungsfaktor 2.0):
+Testbilder (Skalierungsfaktor 2.0):
 
 \begin{figure}[H]
 	\centering
@@ -92,18 +86,20 @@ Testbild zur bilinearen Interpolation (Skalierungsfaktor 2.0):
 	\label{fig:resultResamplingDifference}
 \end{figure}
 
-Das in Figure 3 dargestellte Bild, stellt die Differenz zwischen dem Testbild das anhand der Nearest Neighbor und der bilinearen Interpolation erstellt wurde. Bei näherer Betrachtung sieht man, dass sich an den Kanten im Bild, weiße Ausprägungen wiederfinden. Dies verdeutlicht, dass die NN Interpolation aufgrund keiner Neuberechnung der Werte, diese nicht so gut wiedergibt. Diese Unterschiede in den skalaren Werten ergeben sich daraus, dass die bilineare Interpolation aufgrund der Verwendung des gewichteten Mittelwerts von 4 Pixeln einen ähnlicheren skalaren Wert ergibt, als bei der NN Interpolation.
-
-\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../ResampleBilineareInterpolation_.java}
+Figure 3 visualisert die Differenz zwischen den Testbildern der Nearest Neighbor und der bilinearen Interpolation. Bei näherer Betrachtung sieht man, dass sich an den Umrissen von Lena im Bild weiße Ausprägungen wiederfinden. Diese weißen skalaren Werte bedeutet, dass es hier zwischen den zwei Bildern Unterschiede gibt. Dies verdeutlicht, dass die NN Interpolation aufgrund keiner Neuberechnung der Werte, diese nicht so gut wiedergibt. Diese Unterschiede in den skalaren Werten ergeben sich daraus, dass die bilineare Interpolation aufgrund der Verwendung des gewichteten Mittelwerts von 4 Pixeln einen ähnlicheren skalaren Wert ergibt, als bei der NN Interpolation.
 
 
 \subsubsection{Implementierung Checker-Board}
 
-Die Nearest Neighbor Interpolation bezieht sich in ihrer Berechnung auf keinen neuen skalaren Wert. Es werden jeglich die benachbarten Pixel geprüft, und der Wert der am Nähesten ist, für den neuen Pixel herangezogen. Die Neuzuweisung schlägt sich auf die Bildqualität wieder, dieser wird bei einer Skalierung pixeliger bzw. kantiger.
+Das Checkerboard wurde innerhalb des Resample Filters implementiert und bedient sich der neuberechneten Werte. Die skalaren Werte, die aus den beiden Methoden berechnet werden, werden in einem neuen Array für das skalierte Checkerboard abwechselnd eingetragen.\\
+
+\textit{Charakterisierung der Interpolationsstrategien}
+
+Die Nearest Neighbor Interpolation bezieht sich in ihrer Berechnung auf keinen neuen skalaren Wert. Es werden jeglich die benachbarten Pixel geprüft, und der Wert der am Nähesten ist, für den neuen Pixel herangezogen. Die Neuzuweisung schlägt sich auf die Bildqualität wieder, dieser wird bei einer Skalierung pixeliger bzw. kantiger. Dieser Effekt tritt dann sehr deutlich auf, wenn das Bild zuerst stark verkleinert und anschließend wieder vergrößert wird (0.5 ; 10).
 
 Theoretische Überlegung: Da bei dieser Strategie kein komplexer Algorythmus verwendet wird und nur eine Neuzuweisung statt - berechnung stattfindet, ist dieser schneller als die andere Strategie.
 
-Die bilineare Interpolation hingegen bedient sich auch der benachbarten Pixel, berechnet jedoch auf Basis dieser den gewichteten Mittelwert. Dieser Wert ist ähnlicher als zum Beispiel die Zuweisung der NN Interpolation und resuliert daher in einem besseren Bildqualität. 
+Die bilineare Interpolation hingegen bedient sich auch der benachbarten Pixel, berechnet jedoch auf Basis dieser den gewichteten Mittelwert. Dieser Wert ist ähnlicher als zum Beispiel die Zuweisung der NN Interpolation und resuliert daher in einer besseren Bildqualität. 
 
 Theoretische Überlegung: Aufgrund der Verwendung eines komplexeren Algorythmus ist die Laufzeit bei diesem auch länger.
 
@@ -112,17 +108,17 @@ Theoretische Überlegung: Aufgrund der Verwendung eines komplexeren Algorythmus 
 
 \textbf{Idee}
 
-Aus Texten in 8 verschiedenen Sprachen soll mittels Kompression eine Klassifizierung stattfinden. Zur Testzwecken wurden folgende Datensätze als \textit{ *.txt}  Datein in deutsch, englisch, französisch, spanisch, polnisch, ungarisch, bosnisch, und niederländisch vorbereitet:
+Aus Texten in 8 verschiedenen Sprachen soll mittels Kompression eine Klassifizierung stattfinden. Zur Testzwecken wurden folgende Datensätze als \textit{ *.txt}  Datein in bosnisch, deutsch, englisch, spanisch, französisch, niederländisch, polnisch und ungarisch aufbereitet:
 
 \begin{itemize}
-	\item Abstract einer wissenschaftlichen Arbeit. Diese hatte den Vorteil dass es eine deutsche und englische Übersetzung gab. Alle weiteren Sprachen wurden aus der englischen Version mittels \textit{google translate} generiert.
-	\item Wörterbuch mit 10000 deutschen Wörtern. Dieser Datensatz wurde mittels \textit{google translate} in alle anderen Sprachen übersetzt.
+	\item Abstract einer wissenschaftlichen Arbeit. Diese hat den Vorteil, dass es eine deutsche und englische Übersetzung gibt. Alle weiteren Sprachen wurden aus der englischen Version mittels \textit{google translate} generiert.
+	\item Wörterbuch mit 10000 deutschen Wörtern. Dieser Datensatz wurde mittels \textit{google translate} in die anfangs erwähnten Sprachen übersetzt.
 	\item Die erste Seite der Datenschutzrichtlinien von Facebook. Da die Datenschutzrichtlinien in sämtlichen Sprachen abrufbar sind, konnte für alle Sprachen ein passender Datensatz gefunden werden.
 	\item Die erste Seite der Datenschutzrichtlinien von Google. Auch hier waren Daten in allen Sprachen verfügbar.
-	\item Ein Witz der aus dem deutschen mittels \textit{google translate} in alle andern Sprachen übersetzt wurde.
+	\item Ein Witz der aus dem deutschen mittels \textit{google translate} in alle anderen Sprachen übersetzt wurde.
 \end{itemize}
 
-Zur Weiterverarbeitung wurden den Sprachen Nummern zugeordnet die man folgender Liste entnehmen kann.
+Zur Weiterverarbeitung wurden den Sprachen Nummern zugeordnet. Folgende Liste gibt die Zuordnung wieder:
 
 \begin{itemize}
 	\item 1 = bosnisch
@@ -135,11 +131,11 @@ Zur Weiterverarbeitung wurden den Sprachen Nummern zugeordnet die man folgender 
 	\item 8 = ungarisch
 \end{itemize}
 
-Da nach einer Übersetzung die Texte in verschiedenen Sprachen ungleich viele Buchstaben beinhalten ist auch die Dateigröße unterschiedlich. Dies könnte eventuell rechnerisch berücksichtigt werden. Viel einfacher aber ist es, die letzten Buchstaben jedes langen Textes zu ignorieren und so eine einheitliche Länge des Textes zu gewährleisten. Dies wurde mittels eines shell-Skripts erreicht, welches nur die ersten $n$ Bytes eines Files speichert. So konnte für jeden Text eine Datei erzeugt werden die in allen Sprachen den selben Speicherbedarf hat. Der Verlust der letzten Byte ist bei einer Klassifizierung unwesentlich. 
+Da nach einer Übersetzung die Texte in verschiedenen Sprachen nicht dieselbe Anzahl an Buchstaben beinhalten, variiert auch die Dateigröße. Dies könnte eventuell rechnerisch berücksichtigt werden. Es wurde jedoch die Variante gewählt, die letzten Buchstaben jedes langen Textes zu ignorieren und so eine einheitliche Länge des Textes zu gewährleisten. Dies wurde mittels eines shell-Skripts erreicht, welches nur die ersten $n$ Bytes eines Files speichert. So konnte für jeden Text eine Datei erzeugt werden die in allen Sprachen den selben Speicherbedarf hat. Der Verlust der letzten Byte ist bei einer Klassifizierung unwesentlich. 
 
 \lstinputlisting[frame=single,language=MATLAB,breaklines=true]{../cutData.sh}
 
-Nach einer solchen Normierung der Texte können diese miteinander verglichen werden. Dazu wurde ein Programm in \textit{Octave} geschrieben (siehe Listing \ref{fig: calculateMatrixOctaveCode}  , welches die Texte der einzelnen Datensätze miteinander vergleicht und in einer Matrix darstellt. Eine qualitativ hochwertige Aussage ob die Ergebisse statistische Aussagekraft haben, kann mit $5$ Datensätzen nicht getroffen werden. Es ist aber sicherlich ein Trend erkennbar.
+Nach einer solchen Normierung der Texte können diese nun miteinander verglichen werden. Dazu wurde ein Programm in \textit{Octave} geschrieben (siehe Listing \ref{fig: calculateMatrixOctaveCode}  , welches die Texte der einzelnen Datensätze miteinander vergleicht und in einer Matrix darstellt. Eine qualitativ hochwertige Aussage, ob die Ergebnisse statistische Aussagekraft haben, kann mit $5$ Datensätzen nicht getroffen werden. Es ist aber sicherlich ein Trend erkennbar.
 
 \begin{table}[H]
   \centering
@@ -203,12 +199,9 @@ Eine Datenauswertung wie in Table \ref{tab:datenAuswertungText} lässt deutlich 
 \label{fig: calculateMatrixOctaveCode}
 
 
-\subsubsection{OPTIONAL – nur für Interessierte/Experten}
-
-
 \subsection{Kompression und Code-Transformation}
-\subsubsection{Lempel-Ziv Kompression einer Sequenz}
-Figure \ref{fig: manualLemperZivPdf} zeigt die händische Berechnung der Lemper Ziv Kompression. Beim Übertragen ins Protokoll wurde allerdings ein Fehler entdeckt, der in Tabelle \ref{tab:Level Ziv Kompression} korrigiert wurde.
+\subsubsection{Lempel-Ziv-Welch Kompression einer Sequenz}
+Figure \ref{fig: manualLemperZivPdf} zeigt die händische Berechnung der Lempel-Ziv-Welch Kompression. Beim Übertragen ins Protokoll wurde allerdings ein Fehler entdeckt, der in Tabelle \ref{tab:Level Ziv Kompression} korrigiert wurde.
 
 
 
@@ -262,9 +255,9 @@ In der korrigierten Version ergibt die resultierende Zeichenkette:
 
 \subsubsection{Huffmann Coding}
 
-Die nächste Seite zeigt die händische Berechnung des Huffmann Baums zum gegebenen Beispiel. Die mittlere Codewortlänge lieght dabei bei $1.869 bit $. \\
+Die nächste Seite zeigt die händische Berechnung des Huffmann Baums zum gegebenen Beispiel. Die mittlere Codewortlänge liegt dabei bei $1.869 bit $. \\
 
-Weiters kann man auf der darauffolgenden Seite die manuelle Berechnung von 6 Testfällen finden. Es kann gesagt werden, dass die Huffmann Kompression sehr gut geeignet wäre um Daten zu komprimieren, die sehr oft gleich sind. Dabei spielt homogenität keine Rolle, sondern rein die Häufigkeit des Auftretens der Sonderfälle. An diser Stelle sei erwähnt, dass die Information über solche Sonderfälle nicht verloren geht, sondern einfach mehr Speicher benötigt (verlustfreies Komprimieren).
+Weiters kann man auf der darauffolgenden Seite die manuelle Berechnung von 6 Testfällen finden. Es kann gesagt werden, dass die Huffmann Kompression sehr gut geeignet wäre um Daten zu komprimieren, die sehr oft gleich sind. Dabei spielt Homogenität keine Rolle, sondern rein die Häufigkeit des Auftretens der Sonderfälle. An dieser Stelle sei erwähnt, dass die Information über solche Sonderfälle nicht verloren geht, sondern einfach mehr Speicher benötigt wird (verlustfreies Komprimieren).
 
 \includepdf{images/huffmannBerechnung.pdf}
 \label{fig:huffmannCalculation}
