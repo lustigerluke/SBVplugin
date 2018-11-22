@@ -93,6 +93,22 @@ Figure 3 visualisert die Differenz zwischen den Testbildern der Nearest Neighbor
 
 Das Checkerboard wurde innerhalb des Resample Filters implementiert und bedient sich der neuberechneten Werte. Die skalaren Werte, die aus den beiden Methoden berechnet werden, werden in einem neuen Array für das skalierte Checkerboard abwechselnd eingetragen.\\
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=7cm]{images/bilineare-interpolation-final/scaled-img-checkerboard.jpg}
+	\caption{Checkerboard mit Nearest Neighbor und bilinearer Interpolation}
+	\label{fig:resultCheckerboard}
+\end{figure}
+
+Da sich die beiden Interpolationsstrategien nur bei genauer Betrachtung erkennen lassen, wurde ein Teil des Checkerboards vergrößert (siehe Figure 5). Bei den Segment links unten und rechts oben erkennt man, das das Bild hier pixeliger ist (NN).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=7cm]{images/bilineare-interpolation-final/scaled-img_checkerboard-NN-BI-boxes.png}
+	\caption{Checkerboard Vergrößerung}
+	\label{fig:resultCheckerboardZoom}
+\end{figure}
+
 \textit{Charakterisierung der Interpolationsstrategien}
 
 Die Nearest Neighbor Interpolation bezieht sich in ihrer Berechnung auf keinen neuen skalaren Wert. Es werden jeglich die benachbarten Pixel geprüft, und der Wert der am Nähesten ist, für den neuen Pixel herangezogen. Die Neuzuweisung schlägt sich auf die Bildqualität wieder, dieser wird bei einer Skalierung pixeliger bzw. kantiger. Dieser Effekt tritt dann sehr deutlich auf, wenn das Bild zuerst stark verkleinert und anschließend wieder vergrößert wird (0.5 ; 10).
