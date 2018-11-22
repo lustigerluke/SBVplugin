@@ -1,0 +1,20 @@
+Dit document bevestigt dat de combinatie van de technologische ontwikkeling van digitalisering
+met de gevestigde cursus reserve dienst is mogelijk in overeenstemming met het auteursrecht
+Duitsland en leidt tot toegevoegde waarde voor alle belanghebbenden in het proces. Dit onderzoek is
+gebaseerd op een vergelijkende analyse van literatuur. Een referentieproces met de strategische
+en het operationele niveau van de elektronische reservatiedienst is ontwikkeld met behulp van het bedrijf
+Process Modelling Notation (BPMN), vandaar het extra voordeel van de nieuwe pr
+o-
+voor alle deelnemers. Verschillende implementatieopties voor de bijbehorende taken zijn d
+e-
+beschreven onafhankelijke softwareoplossingen die op de markt beschikbaar zijn. Bovendien, de studie
+identificeert universele benaderingen van integratie binnen de universiteit. Een ander aspect ou
+t
+bekleed is de identificatie van potentieel voor universitaire samenwerking. De studie is voltooid
+door een procedure te ontwikkelen om het nieuwe proces in de specifieke context van omstandigheden te implementeren
+aan de TU Berlijn.
+Het referentieproces kan worden gebruikt voor de implementatie van cursus reserve-services bij om het even welk
+andere universiteit. Voor de implementatie ervan zijn individuele parameters geanalyseerd
+L-
+Het technische niveau van het procesmodel moet worden aangevuld en de procedure moet worden aangevuld
+angepasst.

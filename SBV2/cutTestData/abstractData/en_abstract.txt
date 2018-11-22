@@ -1,0 +1,13 @@
+This  paper  confirms  that  the  combination  of  the  technological  development  of  digitalization 
+with  the  established  course  reserve  service  is  possible  in  compliance  with  copyright  law  in 
+Germany  and  leads  to  added  value  for  all  stakeholders  in  the  process.  This  research  is 
+based  on  a  comparative  analysis  of  literature.  A  reference  process  containing  the  strategic 
+and  the  operational  level  of  the  electronic  reserve  service  is  developed  using  the  Business 
+Process Modeling Notation (BPMN), thereby illustrating the additional benefit of the new pr
+o-
+cess  for  all  participants.  Different  implementation  options  for  the  associated  tasks  are  d
+e-
+scribed  independent  of  software  solutions  available  on  the  market.  In  addition,  the  study 
+identifies universal approaches to closer integration within the university. Another aspect ou
+t-
+lined is the identification of potential for cross-university c

@@ -1,0 +1,379 @@
+GoogleAdatvédelmi és Általános Szerzodési Feltételek
+
+    Áttekintés
+    Adatvédelmi irányelvek
+    Általános Szerzodési Feltételek
+    Technológiák
+    GYIK
+    Google-fiók
+
+        Bevezetés
+        A Google által gyujtött adatok
+        Miért gyujti a Google az adatokat?
+        Adatvédelmi beállítások
+        Az Ön adatainak megosztása
+        Az adatok biztonságának megorzése
+        A saját adatok exportálása és törlése
+        Jogszabályi megfelelés és együttmuködés a hatóságokkal
+        A jelen irányelvekrol
+        Kapcsolódó adatvédelmi gyakorlat
+    Adatátvitelre vonatkozó keretrendszerek
+    Fontos kifejezések
+    Partnerek
+    Frissítések
+
+Google Adatvédelmi irányelvek
+
+Amikor a Google szolgáltatásait használja, ránk bízza adatait. Tudjuk, hogy ez óriási felelosség, ezért mindent megteszünk, hogy megóvjuk adatait, és hogy az Ön kezébe adjuk az irányítást.
+
+A jelen Adatvédelmi irányelvek tájékoztatást adnak arról, hogy milyen adatokat gyujtünk, miért gyujtünk oket, illetve Ön hogyan frissítheti, kezelheti, exportálhatja és törölheti adatait.
+Hatályba lépés dátuma: 2018. május 25. | Archivált verziók | Letöltés PDF formátumban
+
+Számos olyan szolgáltatásunk van, mely emberek millióinak nyújt segítséget a világ felfedezéséhez és az új módszerekkel történo kapcsolatteremtéshez. Szolgáltatásaink közé tartoznak például a következok:
+
+    Google-alkalmazások, -webhelyek és -eszközök, például a Keresés, a YouTube és a Google Home;
+    platformok, például a Chrome böngészo és az Android operációs rendszer;
+    harmadik felek alkalmazásaiban és webhelyein integrált termékek, például a hirdetések és a beágyazott Google Térkép.
+
+Adatai biztonságának megóvása érdekében többféleképpen használhatja szolgáltatásainkat. Tartalmak (például e-mailek vagy fotók) létrehozásához és kezeléséhez, vagy ha relevánsabb keresési találatokat szeretne látni, regisztrálhat Google-fiókot. Számos Google-szolgáltatást pedig anélkül is használhat, hogy be kellene jelentkeznie vagy létre kellene hoznia fiókot – például kereshet a Google-on, és megtekinthet YouTube-videókat. Úgy is dönthet, hogy privát módon, a Chrome inkognitómódjának használatával böngészik az interneten. Emellett az összes szolgáltatásunkban személyre szabhatja adatvédelmi beállításait, szabályozva, hogy milyen adatokat gyujthetünk, és hogyan használhatjuk fel oket.
+
+Szeretnénk mindent a leheto legegyértelmubben elmagyarázni, ezért példákat, magyarázó videókat és a legfontosabb kifejezésekhez meghatározásokat is biztosítottunk. Ha mégis marad kérdése a jelen Adatvédelmi irányelvekkel kapcsolatban, nyugodtan forduljon hozzánk.
+A Google által gyujtött adatok
+
+Szeretnénk áttekintést adni arról, milyen típusú adatokat gyujtünk, amikor Ön a szolgáltatásainkat használja
+
+Az adatokat azért gyujtjük, hogy jobb minoségu szolgáltatásokat nyújthassunk valamennyi felhasználónknak – kezdve az alapveto dolgokkal, például annak kitalálásával, hogy milyen nyelven beszélnek, egészen a bonyolultabb kérdésekig, például hogy milyen hirdetéseket találnak leginkább hasznosnak, hogy kik azok, akik a legfontosabbak számukra az online felületeken, vagy hogy milyen YouTube-videók tetszhetnek nekik. A Google által gyujtött információk típusa és felhasználása attól függ, hogyan használják a felhasználók a szolgáltatásainkat, illetve hogyan kezelik adatvédelmi beállításaikat.
+
+Ha nincs bejelentkezve Google-fiókba, akkor a használt böngészohöz, alkalmazáshoz vagy eszközhöz társított egyedi azonosítók alatt tároljuk az általunk gyujtött adatokat. Ennek révén több munkameneten keresztül is meg tudjuk orizni például a nyelvi beállításokat.
+
+Ha be van jelentkezve, szintén gyujtünk adatokat, amelyeket a Google-fiókjában tárolunk, és amelyeket személyes adatokként kezelünk.
+Az Ön által létrehozott vagy nekünk átadott dolgok
+
+Google-fiókja létrehozásakor személyes adatokat ad meg nekünk (többek között nevét és jelszavát is). Fiókjához ezenkívül telefonszámot és fizetési információkat is hozzáadhat. Még akkor is adhat át adatokat nekünk, amikor nincs bejelentkezve a Google-fiókjába – például megadhatja e-mail-címét, hogy értesítéseket kapjon a szolgáltatásainkkal kapcsolatban.
+
+Gyujtjük azokat a tartalmakat is, amelyeket a szolgáltatásaink használata során létrehoz, feltölt vagy másoktól megkap. E tartalmak közé tartoznak például az elküldött és a fogadott e-mailek, az elmentett fotók és videók, a létrehozott dokumentumok és táblázatok, illetve a YouTube-videókhoz fuzött megjegyzések.
+Adatok, melyeket akkor gyujtünk, mikor a szolgáltatásainkat használja
+Alkalmazások, böngészok és eszközök
+
+Adatokat gyujtünk azokról az alkalmazásokról, böngészokrol és eszközökrol, amelyekkel hozzáfér a Google szolgáltatásaihoz. Ezeknek köszönhetoen tudunk olyan funkciókat biztosítani, mint az automatikus termékfrissítések vagy a képernyo fényerejének csökkentése, ha merül az akkumulátor.
+
+Példák az általunk gyujtött adatokra: egyedi azonosítók, böngészotípus és -beállítások, eszköztípus és -beállítások, operációs rendszer, mobilhálózati információk (a szolgáltató neve és a telefonszám), valamint az alkalmazás verziószáma. Ezenkívül gyujtünk adatokat arról is, hogy az alkalmazások, böngészok és eszközök milyen interakcióba lépnek a szolgáltatásainkkal. Ezen adatok közé tartoznak a következok: IP-cím, hibajelentések, rendszertevékenység, valamint a kérés dátuma, idopontja és hivatkozó URL-je.
+
+Ezeket az adatokat akkor gyujtjük, amikor az eszközön lévo valamelyik Google-szolgáltatás kapcsolatba lép a szervereinkkel – például amikor alkalmazást telepít a Play Áruházból, vagy amikor az egyik szolgáltatás automatikus frissítéseket keres. Ha Google-alkalmazásokkal rendelkezo Android-eszközt használ, eszköze rendszeres idoközönként kapcsolatba lép a Google szervereivel, hogy információkat biztosítson az eszközrol, illetve kapcsolódjon a szolgáltatásainkhoz. Az átadott információk közé tartoznak például a következok: az eszköz típusa, a szolgáltató neve, a hibajelentések és a telepített alkalmazások.
+Felhasználói tevékenység
+
+Adatokat gyujtünk a szolgáltatásainkban végzett tevékenységeirol, és ezek felhasználásával tudunk például olyan YouTube-videókat javasolni, amelyek tetszhetnek Önnek. Az általunk gyujtött tevékenységadatok közé a következok tartozhatnak:
+
+    keresett kifejezések;
+    megtekintett videók;
+    tartalmakkal és hirdetésekkel kapcsolatos megtekintések és interakciók;
+    hangadatok a hangszolgáltatások használata esetén;
+    vásárlási tevékenységek;
+    azok a személyek, akikkel kommunikál vagy tartalmat oszt meg;
+    harmadik feleknek a mi szolgáltatásainkat használó webhelyén vagy alkalmazásában végzett tevékenységek.
+    A Google-fiókkal szinkronizált böngészési elozmények a Chrome böngészobol
+
+Ha a szolgáltatásaink használatával indít és fogad hívásokat vagy SMS-eket, akkor gyujthetjük a telefonszolgáltatással kapcsolatos naplóadatokat, például az Ön telefonszámát, a hívó fél telefonszámát, a hívott fél telefonszámát, az átirányítási telefonszámokat, a hívások és SMS-ek dátumát és idopontját, a hívások idotartamát, az útválasztási információkat és a hívások típusait.
+
+Google-fiókjában megtekintheti és kezelheti a fiókba mentett tevékenységadatokat.
+
+A Google-fiók megnyitása
+Felhasználói helyadatok
+
+Szolgáltatásaink használatakor különbözo funkciók – például a hétvégi kiránduláshoz készített útvonalterv vagy a közeli mozikban játszott filmek vetítési idopontjai – biztosítása céljából gyujtjük a felhasználók tartózkodási helyével kapcsolatos adatokat.
+
+A tartózkodási hely megállapítása változó szintu pontossággal történik a következok alapján:
+
+    GPS
+    IP-cím
+    Az eszköz érzékeloinek adatai
+    Az eszközhöz közeli dolgokkal kapcsolatos információk – például Wi-Fi hozzáférési pontok, átjátszótornyok és aktivált Bluetooth-szal rendelkezo eszközök
+
+A helyadatok gyujtött típusai részben függenek az eszköz- és fiókbeállításoktól. Például be- vagy kikapcsolhatja a helyszolgáltatást Android-eszközén a Beállítások alkalmazásban. Ezenkívül bekapcsolhatja a Helyelozményeket, ha szeretné a fiókjába menteni és ott kezelni a helyadatokat.
+
+Bizonyos esetekben a Google nyilvánosan hozzáférheto forrásokból is gyujthet Önrol adatokat. Ha például megjelenik a neve a helyi újságban, a Google keresomotorja indexelheti az adott cikket, és megjelenítheti olyan személyeknek, akik rákeresnek az Ön nevére. Ezenkívül megbízható partnerektol is gyujthetünk Önnel kapcsolatos információkat. Közéjük tartoznak például marketingpartnereink, akik az üzleti szolgáltatásaink potenciális vevoirol szolgáltatnak adatokat, valamint a biztonsági partnereink, akik a visszaélésekkel szembeni védekezés céljából adnak át nekünk adatokat. Hirdetoktol is kapunk adatokat, hogy hirdetési és kutatási szolgáltatásokat biztosítsunk a megbízásukból.
+
+Az adatok gyujtésére és tárolására különféle technológiákat használunk: cookie-kat, képpontcímkéket, helyi tárhelyeket (például böngészo webes tárhelyét vagy alkalmazásadatok gyorsítótárát), adatbázisokat és szervernaplókat.
+Miért gyujti a Google az adatokat?
+
+Az adatokat arra használjuk fel, hogy jobb szolgáltatásokat biztosítsunk
+
+A szolgáltatásainkon keresztül gyujtött adatokat a következo célokra használjuk fel:
+A szolgáltatásaink biztosítása
+
+A felhasználói adatokat arra használjuk fel, hogy biztosíthassuk szolgáltatásainkat; például feldolgozzuk a keresokifejezést, hogy megjeleníthessük a találatokat, vagy segítünk Önnek az adott tartalom megosztásában azzal, hogy címzetteket javaslunk a névjegyek közül.
+A szolgáltatásaink karbantartása és továbbfejlesztése
+
+A felhasználói adatokat arra is felhasználjuk, hogy meggyozodjünk a szolgáltatásaink megfelelo muködésérol; például nyomon követjük a szolgáltatáskimaradásokat, illetve kijavítjuk a felhasználók által jelentett problémákat. Az adatokat emellett szolgáltatásaink továbbfejlesztésére is felhasználjuk; például ha tudjuk, hogy mely keresokifejezéseket írják le a leggyakrabban helytelenül, javítani tudjuk a szolgáltatásainkban használt helyesírás-ellenorzo funkciót.
+Új szolgáltatások kifejlesztése
+
+A meglévo szolgáltatásokban gyujtött adatokat felhasználjuk újak kifejlesztésére. Például a Google Fotók kialakításában és elindításában sokat segített az, hogy megtanultuk, hogyan rendszerezik az emberek a fényképeiket a Picasában, a Google elso fotós alkalmazásában.
+Személyre szabott szolgáltatások biztosítása, beleértve a tartalmakat és a hirdetéseket is
+
+Az összegyujtött adatokat felhasználjuk arra, hogy szolgáltatásainkat személyre szabjuk, így biztosítani tudjunk ajánlásokat, személyre szabott tartalmakat és személyre szabott keresési eredményeket. A Biztonsági ellenorzés például annak alapján ad biztonsági tanácsokat, hogy Ön hogyan használja a Google-termékeket. A Google Play pedig a telepített alkalmazások és a YouTube-on megtekintett videók alapján javasol új alkalmazásokat, amelyek esetleg tetszhetnek Önnek.
+
+A beállításoktól függoen személyre szabott hirdetéseket is megjeleníthetünk az érdeklodési körök alapján. Ha például rákeres a „túrakerékpár” kifejezésre, sportfelszerelésekkel kapcsolatos hirdetés jelenhet meg Önnek, amikor olyan webhelyet keres fel, amely Google által biztosított hirdetéseket tartalmaz. A hirdetésbeállításokban szabályozhatja, hogy milyen adatokat használhatunk fel hirdetések megjelenítése céljából.
+
+    Különleges személyes adatok (mint faji származás, vallás, szexuális beállítottság vagy egészségi állapot) alapján nem jelenítünk meg személyre szabott hirdetéseket.
+    A hirdetokkel csak akkor osztunk meg az Ön személyes azonosítására alkalmas adatot (például nevet vagy e-mail-címet), ha Ön kifejezetten megkér rá minket. Ha például látja a közeli virágüzlet hirdetését, és rákoppint a hirdetésben szereplo „hívás” gombra, akkor mi elindítjuk a hívást, és megoszthatjuk a telefonszámát az üzlettel.
+
+Ugrás a Hirdetésbeállításokhoz
+A teljesítmény mérése
+
+Az adatokat felhasználjuk elemzési és mérési célokra, hogy többet megtudjunk arról, hogyan használják a szolgáltatásainkat. Ha például felkeresi valamelyik webhelyünket, a látogatásával kapcsolatos adatok elemzését felhasználjuk a terméktervezés optimalizálásához. Felhasználjuk azoknak a hirdetéseknek az adatait is, amelyekkel interakcióba lép, így segíteni tudunk a hirdetoknek a kampányaik teljesítményének mérésében. E célra többféle eszközt használunk, többek között a Google Analytics szolgáltatást. Amikor olyan webhelyet keres fel, amely használja a Google Analytics szolgáltatást, akkor a Google és a Google Analytics-ügyfél összekapcsolhatja az adott webhelyen végzett tevékenységekre vonatkozó adatokat a hirdetési szolgáltatásainkat használó egyéb webhelyeken végzett tevékenységekre vonatkozó adatokkal.
+Kommunikáció a felhasználókkal
+
+Az összegyujtött adatokat (például az e-mail-címet) felhasználjuk közvetlen kapcsolatfelvétel céljából. Értesítést küldhetünk, ha gyanús tevékenységet észlelünk; például valaki szokatlan helyrol próbál meg bejelentkezni az Ön Google-fiókjába. Vagy tájékoztathatjuk a szolgáltatásainkban a közeljövoben végrehajtani kívánt változtatásokról és fejlesztésekrol. Ha pedig Ön lép kapcsolatba a Google-lal, a nyilvántartásunkban megorizzük a kérését, hogy segíthessünk Önnek a felmerülo problémákban.
+A Google, a felhasználóink és a nagyközönség védelme
+
+Az adatokat felhasználjuk a szolgáltatásaink biztonságának és megbízhatóságának javítására. Ide tartozik az olyan csalások, visszaélések, biztonsági kockázatok és muszaki problémák felismerése, megelozése és megoldása, amelyek kárt okozhatnak a Google-nak, a felhasználóinknak, illetve a nagyközönségnek.
+
+Különféle technológiák segítségével dolgozzuk fel az e célra gyujtött információkat. Automatizált rendszereink elemzik az Ön tartalmait, hogy olyan funkciókat biztosíthassanak Önnek, mint a személyre szabott keresési eredmények és hirdetések, illetve a szolgáltatások használatának módja alapján testreszabott egyéb funkciók. Mi is elemezzük a tartalmakat, hogy felfedezzük a visszaéléséket (például a spamet, a rosszindulatú programokat és az illegális tartalmakat). Algoritmusokat is használunk az adatokban rejlo minták felismerésére. Például a Google Fordító úgy segíti a különbözo nyelveken beszélo emberek egymással való kommunikációját, hogy felismeri a lefordíttatni kívánt kifejezésekben megtalálható általános nyelvi mintákat.
+
+A szolgáltatásainkban és az eszközökön gyujtött adatokat összekapcsolhatjuk a fent leírtak céljából. Ha például gitárosok videóit nézi a YouTube-on, akkor elofordulhat, hogy gitároktatást reklámozó hirdetés jelenik meg az egyik olyan webhelyen, amely a mi hirdetési termékeinket használja. Fiókbeállításaitól függoen elofordulhat, hogy a más webhelyeken és alkalmazásokban végzett tevékenységeit rendszerünk a személyes adataihoz társítja a Google szolgáltatásai és a Google által megjelenített hirdetések fejlesztése érdekében.
+
+Ha más felhasználók már rendelkeznek az Ön e-mail-címével, vagy Önt azonosító egyéb adattal, akkor hozzáférhetové tehetjük számukra Google-profilja nyilvános adatait, például nevét és fényképét. Ez például abban segít nekik, hogy felismerjék, hogy Ön küldött egy adott e-mailt.
+
+Az Ön adatainak a jelen Adatvédelmi irányelvekben nem szereplo célokra történo felhasználása elott a hozzájárulását kérjük.
+Adatvédelmi beállítások
+
+Vannak választási lehetoségei azzal kapcsolatban, hogy milyen adatokat gyujthetünk, és hogyan használhatjuk fel oket
+
+Ebben a szakaszban az adatai védelmének kezelésére szolgáló fo beállításokat mutatjuk be, amelyek az összes szolgáltatásunkra érvényesek. Használhatja az Adatvédelmi Áttekinto nevu eszközt is, amely segít a fontos adatvédelmi beállítások áttekintésében és módosításában. Ezen eszközök mellett az egyes termékekben is biztosítunk az adott termékre vonatkozó adatvédelmi beállításokat. További információt a Google-termékek adatvédelmi útmutatójában talál.
+
+Az Adatvédelmi Áttekinto megnyitása
+A saját adatok kezelése, áttekintése és aktualizálása
+
+Ha be van jelentkezve, bármikor áttekintheti és frissítheti adatait a használt szolgáltatásokat felkeresve. A Google Fotók és a Google Drive például egyaránt úgy lettek kialakítva, hogy segítenek a Google rendszereiben mentett bizonyos tartalomtípusok kezelésében.
+
+Létrehoztunk egy olyan helyet is, ahol áttekintheti és szabályozhatja a Google-fiókba mentett adatokat. Google-fiókja a következoket tartalmazza:
+Adatvédelmi beállítások
+Tevékenységvezérlok
+
+Eldöntheti, milyen tevékenységtípusokat szeretne menteni a fiókban. Például bekapcsolhatja a Helyelozményeket, ha forgalmi javaslatokat szeretne kapni a napi ingázáshoz, vagy mentheti a YouTube-on megnézett videók megtekintési elozményeit, hogy jobb videójavaslatokhoz jusson.
+
+Ugrás a Tevékenységvezérlok menühöz
+Hirdetésbeállítások
+
+Kezelheti a Google szolgáltatásaiban, illetve az olyan webhelyeken és alkalmazásokban megjeleno hirdetések beállításait, amelyek partneri viszonyra léptek a Google-lal hirdetések megjelenítése céljából. Módosíthatja érdeklodési köreit, eldöntheti, hogy felhasználhatjuk-e személyes adatait arra, hogy relevánsabb hirdetéseket jelenítsünk meg Önnek, valamint be- vagy kikapcsolhat bizonyos hirdetési szolgáltatásokat.
+
+Ugrás a Hirdetésbeállításokhoz
+Az Ön adatai
+
+Megadhatja, hogy mások mit láthatnak Önrol a Google-szolgáltatásokban.
+
+Az Ön adatai oldal megnyitása
+Megosztott ajánlások
+
+Kiválaszthatja, hogy látható legyen-e neve és fotója az Ön által végrehajtott, hirdetésekben megjeleno tevékenységek (például vélemény írása, ajánlás) mellett.
+
+A Megosztott ajánlások megnyitása
+Az Ön által megosztott adatok
+
+Szabályozhatja, hogy kivel oszt meg adatokat a fiókján keresztül a Google+ szolgáltatásban.
+
+Ugrás Az Ön által megosztott adatokhoz
+Az adatok áttekintésére és aktualizálására szolgáló módszerek
+Saját tevékenységek
+
+A Saját tevékenységek segítségével áttekintheti és szabályozhatja a Google-szolgáltatások használata (például a végrehajtott keresések vagy a Google Play felkeresése) során létrejött adatokat. Böngészhet dátum és témakör szerint, illetve részben vagy egészben törölheti tevékenységeit.
+
+Ugrás a Saját tevékenységek oldalra
+Google Irányítópult
+
+A Google Irányítópult a konkrét termékekkel kapcsolatos adatok kezelését teszi lehetové.
+
+Az Irányítópult megnyitása
+Személyes adatok
+
+Kezelheti a kapcsolatfelvételi adatait (például nevét, e-mail-címét és telefonszámát).
+
+A Személyes adatok oldal megnyitása
+
+Ha ki van jelentkezve, kezelheti a böngészohöz és az eszközhöz kapcsolódó adatokat:
+
+    Kijelentkezve végrehajtott keresések személyre szabása: Döntse el, hogy keresési tevékenységét felhasználjuk-e relevánsabb találatok és ajánlások biztosítására.
+    YouTube-beállítások: A YouTube-on szüneteltetheti vagy törölheti a keresési elozményeket és a megtekintési elozményeket.
+    Hirdetésbeállítások: Kezelheti az olyan hirdetésekkel kapcsolatos beállításokat, amelyek a Google szolgáltatásaiban, illetve a Google-lal hirdetések megjelenítése céljából partneri viszonyra lépo webhelyeken és alkalmazásokban jelennek meg.
+
+A saját adatok exportálása, eltávolítása és törlése
+
+Exportálhatja a Google-fiókjában lévo tartalmak egy példányát, ha biztonsági másolatként vagy valamelyik nem Google-szolgáltatásban szeretné használni.
+
+Az adatok exportálása
+
+Ezenkívül kérheti tartalmak eltávolítását adott Google-szolgáltatásokból a vonatkozó jogszabályok alapján.
+
+A következo lehetoségek állnak rendelkezésére adatok törléséhez:
+
+    Tartalmainak törlése konkrét Google-szolgáltatásokból
+    Konkrét elemek megkeresése és törlése a fiókjában a Saját tevékenységek oldalon
+    Adott Google-termékek törlése a hozzájuk tartozó adataival együtt
+    A teljes Google-fiókja törlése
+
+Az adatok törlése
+
+Végezetül pedig az Inaktív fiók kezeloje szolgáltatás lehetové teszi, hogy hozzáférést biztosítson valaki másnak Google-fiókja egyes részeihez, ha valamilyen váratlan ok miatt nem tudja használni a fiókot.
+
+A Google által gyujtött adatok szabályozására más módok is vannak, akár be van jelentkezve Google-fiókjába, akár nincs:
+
+    Böngészobeállítások: Beállíthatja a böngészojét úgy, hogy jelezze, ha a Google cookie-t állított be benne. Ezenkívül a böngészoben letilthatja a cookie-k fogadását adott domainrol vagy az összes domainrol. Ne feledje azonban, hogy a szolgáltatásaink megfelelo muködéséhez cookie-kra van szükség (például ahhoz, hogy megjegyezzék az Ön nyelvi beállításait).
+    Eszközszintu beállítások: Eszköze rendelkezhet olyan vezérlokkel, amelyek megszabják, hogy milyen adatokat gyujthetünk. Például módosíthatja a helybeállításokat Android-eszközén.
+
+Az Ön adatainak megosztása
+Amikor Ön oszt meg saját adatokat
+
+Számos szolgáltatásunk lehetové teszi információk megosztását más személyekkel, és a megosztás módját Ön szabályozza. Például közzéteheti videóit a YouTube-on nyilvánosan, de dönthet úgy is, hogy inkább maradjanak privátok a videók. Ne feledje, hogy amikor nyilvánosan oszt meg adatokat, akkor az adott tartalom hozzáférheto lehet a keresomotorokon, így például a Google Keresésen keresztül.
+
+Ha be van jelentkezve, és így lép interakcióba bizonyos Google-szolgáltatásokkal – például megjegyzést ír valamelyik YouTube-videóhoz vagy véleményt ír az egyik dalról a Playen –, akkor neve és fotója megjelenik az adott tevékenység mellett. Ezeket az információkat (a megosztott ajánlások beállításaitól függoen) hirdetésekben is megjeleníthetjük.
+Amikor a Google osztja meg az Ön adatait
+
+A Google-on kívül más vállalattal, szervezettel vagy személlyel nem osztjuk meg a személyes adatokat, kivéve az alábbi eseteket:
+Az adatmegosztás az Ön beleegyezésével történik
+
+A személyes adatokat akkor osztjuk meg a Google szolgáltatásain kívül, ha ehhez megkapjuk az Ön hozzájárulását. Ha például a Google Home segítségével keres utazási lehetoséget valamelyik telekocsi-szolgáltatásban, engedélyt kérünk Öntol, hogy megoszthassuk címét az adott szolgáltatással. A bizalmas személyes adatok megosztása elott kifejezett hozzájárulást kérünk Öntol.
+Domainrendszergazdákkal történo adatmegosztás
+
+Ha olyan intézményben tanul, vagy ha olyan szervezetnek dolgozik, amely használja a Google szolgáltatásait (például a G Suite terméket), akkor a domainrendszergazda és a fiókot kezelo viszonteladók hozzáférnek az Ön Google-fiókjához. A következoket tehetik meg:
+
+    a fiókban tárolt adatok (például e-mailek) elérése és megorzése;
+    a fiókkal kapcsolatos statisztikák megtekintése (például hány alkalmazást telepített Ön);
+    a fiókhoz tartozó jelszó módosítása;
+    a fiókhoz való hozzáférésének felfüggesztése vagy megszüntetése;
+    fiókadatainak megszerzése annak érdekében, hogy biztosíthassák a vonatkozó jogszabályoknak, eloírásoknak, jogi eljárásoknak vagy végrehajtható kormányzati kéréseknek való megfelelést;
+    a saját adatainak vagy adatvédelmi beállításainak Ön általi törlésére vagy szerkesztésére vonatkozó lehetoség korlátozása.
+
+A külso feldolgozás céljaira
+
+A személyes adatokat leányvállalatainknak és más megbízható vállalkozásoknak vagy személyeknek is átadjuk annak érdekében, hogy azokat az utasításainknak, valamint az adatvédelmi irányelveinknek megfeleloen, valamennyi további vonatkozó titoktartási és biztonsági intézkedéssel összhangban dolgozzák fel a számunkra. Például szolgáltatókat alkalmazunk, akik segítenek az ügyfélszolgálati problémák megoldásában.
+Jogszabályi okokból
+
+Abban az esetben osztjuk meg a személyes adatokat a Google-on kívüli entitásokkal, ha jóhiszemuen feltételezzük, hogy az adatokhoz való hozzáférés, illetve az adatok felhasználása, megorzése vagy közzététele észszeruen indokolt annak érdekében, hogy:
+
+    Megfeleljünk a vonatkozó jogszabályoknak, eloírásoknak, jogi folyamatoknak vagy törvényileg kötelezo hatósági megkereséseknek. Az Átláthatósági Jelentésben tesszük közzé, hogy mennyi és milyen típusú megkeresést kapunk kormányzati szervektol.
+    Betartassuk a vonatkozó általános szerzodési feltételeket, ideértve azok lehetséges megsértésének kivizsgálását is.
+    Észleljük, megelozzük, illetve más módon kezeljük a csalásokat, valamint a biztonsági vagy technikai jellegu problémákat.
+    A jogszabályok által eloírt vagy megengedett módon védelmet nyújtsunk a Google-nak, a felhasználóinknak vagy a nagyközönségnek a jogait, tulajdonát és biztonságát fenyegeto veszélyekkel szemben.
+
+A személyazonosításra nem alkalmas adatokat megoszthatjuk a nyilvánossággal és partnereinkkel – például megjelenítokkel, hirdetokkel, fejlesztokkel vagy jogtulajdonosokkal. Így például megoszthatjuk az adatokat a nyilvánossággal annak érdekében, hogy a szolgáltatásaink általános használatában jelentkezo tendenciákat bemutathassuk. Ezenkívül bizonyos partnereink számára lehetové tesszük adatok gyujtését a böngészobol vagy az eszközrol saját cookie-k vagy hasonló technológiák használatával hirdetésmegjelenítési és teljesítménymérési célokból.
+
+Ha a Google összeolvadásban, felvásárlásban vagy adásvételben érintett, továbbra is biztosítjuk valamennyi személyes adat titkosságát, az érintett felhasználókat pedig értesítjük a személyes adataik átadását megelozoen, valamint az adatok más adatvédelmi irányelvek hatálya alá kerülése elott.
+Az adatok biztonságának megorzése
+
+A felhasználói adatok védelme érdekében szolgáltatásaink biztonsági funkciókkal rendelkeznek
+
+Az összes Google-termék el van látva olyan hatékony biztonsági funkciókkal, amelyek folyamatosan védik az adatokat. A szolgáltatások üzemeltetése során gyujtött statisztikai adatok segítségével észlelni tudjuk a biztonsági fenyegetéseket, és automatikusan letiltjuk oket, hogy ne jussanak el Önhöz. Ha pedig olyan kockázatot fedezünk fel, amelyrol úgy gondoljuk, hogy fel kell hívni rá az Ön figyelmét, értesítést küldünk, valamint tájékoztatjuk arról is, hogy milyen lépéseket hajthat végre a biztonság növelése érdekében.
+
+Mindent megteszünk azért, hogy megóvjuk Önt és a Google-t a birtokunkban lévo adatokhoz való illetéktelen hozzáféréstol, illetve az említett adatok illetéktelen módosításától, közzétételétol és megsemmisítésétol. Ennek érdekében:
+
+    titkosítást használunk, amely megvédi az adatokat átvitel közben;
+    számos olyan biztonsági funkciót kínálunk, amelyek segítenek a fiók védelmében – ide tartozik például a Biztonságos Böngészés, a Biztonsági ellenorzés és a kétlépcsos azonosítás;
+    a rendszereinkhez való illetéktelen hozzáférés megakadályozása érdekében rendszeresen felülvizsgáljuk – a fizikai biztonsági intézkedéseinkre is kiterjedoen – az adatgyujtési, -tárolási és -feldolgozási gyakorlatainkat.
+    A személyes adatokhoz való hozzáférés korlátozott, a hozzáférésre csak a Google azon alkalmazottai, alvállalkozói és ügynökei jogosultak, akiknek ezekre az adatokra a feldolgozás érdekében szükségük van. Az ilyen hozzáféréssel rendelkezokre szigorú szerzodéses titoktartási kötelezettségek vonatkoznak, melyek elmulasztása esetén fegyelmi eljárás alá vonhatók és elbocsáthatók.
+
+A saját adatok exportálása és törlése
+
+Adatainak másolatát bármikor exportálhatja, illetve bármikor törölheti adatait a Google-fiókból
+
+Exportálhatja a Google-fiókjában lévo tartalmak egy példányát, ha biztonsági másolatként vagy valamelyik nem Google-szolgáltatásban szeretné használni.
+
+Az adatok exportálása
+
+A következo lehetoségek állnak rendelkezésére adatok törléséhez:
+
+    Tartalmainak törlése konkrét Google-szolgáltatásokból
+    Konkrét elemek megkeresése és törlése a fiókjában a Saját tevékenységek oldalon
+    Adott Google-termékek törlése a hozzájuk tartozó adataival együtt
+    A teljes Google-fiókja törlése
+
+Az adatok törlése
+
+Bizonyos esetekben korlátozott ideig megorizhetjük az adatokat, ha ezt nyomós üzleti érdek vagy jogszabály megköveteli. Megnézheti a Google által használt adatmegorzési idoszakok hosszát, amelybol az is kiderül, mennyi idobe telik, amíg eltávolítjuk a szóban forgó adatokat.
+
+Mindent megteszünk annak érdekében, hogy szolgáltatásaink védelmet nyújtsanak az adatok akaratlan vagy rosszindulatú törlésével szemben. Emiatt elofordulhat, hogy az aktív és a biztonsági másolatokat tartalmazó rendszereinkbol a törlési muvelethez képest késobb törlodik az adatok másolata.
+Jogszabályi megfelelés és együttmuködés a hatóságokkal
+
+Rendszeresen felülvizsgáljuk a jelen adatvédelmi irányelveket, és gondoskodunk arról, hogy az adatkezelés ezeknek megfeleloen történjen.
+Adatok átvitele
+
+Világszerte vannak szervereink, és elofordulhat, hogy az Ön adatait olyan szervereken dolgozzuk fel, amelyek nem az Ön országában találhatók. Az adatvédelmi törvények országonként különbözok, és egyes országok szélesebb köru védelmet biztosítanak a többinél. Az adatai feldolgozásának helyétol függetlenül ugyanazt a védelmet biztosítjuk, amelyet a jelen adatvédelmi irányelvek meghatároznak. Betartjuk az adattovábbításhoz kapcsolódó bizonyos jogi keretrendszereket, beleértve az EU–USA adatvédelmi pajzs (EU-US Privacy Shield Framework) és a Svájc–USA adatvédelmi pajzs (Swiss-US Privacy Shield Framework) rendelkezéseit.
+
+Ha hivatalos írásos panaszt kapunk, felvesszük a kapcsolatot a panaszt benyújtó személlyel. Az olyan panaszok rendezése érdekében, amelyeket a saját adatok átadásával kapcsolatban nyújtottak be, és amelyeket nem tudunk közvetlenül felhasználóinkkal megoldani, együttmuködünk az illetékes hatóságokkal (ideértve a helyi adatvédelmi hatóságokat is).
+Európai követelmények
+
+Ha az Európai Unió (EU) adatvédelmi törvényei vonatkoznak az Ön adatainak feldolgozására, akkor biztosítjuk az Ön számára a jelen irányelvekben leírt szabályozási lehetoségeket, így gyakorolni tudja a következo jogait: hozzáférés kérése a saját adataihoz; az adatok frissítése és eltávolítása; az adatok feldolgozhatóságának korlátozása. Ezenkívül jogosult tiltakozni az adatai feldolgozása esetén, illetve az adatok más szolgáltatásba való exportálására.
+
+Adatait a jelen irányelvekben leírt célokra használjuk fel a következo jogalapok érvényesítésével:
+Az adatmegosztás az Ön beleegyezésével történik
+
+Hozzájárulást kérünk az Ön adatainak meghatározott célokra történo feldolgozásához, és Önnek jogában áll bármikor visszavonni a hozzájárulást. Például hozzájárulást kérünk ahhoz, hogy személyre szabott szolgáltatásokat (például hirdetéseket) biztosíthassunk Önnek. Ezenkívül hozzájárulást kérünk ahhoz is, hogy gyujthessük hangtevékenységeit a beszédfelismerés céljából. Ezeket a beállításokat a Google-fiókjában kezelheti.
+Amikor jogos érdekeket szeretnénk érvényesíteni
+
+A Google és harmadik felek jogos érdekeinek céljából feldolgozhatjuk az adatait az adatvédelmet szolgáló megfelelo biztonsági intézkedések használatával. Ezt azt jelenti, hogy például a következo célokra használhatjuk fel az adatokat:
+
+    a szolgáltatásaink biztosítása, karbantartása és fejlesztése, hogy megfeleljenek a felhasználóink igényeinek;
+    olyan új termékek és funkciók fejlesztése, amelyek hasznosak a felhasználóink számára;
+    annak megértése, hogyan használják az emberek a szolgáltatásainkat, ugyanis így tudjuk biztosítani és fejleszteni a szolgáltatások teljesítményét;
+    a szolgáltatásaink személyre szabása, hogy jobb felhasználói élményt tudjunk biztosítani;
+    marketingtevékenységek, hogy tájékoztathassuk a felhasználókat a szolgáltatásainkról;
+    hirdetések megjelenítése, hogy számos szolgáltatásunkat ingyen tudjuk kínálni a felhasználóknak;
+    a csalások, visszaélések, valamint a biztonsági vagy technikai jellegu problémák észlelése, megelozése, illetve más módon történo kezelése a szolgáltatásainkban;
+    védelem nyújtása a Google-nak, a felhasználóknak és a nagyközönségnek a jogokat, tulajdont vagy biztonságot fenyegeto veszéllyel szemben a jogszabályok által eloírt vagy megengedett módon;
+    kutatások elvégzése, amelyek segítségével továbbfejleszthetjük szolgáltatásainkat a felhasználók számára, és amelyek a köz érdekét szolgálják;
+    a partnereinkkel – például a fejlesztokkel és a jogtulajdonosokkal – kapcsolatos kötelezettségeink teljesítése;
+    jogérvényesítés, beleértve a vonatkozó általános szerzodési feltételek lehetséges megsértéseinek kivizsgálását.
+
+Amikor szolgáltatást biztosítunk
+
+Kezeljük és feldolgozzuk az adatait, hogy biztosítani tudjuk Önnek azt a szolgáltatást, amelyet szerzodés alapján igénybe szeretne venni. Például feldolgozzuk a fizetési adatait, ha kiegészíto tárhelyet vásárol a Google Drive szolgáltatásban.
+Amikor törvényi kötelezettségnek kell eleget tennünk
+
+Kezeljük az adatokat, ha erre vonatkozó törvényi kötelezettségünk van; például ha jogi folyamatra vagy végrehajtható kormányzati kérésre reagálunk.
+
+Ha kérdései vannak, felveheti a kapcsolatot a Google-lal és az adatvédelmi irodánkkal. Ha pedig arra kíváncsi, milyen jogokkal rendelkezik a helyi törvények értelmében, felveheti a kapcsolatot a helyi adatvédelmi hatósággal.
+A jelen irányelvekrol
+Mikor alkalmazandók ezek az irányelvek?
+
+A jelen adatvédelmi irányelvek a Google LLC és leányvállalatainak szolgáltatásaira (például a YouTube és az Android), valamint a harmadik felek webhelyein kínált (például hirdetési) szolgáltatásokra vonatkoznak. A jelen adatvédelmi irányelvek nem terjednek ki azokra a szolgáltatásokra, amelyekre olyan külön adatvédelmi irányelvek vonatkoznak, melyek nem foglalják magukban a jelen adatvédelmi irányelveket.
+
+A jelen adatvédelmi irányelvek nem vonatkoznak a következokre:
+
+    a szolgáltatásainkat reklámozó egyéb vállalatok és szervezetek információs gyakorlatára;
+    más vállalatok vagy személyek által kínált szolgáltatásokra, például a Google-szolgáltatásokat tartalmazó, a keresési eredmények között megjeleno vagy a szolgáltatásainkból hivatkozott termékekre vagy webhelyekre.
+
+A jelen irányelvek módosítása
+
+A jelen adatvédelmi irányelveket idorol idore módosítjuk. A jelen adatvédelmi irányelvekben biztosított jogait az Ön kifejezett hozzájárulása nélkül nem csökkentjük vagy korlátozzuk. Mindig feltüntetjük a legutóbbi módosítások közzétételének dátumát, emellett hozzáférést biztosítunk az archivált változatokhoz. Jelentos módosítások esetén szembetunobb értesítést küldünk (például bizonyos szolgáltatások esetében e-mailben értesítjük az adatvédelmi irányelvek változásáról).
+Kapcsolódó adatvédelmi gyakorlat
+Adott Google-szolgáltatások
+
+A következo adatvédelmi közlemények további információt nyújtanak bizonyos Google-szolgáltatásokról:
+
+    A Chrome és a Chrome operációs rendszer
+    Play Könyvek
+    Payments
+    Fiber
+    Project Fi
+    G Suite for Education
+    YouTube Gyerekeknek
+    Family Link szolgáltatással kezelt Google-fiókok
+
+További hasznos források
+
+Az alábbi linkeken olyan hasznos forrásokat talál, amelyekbol többet megtudhat az adatkezelési gyakorlatunkról és az adatvédelmi beállításokról.
+
+    A fiók kezelésével kapcsolatban számos beállítást találhat Google-fiókjában.
+    Az Adatvédelmi Áttekinto segít a Google-fiókra vonatkozó legfontosabb adatvédelmi beállítások konfigurálásában.
+    A Google Biztonsági központja a biztonság megorzésével kapcsolatban kínál tanácsokat.
+    A Google adatvédelmi webhelyén további információt talál arról, hogyan orizzük meg a személyes adatok biztonságát.
+    Az Adatvédelmi irányelvek és Általános Szerzodési Feltételek oldal bovebb kontextust biztosít a jelen adatvédelmi irányelvekkel és az Általános Szerzodési Feltételekkel kapcsolatban.
+    A Technológiák és alapelvek oldalon a következokrol talál további információkat:
+        Hogyan használja a Google a cookie­­-kat?
+        A hirdetésekhez használt technológiák
+        Hogyan használja a Google a mintafelismerést olyan célokra, mint például az arcok felismerése a fotókon?
+        Ez az oldal leírja, hogy milyen adatok kerülnek megosztásra a Google-lal, amikor olyan webhelyeket keres fel, amelyek a mi hirdetési, elemzési vagy közösségi termékeinket használják.
+        Hogyan használja fel a Google az Ön adatait, amikor a partnereink webhelyeit vagy alkalmazásait használja?
+
+Nyelv módosítása:
+
+    GoogleMinden a Google-rólAdatvédelemÁltalános Szerzodési Feltételek
