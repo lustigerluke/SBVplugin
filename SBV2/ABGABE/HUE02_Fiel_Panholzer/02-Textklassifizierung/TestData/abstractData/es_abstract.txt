@@ -1,0 +1,20 @@
+Este trabajo confirma que la combinación del desarrollo tecnológico de la digitalización
+con el servicio de reserva de curso establecido es posible de conformidad con la ley de derechos de autor
+Alemania y lleva a un valor añadido para todos los interesados ??en el proceso. Esta investigacion es
+Basado en un análisis comparativo de la literatura. Un proceso de referencia que contiene lo estratégico.
+y el nivel operativo del servicio de reserva electrónica se desarrolla utilizando el negocio
+Notación de modelado de procesos (BPMN), de ahí el beneficio adicional de la nueva pr
+o-
+Acceso a todos los participantes. Diferentes opciones de implementación para las tareas asociadas son d.
+e-
+Soluciones de software independientes descritas disponibles en el mercado. Además, el estudio.
+Identifica enfoques universales de integración dentro de la universidad. Otro aspecto ou
+t
+alineado es la identificación del potencial para la cooperación cruzada universitaria. Se completa el estudio.
+desarrollando un procedimiento para implementar el nuevo proceso en el contexto específico de las condiciones
+en la tu berlin.
+El proceso de referencia se puede utilizar para la implementación de los servicios de reserva de cursos en cualquier
+otra universidad Para su implementación se han analizado parámetros individuales.
+l-
+Por otra parte, el nivel técnico del modelo de proceso debe complementarse y su procedimiento
+angepasst.

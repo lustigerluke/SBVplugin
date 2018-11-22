@@ -1,0 +1,25 @@
+Diese Arbeit zeigt, dass die Verknüpfung der technologischen Entwicklung der Digitalisierung 
+mit  der  etablierten  Dienstleistung  Semesterapparat  unter  Beachtung  des  Urheberrechts  in 
+Deutschland möglich ist und zu einem Mehrwert für alle am Prozess Beteiligten führt.  Dazu 
+werden auf Basis einer vergleichenden Literaturanalyse unter Einsatz der Business Process 
+Modeling  Notation  (BPMN)  Grundsätze  für  eine  Konzeption  in  Form  eines  Referenzprozes-
+s
+es,  der  die  strategische  und  die  operative  Ebene  umfasst,  für  den  elektronischen  Semes-
+terapparat  entwickelt  und  der  daraus  resultierende  Mehrwert  für  alle  Beteiligten  aufgezeigt
+. 
+Die  Realisierungsoptionen  für  die  dabei  anfallenden  Aufgaben  werden 
+unabhängig  von  auf 
+dem  Markt  befindlichen  Softwarelösungen  allgemein  gültig  beschrieben  und  Ansatzpunkte 
+für  eine  verstärkte  Vernetzung  innerhalb  der  Hochschule 
+benannt
+.  Darüber  hinaus  werden 
+Potenziale  für  hochschulübergreifen
+de  Kooperationen  identifiziert.  Die  Arbeit  wird  durch  die 
+Ausarbeitung  einer  organisatorischen  und  inhaltlichen  Vorgehensweise  zur  Umsetzung  des 
+Konzepts unter den konkreten Rahmenbedingung der TU Berlin vervollständigt.  
+Der  Referenzprozess kann für  die  Implementierung  eines  elektronischen Semesterapparats 
+in  jeder  anderen  Hochschule  herangezogen  werden.  Für  die  konkrete  Umsetzung  sind  z
+u-
+sätzlich  die  individuellen  Rahmenbedingungen  zu  analysieren,  das  technische  Prozessm
+o-
+dell zu ergänzen und die Vorgehensweise anzupassen. 
