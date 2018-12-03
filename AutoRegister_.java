@@ -15,11 +15,17 @@ public class AutoRegister_ implements PlugInFilter {
 	
 	
 	public void run(ImageProcessor ip) {
+		// read image
 		byte[] pixels = (byte[])ip.getPixels();
 		int width = ip.getWidth();
 		int height = ip.getHeight();
         int[][] inDataArrInt = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
         
+        // invert to set background to black
+        int[] invertTF = ImageTransformationFilter.GetInversionTF(255);
+		inDataArrInt = ImageTransformationFilter.GetTransformedImage(inDataArrInt, width, height, invertTF);
+        
+        // chop image
 		int widthHalf = (int)(width / 2.0);
 		double[][] tmpImage = ImageJUtility.convertToDoubleArr2D(inDataArrInt, width, height);
 		Rectangle roi = new Rectangle(0, 0, widthHalf, height);
@@ -28,35 +34,63 @@ public class AutoRegister_ implements PlugInFilter {
 		roi = new Rectangle(widthHalf, 0, widthHalf, height);
 		double[][] Img2 = ImageJUtility.cropImage(tmpImage, roi.width, roi.height, roi);
 		ImageJUtility.showNewImage(Img2, widthHalf, height, "second half image");
-        
-		int[][] intImg1 = ImageJUtility.convertToIntArr2D(Img1, widthHalf, height);
-		int[][] intImg2 = ImageJUtility.convertToIntArr2D(Img2, widthHalf, height);
 		
-		
-        // define transform
-        double transX = 30.131;
-        double transY = -59.999;
-        double rotAngle = 0.746;
-        
+		// initialize ranges
         int xRadius = 50;
         int yRadius = 40;
         int rotRadius = 10;
-        
+		
+		// initialize arrays
+		int[][] intImg1 = ImageJUtility.convertToIntArr2D(Img1, widthHalf, height);
+		int[][] intImg2 = ImageJUtility.convertToIntArr2D(Img2, widthHalf, height);
         int[][] transformedImg;
         int[][] diffImg;
         int[][][] ssE = new int[2*xRadius + 1][2*yRadius + 1][2*rotRadius + 1];
+		
+		// initial fitness
+		diffImg = ImageJUtility.calculateImgDifference(intImg1, intImg2, widthHalf, height);
+		int initialFitness = calculateSSE(diffImg, widthHalf, height);
+		System.out.println("initiale Fitness: " + initialFitness);
+        
+		// fill ssE matrix
         for(int x = - xRadius; x < xRadius; x++) {
         	for( int y = -yRadius; y < yRadius; y++) {
         		for (int angle = - rotRadius; angle < rotRadius; angle ++) {
         			transformedImg = transformImage(intImg1, widthHalf, height, x, y, angle);
-        			diffImg = ImageJUtility.calculateImgDifference(intImg1, intImg2, widthHalf, height);
+        			diffImg = ImageJUtility.calculateImgDifference(transformedImg, intImg2, widthHalf, height);
         			ssE[x+xRadius][y+yRadius][angle+rotRadius] = calculateSSE(diffImg, widthHalf, height);
         		}
         	}
         }
+        System.out.println("filled ssE matrix");
         
-        System.out.println("Done");
-        //ImageJUtility.showNewImage(transformedImg, width, height, "transformed image");
+        // find minimum
+        int minimum = initialFitness;
+        int minXind = 0;
+        int minYind = 0;
+        int minAnleInd = 0;
+        for(int x =0; x < 2*xRadius+1; x++) {
+        	for( int y = 0; y < 2*yRadius+1; y++) {
+        		for (int angle = 0; angle < 2*rotRadius+1; angle ++) {
+        			if(ssE[x][y][angle] < minimum) {
+        				minimum = ssE[x][y][angle];
+        				minXind = x;
+        				minYind = y;
+        				minAnleInd = angle;
+        			}
+        		}
+        	}
+        }
+        
+		// final fitness
+        // TODO: die indizes stimmen nicht. Entweder die finale Fitness direkt aus ssE[][][] herauslesen oder vernünftig neu berechnen (man muss den Offset wieder wegnehmen ;) ) 
+		//transformedImg = transformImage(intImg1, widthHalf, height, minXind,minYind,minAnleInd);
+		//diffImg = ImageJUtility.calculateImgDifference(transformedImg, intImg2, widthHalf, height);
+		//int finalFitness = calculateSSE(diffImg, widthHalf, height);
+		System.out.println("final Fitness: " + minimum);
+        
+        
+        ImageJUtility.showNewImage(diffImg, widthHalf, height, "fittest diff image");
                         
 	} //run
 
