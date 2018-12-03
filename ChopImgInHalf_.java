@@ -29,7 +29,7 @@ public class ChopImgInHalf_ implements PlugInFilter {
 		ImageJUtility.showNewImage(Img1, (int)widthHalf, height, "first half image");
 		roi = new Rectangle((int)widthHalf, 0, (int)widthHalf, height);
 		double[][] Img2 = ImageJUtility.cropImage(tmpImage, roi.width, roi.height, roi);
-		ImageJUtility.showNewImage(Img2, (int)widthHalf, height, "first half image");
+		ImageJUtility.showNewImage(Img2, (int)widthHalf, height, "second half image");
                         
 	} //run
 
