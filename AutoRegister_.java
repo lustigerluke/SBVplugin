@@ -52,28 +52,24 @@ public class AutoRegister_ implements PlugInFilter {
 		int initialFitness = calculateSSE(diffImg, widthHalf, height);
 		System.out.println("initiale Fitness: " + initialFitness);
         
-		// fill ssE matrix
+		// fill ssE matrix  and find minimum
+        int minimum = initialFitness;
+        int tmpSSE = 0;
+        int minXind = 0;
+        int minYind = 0;
+        int minAnleInd = 0;
         for(int x = - xRadius; x < xRadius; x++) {
         	for( int y = -yRadius; y < yRadius; y++) {
         		for (int angle = - rotRadius; angle < rotRadius; angle ++) {
         			transformedImg = transformImage(intImg1, widthHalf, height, x, y, angle);
         			diffImg = ImageJUtility.calculateImgDifference(transformedImg, intImg2, widthHalf, height);
-        			ssE[x+xRadius][y+yRadius][angle+rotRadius] = calculateSSE(diffImg, widthHalf, height);
-        		}
-        	}
-        }
-        System.out.println("filled ssE matrix");
-        
-        // find minimum
-        int minimum = initialFitness;
-        int minXind = 0;
-        int minYind = 0;
-        int minAnleInd = 0;
-        for(int x =0; x < 2*xRadius+1; x++) {
-        	for( int y = 0; y < 2*yRadius+1; y++) {
-        		for (int angle = 0; angle < 2*rotRadius+1; angle ++) {
-        			if(ssE[x][y][angle] < minimum) {
-        				minimum = ssE[x][y][angle];
+        			tmpSSE = calculateSSE(diffImg, widthHalf, height);
+        			ssE[x+xRadius][y+yRadius][angle+rotRadius] =tmpSSE;
+        			
+        			// find minimum and save indices for later
+        			if(tmpSSE < minimum) {
+        				minimum = tmpSSE;
+        				System.out.println("current minimal fitness: " + minimum);
         				minXind = x;
         				minYind = y;
         				minAnleInd = angle;
@@ -81,15 +77,11 @@ public class AutoRegister_ implements PlugInFilter {
         		}
         	}
         }
-        
-		// final fitness
-        // TODO: die indizes stimmen nicht. Entweder die finale Fitness direkt aus ssE[][][] herauslesen oder vernünftig neu berechnen (man muss den Offset wieder wegnehmen ;) ) 
-		//transformedImg = transformImage(intImg1, widthHalf, height, minXind,minYind,minAnleInd);
-		//diffImg = ImageJUtility.calculateImgDifference(transformedImg, intImg2, widthHalf, height);
-		//int finalFitness = calculateSSE(diffImg, widthHalf, height);
-		System.out.println("final Fitness: " + minimum);
-        
-        
+        System.out.println("final Fitness: " + minimum); 
+
+        // plot difference image to proof the transformation
+        transformedImg = transformImage(intImg1, widthHalf, height, minXind,minYind,minAnleInd);
+		diffImg = ImageJUtility.calculateImgDifference(transformedImg, intImg2, widthHalf, height);
         ImageJUtility.showNewImage(diffImg, widthHalf, height, "fittest diff image");
                         
 	} //run
