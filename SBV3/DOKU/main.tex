@@ -26,22 +26,93 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \renewcommand{\thesubsubsection}{\alph{subsubsection} )}
 %\renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection} )}
 
-\setcounter{section}{1}
+\setcounter{section}{2}
 
 \begin{document}
 
-\title{Übungsaufgaben II, SBV1 }
+\title{Übungsaufgaben III, SBV1 }
 \author{Lukas Fiel, Lisa Panholzer}
 \maketitle
 
 
 \newpage
 \section{Übungsaufgaben III}
-\subsection{Resampling und Interpolation}
-\subsubsection{Implementierung Resampling}
+\subsection{Resampling und Bildüberlagerung}
+\subsubsection{Zerteilen eines Bildes}
+\label{chopImg}
+Zur vertikalen Teilung eines Bildes wurde ein simpler Filter \textit{ChopImgInHalf\_} in \textit{ImageJ} implementiert. Dieser definiert zuerst eine ROI (region of interest) welche die erste Hälfte des Bildes beinhaltet. Mittels \textit{ImageJUtility.chopImage} kann dieser Bereich aus dem Ursprungsbild herausgeschnitten und angezeigt werden. Die Berechnung der 2ten Hälfte des Bildes unterscheidet sich lediglich durch die linke obere Koordinate des interessanten Bereichs (roi). 
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c | c |}
+	\hline
+	gegebenes & invertierter & invertierter \\	
+	Testbild & Bildausschnitt1 & Bildausschnitt2 \\ 
+    \hline
+    \includegraphics[width=5cm]{images/chop/binary1.jpg} &
+    \includegraphics[width=2.5cm]{images/chop/binary1FH.jpg} &
+    \includegraphics[width=2.5cm]{images/chop/binary1SH.jpg} \\
+    \hline
+    \includegraphics[width=5cm]{images/chop/lena.jpg} &
+    \includegraphics[width=2.5cm]{images/chop/lenaFH.jpg} &
+    \includegraphics[width=2.5cm]{images/chop/lenaSH.jpg} \\
+    \hline
+    
+  \end{tabular}
+  \caption{Testfälle: Zerteilung eines Bildes}
+  \label{tab:chopInHalfTest}
+\end{table}
+
+\subsubsection{Transformation mittels Nearest Neighbor und Bilinearer Interpolation}
+
+\subsubsection{automatische Registrierung}
+Es wurde ein Filter in \textit{ImgaeJ} implementiert, der zur automatischen Registrierung von Bildinhalten herangezogen werden soll. Dabei wurde von den gegebenen Testbildern ausgegangen. \\
+Da diese mit einer Bildtiefe von $8 bit$ nur Werte von $0$ (schwarz) bis $255$ (weiß) aufweisen, kann mittels SSE einfach ein Algorithmus geschrieben werden, der die Bilder voneinander subtrahiert und die Pixelwerte des Resultatbildes als Fitness heranzieht und aufsummiert. Der Hintergrund der gegebenen Bilder ist dabei meist weiß ($255$). Bei einer Verschiebung und anschließender Subtraktion entstehen aus diesem Grund aber schwarze Fragmente am Rand. Dieser Umstand kann leicht eliminiert werden, indem das Ursprungsbild zu Beginn invertiert wird. So ist der Hintergrund schwarz ($0$). Kanten werden dementsprechend weiß ($255$) dargestellt. \\
+Das invertierte Bild wird anschließend, wie in Punkt \ref{chopImg} beschrieben, zerteilt und die Einzelbilder dargestellt. \\
+Die eigentliche Registrierung verschiebt nun Bild1 in x und y Richtiung und rotiert dieses auch um jeweils ein Inkrement. Jedes dieser transformierten Bilder wird nun von Bild2 abgezogen und erneut ein Fitneswert berechnet. Es ist davon auszugehen, dass ein schwarzer Hintergrund ($0$) abgezogen von einem schwarzen Hintergrund ($0$) wiederum $0$ ergibt. Werden allerdings weiße Pixel von schwarzem Hintergrund abgezogen, oder schwarzer Hintergrund von weißen Linien abgezogen, so erhält man Werte abweichend von $0$. Auch Negativwerte sind so denkbar, wesshalb diese Differenzwerte zum Quadrat genommen werden. Hierdurch sind Differenzwerte immer positiv.\\
+Wird Bild1 irgendwann genau auf die Position geschoben an der sich Bild2 befindet so subtrahieren sich die weißen Linien im Idealfall zu $0$. So kann ein eindeutiger Fitnesswert errechnet werden, der sein Optimum bei $0$ findet.\\
+Aus Ressourcengründen werden all die beschriebenen Berechnungen/Verschiebungen mit dem NearesNeighbor Algorithmus berechnet. Ist das Optimum gefunden wird anschließend nocheinmal die Transformation mit Bilinearer Interpolation berechnet und von Bild2 subtrahiert. Das Resultatbild wird zum Schluss für den User sichtbar dargestellt um den Erfolg des Filters zu veranschlaulichen. \\
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c | c | c |}
+	\hline
+	gegebenes & invertierter & invertierter & resultierendes \\	
+	Testbild & Bildausschnitt1 & Bildausschnitt2 & Differenzbild \\ 
+    \hline
+    \includegraphics[width=5cm]{images/autoregister/binary1.jpg} &
+    \includegraphics[width=2.5cm]{images/autoregister/binary1FH.jpg} &
+    \includegraphics[width=2.5cm]{images/autoregister/binary1SH.jpg} &
+    \includegraphics[width=2.5cm]{images/autoregister/binary1DIFF.jpg} \\
+    \hline
+    \includegraphics[width=5cm]{images/autoregister/binary2.jpg} &
+    \includegraphics[width=2.5cm]{images/autoregister/binary2FH.jpg} &
+    \includegraphics[width=2.5cm]{images/autoregister/binary2SH.jpg} &
+    \includegraphics[width=2.5cm]{images/autoregister/binary2DIFF.jpg} \\
+    \hline
+    \includegraphics[width=5cm]{images/autoregister/gray2.jpg} &
+    \includegraphics[width=2.5cm]{images/autoregister/gray1FH.jpg} &
+    \includegraphics[width=2.5cm]{images/autoregister/gray1SH.jpg} &
+    \includegraphics[width=2.5cm]{images/autoregister/gray1DIFF.jpg} \\
+    \hline
+    
+  \end{tabular}
+  \caption{Testfälle: automatische Registrierung}
+  \label{tab:autoRegisterTest}
+\end{table}
+
+\subsubsection{Optimierungs-Strategie: Gradientenabstieg (gradient descent) oder Evolutionsstrategie (evolution strategy)}
+skipped\\
+\subsubsection{Mutual Information Metrik}
+skipped\\
+\subsubsection{Registrierung mittels DistanceMap}
+skipped?!\\
+@Lisa: hier könnte dein Text stehen ;) Im Anschluss findest du noch Code-Beispiele für das Einfügen von Bildern und Tabellen und und und .... ich habs dir drinnen gelassen, nachdem ich diese selbst verwendet hab ;) bitte löschen wenn du sie nicht mehr brauchst.
 
 
-hier könnte Ihr text stehen
+\newpage
+
+
 \begin{figure}[H]
 	\centering
 	%\includegraphics[width=7cm]{images/bilineare-interpolation-final/bip-scaled-2.jpg}
@@ -50,24 +121,7 @@ hier könnte Ihr text stehen
 \end{figure}
 
 
-\begin{table}[H]
-  \centering
-  \begin{tabular}{| l | c | c | c | c | c |}
-	\hline
-	Datensätze & Abstract & Dictionary & Facebook & Google & Witz \\ 
-    \hline
-    Abstract &
-  %  \includegraphics[width=2.5cm]{../images/abstractData/abstractData.jpg} &
-  %  \includegraphics[width=2.5cm]{../images/abstractData/dictData.jpg} &
-  %  \includegraphics[width=2.5cm]{../images/abstractData/facebookData.jpg} &
-  %  \includegraphics[width=2.5cm]{../images/abstractData/googleData.jpg} &
-  %  \includegraphics[width=2.5cm]{../images/abstractData/witzData.jpg} \\
-  %  \hline
-    
-  \end{tabular}
-  \caption{Auswertung der Datensätze}
-  \label{tab:datenAuswertungText}
-\end{table}
+
 
 \newpage
 %%\lstinputlisting[frame=single,language=MATLAB,breaklines=true,caption = Octave Script zur Darstellung der einzelnen Kompressionsraten.]{../calculateZipMatrix.m}
