@@ -53,6 +53,38 @@ public class Register_ implements PlugInFilter {
 		return radius;
 	}
 	
+	public double GetBilinearinterpolatedValue(int[][] inImg, double x, double y, int width, int height) {
+		// calculate the delta for x and y
+		double deltaX = x - Math.floor(x);
+		double deltaY = y - Math.floor(y);
+
+		// set calculation fregment
+		int xPlus1 = (int) x + 1;
+		int yPlus1 = (int) y + 1;
+
+		// handling of image edge for x
+		if (x + 1 >= width) {
+			xPlus1 = (int) x;
+		}
+
+		// handling of image edge for y
+		if (y + 1 >= height) {
+			yPlus1 = (int) y;
+		}
+
+		// get 4 neighboring pixels
+		int neighbor1 = inImg[xPlus1][(int) (y)];
+		int neighbor2 = inImg[(int) (x)][yPlus1];
+		int neighbor3 = inImg[xPlus1][yPlus1];
+		int neighbor4 = inImg[(int) (x)][(int) (y)];
+
+		// calculate weighted mean out of neighbors
+		double weightedMean = ((1 - deltaX) * (1 - deltaY) * neighbor4) + (deltaX * (1 - deltaY) * neighbor1)
+				+ ((1 - deltaX) * deltaY * neighbor2) + (deltaX * deltaY * neighbor3);
+
+		return weightedMean;
+	}
+	
 	public int[][] transformImage(int[][] inImg,int width, int height, double transX, double transY, double rotAngle) {
 		
 		//allocate result image
@@ -82,7 +114,7 @@ public class Register_ implements PlugInFilter {
 				posY -= transY;
 				
 
-				// move orifin back from center to top corner
+				// move origin back from center to top corner
 				posX = posX + widthHalf;
 				posY = posY + heightHalf;
 				
@@ -98,7 +130,10 @@ public class Register_ implements PlugInFilter {
 				}
 				else {
 					// if not nearest neighbor, do bilinear interpolation
+					double resultVal = GetBilinearInterpolatedValue(inDataArrInt, posX, posY, width, height);
 					
+					//set new rounded value for current location
+					resultImg[x][y] = (int) (resultVal + 0.5);
 					
 				}
 			
