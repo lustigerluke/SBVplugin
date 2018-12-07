@@ -108,15 +108,15 @@ public class RegionGrowing_ implements PlugInFilter {
 		System.out.println("xStart : " + xStart +  ", yStart: " + yStart);
 		
 		// user input - default
-		int lowerThresh = 80;
-		int upperThresh = 120;
+		int lowerThresh = 100;
+		int upperThresh = 255;
 		// user dialog
 		GenericDialog gd = new GenericDialog("thresh params");
 		gd.addSlider("lower thresh", 0, 255, lowerThresh);
 		gd.addSlider("upper thresh", 0, 255, upperThresh);
 		gd.showDialog();
 
-		if (gd.wasCanceled()) {
+		if (!gd.wasCanceled()) {
 			lowerThresh = (int) gd.getNextNumber();
 			upperThresh = (int) gd.getNextNumber();
 		}
