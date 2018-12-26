@@ -23,7 +23,7 @@ public class RegionGrowing_ implements PlugInFilter {
 		return DOES_8G + DOES_STACKS + SUPPORTS_MASKING + ROI_REQUIRED;
 	} // setup
 	
-	public static int[][] performRegionGrowing(int[][] inImgArr, int width, int height, int lowerThresh, int upperThresh, int seedX, int seedY) {
+	public static int[][] performRegionGrowing(int[][] inImgArr, int width, int height, int lowerThresh, int upperThresh, int seedX, int seedY, String region) {
 		// constants
 		int BG_VAL = 0;
 		int FG_VAL = 255;
@@ -55,22 +55,33 @@ public class RegionGrowing_ implements PlugInFilter {
 					int nbX = nextPos.x + xOffset;
 					int nbY = nextPos.y + yOffset;
 					
-					// check if valid range ==> position within image boundaries
-					if(nbX >= 0 && nbY >= 0 && nbX < width && nbY < height) {
+					// check if N4 region
+					boolean isRegion = false;
+					if(region.equals("N4") && (xOffset*yOffset == 0 && xOffset+yOffset != 0)) isRegion = true;
+					if(region.equals("N8") && (xOffset != 0 || yOffset != 0)) isRegion = true;
+					
+					
+					if(isRegion) {
 						
-						int nbVal = inImgArr[nbX][nbY];
-						//check if pixel is unprocessed and if vlaue in threshold range
-						if(returnArr[nbX][nbY] == UNPROCESSED_VAL) {
-							//check if range valid
-							if(nbVal >= lowerThresh && nbVal <= upperThresh) {
-								returnArr[nbX][nbY] = FG_VAL;
-								processingStack.push(new Point(nbX,nbY));
-							}
-							else {
-								returnArr[nbX][nbY] = BG_VAL;
+						// check if valid range ==> position within image boundaries
+						if(nbX >= 0 && nbY >= 0 && nbX < width && nbY < height) {
+							
+							int nbVal = inImgArr[nbX][nbY];
+							
+							//if current pixel was not processed yet (check if pixel is unprocessed and if vlaue in threshold range)
+							if(returnArr[nbX][nbY] == UNPROCESSED_VAL) {
+								
+								//if range valid
+								if(nbVal >= lowerThresh && nbVal <= upperThresh) {
+									returnArr[nbX][nbY] = FG_VAL;				//set current pixel to foreground
+									processingStack.push(new Point(nbX,nbY)); 	// push current pixel to the stack
+								}
+								else {
+									returnArr[nbX][nbY] = BG_VAL;
+								}
 							}
 						}
-					}
+					} // if N4 region
 				}//for yOffset
 			}// for xOffset
 		
@@ -89,8 +100,8 @@ public class RegionGrowing_ implements PlugInFilter {
 		
 		
 		return returnArr;
-	}
-
+	} //performRegionGrowing
+	
 
 	public void run(ImageProcessor ip) {
 		byte[] pixels = (byte[]) ip.getPixels();
@@ -121,9 +132,10 @@ public class RegionGrowing_ implements PlugInFilter {
 			upperThresh = (int) gd.getNextNumber();
 		}
 		
-		//finally calling functiopn
-		int[][] resultImg = performRegionGrowing(inDataArrInt, width, height, lowerThresh, upperThresh, xStart, yStart);
-		
+		//finally calling function
+		int[][] resultImg = performRegionGrowing(inDataArrInt, width, height, lowerThresh, upperThresh, xStart, yStart,"N4");
+
+	
 		ImageJUtility.showNewImage(resultImg, width, height, "region coin result");
 
 	} // run
