@@ -26,6 +26,8 @@ public class AutoRegionGrowing_ implements PlugInFilter {
 		
 		int[][] returnArr = new int[width][height];
 		
+		
+		// prepare -> set every pixel to unprocessed state
 		for( int x= 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
 				returnArr[x][y] = UNPROCESSED_VAL;
@@ -34,15 +36,19 @@ public class AutoRegionGrowing_ implements PlugInFilter {
 		
 		Stack<Point> processingStack = new Stack<Point>();
 		
+		// for whole image
 		for ( int x = 0; x < width; x++) {
 			for ( int y = 0; y < height; y++) {
 		
 				//first check if seed point is valid
 				int seedVal = inImgArr[x][y];
-				if(seedVal >= lowerThresh && seedVal <= upperThresh) {
+				if(seedVal >= lowerThresh && seedVal <= upperThresh && returnArr[x][y] == UNPROCESSED_VAL) {
 					processingStack.push(new Point(x, y));
-					returnArr[x][y] = FG_VAL;
+					FG_VAL = FG_VAL -20;
+					System.out.println("next foreground will be: " + FG_VAL);
+					//returnArr[x][y] = FG_VAL;
 				}
+								
 				
 				while(!processingStack.empty()) {
 					Point nextPos = processingStack.pop();
@@ -57,7 +63,6 @@ public class AutoRegionGrowing_ implements PlugInFilter {
 							boolean isRegion = false;
 							if(region.equals("N4") && (xOffset*yOffset == 0 && xOffset+yOffset != 0)) isRegion = true;
 							if(region.equals("N8") && (xOffset != 0 || yOffset != 0)) isRegion = true;
-							
 							
 							if(isRegion) {
 								
@@ -83,11 +88,16 @@ public class AutoRegionGrowing_ implements PlugInFilter {
 						}//for yOffset
 					}// for xOffset
 				
-				} //while
+				} //while processed all pixels of growing region
+				
+				
+				
 			} // for hight -> y
 		} //ffor width -> x
 
+		
 		System.out.println(processingStack.size());
+		
 		
 		//cleanup - all values still unprocessed - get assigned the background value BG_VAL
 		for( int x = 0; x < width; x++) {
@@ -125,7 +135,7 @@ public class AutoRegionGrowing_ implements PlugInFilter {
 		}
 		
 		//finally calling function
-		int[][] resultImg = performRegionGrowing(inDataArrInt, width, height, lowerThresh, upperThresh,"N4");
+		int[][] resultImg = performRegionGrowing(inDataArrInt, width, height, lowerThresh, upperThresh,"N8");
 
 	
 		ImageJUtility.showNewImage(resultImg, width, height, "region coin result");
