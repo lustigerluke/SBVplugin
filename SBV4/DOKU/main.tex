@@ -6,6 +6,7 @@
 \usepackage{float}
 \usepackage{array}
 \usepackage{pdfpages}
+\usepackage{lscape}
 
 \lstset{
 extendedchars=\true,
@@ -40,10 +41,53 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \subsection{Region Growing}
 
 \subsubsection{Manuelles Image Growing}
-todo
+\label{subsec:manualRegionGrowing}
+Der Algorithmus zu dieser Übung wurde aus der Vorlesung übernommen. Es waren lediglisch N4 und N8 Nachbarpixelregionen zu unterscheiden. Diese wurden einfach durch Variable der Funktion mitgegeben und in einer \textit{if} Abfrage abgefragt. \\
+Figure \ref{tab:N4pattern} und Figure \ref{tab:N8pattern} vergleichen die zu unersuchenden Nachbarschaftspixel.
+
+\textit{Regionsvergleich}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c  c  c |}
+    \hline
+    x/y & -1 & 0 & 1 \\
+    \hline
+    -1  & 0 & x & 0 \\
+    0   & x & 0 & x \\
+    1   & 0 & x & 0 \\
+    \hline
+  \end{tabular}
+  \caption{N4 Region}
+  \label{tab:N4pattern}
+
+  \hspace{1cm}
+
+  \begin{tabular}{| c | c  c  c |}
+    \hline
+    x/y & -1 & 0 & 1 \\
+    \hline
+    -1  & x & x & x \\
+    0   & x & 0 & x \\
+    1   & x & x & x \\
+  \hline
+  \end{tabular}
+  \caption{N8 Region}
+  \label{tab:N8pattern}
+\end{table}
+
+
+\begin{landscape}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = RegionGrowing-Algorithmus.]{../../RegionGrowing_.java}
+\end{landscape}
+
 
 \subsubsection{Image Growing mit Labeling}
-todo
+Für die Implmentierung wurde der Code aus Aufgabe \ref{subsec:manualRegionGrowing} kopiert und erweitert. Muss das gesamte Bild untersucht werden um alle Objekte zu finden. Wird ein passendes Pixel gefunden, wird der Region-Growing Algorithmus herangezogen. Mittels der Fordergrundfarbe werden die Objekte eingeteilt und unterschieden.
+
+\begin{landscape}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = RegionGrowing-Algorithmus.]{../../AutoRegionGrowing_.java}
+\end{landscape}
 
 
 \subsection{Optimaler Threshold}
