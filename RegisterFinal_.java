@@ -5,9 +5,9 @@ import ij.process.*;
 import java.awt.*;
 import ij.gui.GenericDialog;
 
-public class Register_ implements PlugInFilter {
+public class RegisterFinal_ implements PlugInFilter {
   
-	boolean nnFlag = true;
+	boolean nnFlag = false;
 	
    public int setup(String arg, ImagePlus imp) {
 		if (arg.equals("about"))
@@ -22,15 +22,22 @@ public class Register_ implements PlugInFilter {
 		int width = ip.getWidth();
 		int height = ip.getHeight();
         int[][] inDataArrInt = ImageJUtility.convertFrom1DByteArr(pixels, width, height);
+        
+        int widthHalf = (int) (width / 2.0);
+		double[][] img1 = chopImgInHalf(inDataArrInt, width, height, widthHalf, true);
+		double[][] img2 = chopImgInHalf(inDataArrInt, width, height, widthHalf, false);
+		
+		int[][] intImg2 = ImageJUtility.convertToIntArr2D(img2, widthHalf, height);
                           
         // define transform
         double transX = getUserInput(0,"deltaX");
         double transY = getUserInput(0,"deltaY");
         double rotAngle = getUserInput(0,"rotation");
         
-        int[][] transformedImg = transformImage(inDataArrInt, width, height, transX, transY, rotAngle);
+        //int[][] transformedImg = transformImage(inDataArrInt, width, height, transX, transY, rotAngle);
+        int[][] transformedImg = transformImage(intImg2, widthHalf, height, transX, transY, rotAngle);
         
-        ImageJUtility.showNewImage(transformedImg, width, height, "transformed image");
+        ImageJUtility.showNewImage(transformedImg, widthHalf, height, "transformed image");
                         
 	} //run
 
@@ -58,18 +65,14 @@ public class Register_ implements PlugInFilter {
 		double deltaX = x - Math.floor(x);
 		double deltaY = y - Math.floor(y);
 
-		// set calculation fregment
+		// set calculation fragment
 		int xPlus1 = (int) x + 1;
 		int yPlus1 = (int) y + 1;
 
-		// handling of image edge for x
-		if (x + 1 >= width) {
-			xPlus1 = (int) x;
-		}
-
-		// handling of image edge for y
-		if (y + 1 >= height) {
-			yPlus1 = (int) y;
+		
+		//handling translation and rotation for x and y
+		if(x < 0 || x >= width || y < 0 || y >= height || xPlus1 < 0 || xPlus1 >= width || yPlus1 < 0 || yPlus1 >= height) {
+			return 0;
 		}
 
 		// get 4 neighboring pixels
@@ -123,14 +126,14 @@ public class Register_ implements PlugInFilter {
 					int nnX = (int) (posX + 0.5);
 					int nnY = (int) (posY + 0.5);
 					
-					//6) assigne value from original imag inImg if inside the image boundaries
+					//6) assigne value from original img inImg if inside the image boundaries
 					if(nnX >= 0 && nnX <width && nnY >= 0 && nnY < height) {
 						resultImg[x][y] = inImg[nnX][nnY];
 					}
 				}
 				else {
-					// if not nearest neighbor, do bilinear interpolation
-					double resultVal = GetBilinearInterpolatedValue(inDataArrInt, posX, posY, width, height);
+					// if nearest neighbor flag is false, do bilinear interpolation
+					double resultVal = GetBilinearinterpolatedValue(inImg, posX, posY, width, height);
 					
 					//set new rounded value for current location
 					resultImg[x][y] = (int) (resultVal + 0.5);
@@ -141,6 +144,36 @@ public class Register_ implements PlugInFilter {
 			}
 		}
 		return resultImg;
+	}
+	
+	
+	public static double[][] chopImgInHalf(int[][] inDataArrInt, int width, int height, int widthHalf, boolean flag) {
+		// store half of width in int var
+
+		// create temporary image
+		double[][] tmpImage = ImageJUtility.convertToDoubleArr2D(inDataArrInt, width, height);
+
+		if (flag == true) {
+			// create region of interest
+			Rectangle roi = new Rectangle(0, 0, widthHalf, height);
+
+			// crop image and store first half in var
+			double[][] Img1 = ImageJUtility.cropImage(tmpImage, roi.width, roi.height, roi);
+			ImageJUtility.showNewImage(Img1, widthHalf, height, "first half image");
+
+			return Img1;
+		} else {
+
+			// create region of interest
+			Rectangle roi = new Rectangle(0, 0, widthHalf, height);
+
+			// overwrite roi with values for second half, crop image and store second half
+			// in var
+			roi = new Rectangle(widthHalf, 0, widthHalf, height);
+			double[][] Img2 = ImageJUtility.cropImage(tmpImage, roi.width, roi.height, roi);
+			ImageJUtility.showNewImage(Img2, widthHalf, height, "second half image");
+			return Img2;
+		}
 	}
 	
 	
