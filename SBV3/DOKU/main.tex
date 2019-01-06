@@ -40,14 +40,14 @@ postbreak=\mbox{{$\hookrightarrow$}\space},
 \subsection{Resampling und Bildüberlagerung}
 \subsubsection{Zerteilen eines Bildes}
 \label{chopImg}
-Zur vertikalen Teilung eines Bildes wurde ein simpler Filter \textit{ChopImgInHalf\_} in \textit{ImageJ} implementiert. Dieser definiert zuerst eine ROI (region of interest) welche die erste Hälfte des Bildes beinhaltet. Mittels \textit{ImageJUtility.chopImage} kann dieser Bereich aus dem Ursprungsbild herausgeschnitten und angezeigt werden. Die Berechnung der 2ten Hälfte des Bildes unterscheidet sich lediglich durch die linke obere Koordinate des interessanten Bereichs (roi). 
+Zur vertikalen Teilung eines Bildes wurde ein simpler Filter \textit{ChopImgInHalf\_} in \textit{ImageJ} implementiert. Dieser definiert zuerst eine ROI (region of interest) welche die erste Hälfte des Bildes beinhaltet. Mittels \textit{ImageJUtility.chopImage} kann dieser Bereich aus dem Ursprungsbild herausgeschnitten und angezeigt werden. Die Berechnung der zweiten Hälfte des Bildes unterscheidet sich lediglich durch die linke obere Koordinate des interessanten Bereichs (ROI). 
 
 \begin{table}[H]
   \centering
   \begin{tabular}{| c | c | c |}
 	\hline
-	gegebenes & invertierter & invertierter \\	
-	Testbild & Bildausschnitt1 & Bildausschnitt2 \\ 
+	 & erste & zweite \\	
+	Testbild & Bildhälfte & Bildhälfte \\ 
     \hline
     \includegraphics[width=5cm]{images/chop/binary1.jpg} &
     \includegraphics[width=2.5cm]{images/chop/binary1FH.jpg} &
@@ -59,11 +59,16 @@ Zur vertikalen Teilung eines Bildes wurde ein simpler Filter \textit{ChopImgInHa
     \hline
     
   \end{tabular}
-  \caption{Testfälle: Zerteilung eines Bildes}
+  \caption{Zerteilung eines Bildes anhand selbst definiertem Filter}
   \label{tab:chopInHalfTest}
 \end{table}
 
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../ChopImgInHalf_.java}
+
 \subsubsection{Transformation mittels Nearest Neighbor und Bilinearer Interpolation}
+
+
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../RegisterFinal_.java}
 
 \subsubsection{automatische Registrierung}
 Es wurde ein Filter in \textit{ImgaeJ} implementiert, der zur automatischen Registrierung von Bildinhalten herangezogen werden soll. Dabei wurde von den gegebenen Testbildern ausgegangen. \\
@@ -101,15 +106,7 @@ Aus Ressourcengründen werden all die beschriebenen Berechnungen/Verschiebungen 
   \label{tab:autoRegisterTest}
 \end{table}
 
-\subsubsection{Optimierungs-Strategie: Gradientenabstieg (gradient descent) oder Evolutionsstrategie (evolution strategy)}
-skipped\\
-\subsubsection{Mutual Information Metrik}
-skipped\\
-\subsubsection{Registrierung mittels DistanceMap}
-skipped?!\\
-@Lisa: hier könnte dein Text stehen ;) Im Anschluss findest du noch Code-Beispiele für das Einfügen von Bildern und Tabellen und und und .... ich habs dir drinnen gelassen, nachdem ich diese selbst verwendet hab ;) bitte löschen wenn du sie nicht mehr brauchst.
-
-
+\lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../AutoRegisterFinal_.java}
 \newpage
 
 
