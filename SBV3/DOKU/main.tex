@@ -67,10 +67,23 @@ Zur vertikalen Teilung eines Bildes wurde ein simpler Filter \textit{ChopImgInHa
 
 \subsubsection{Transformation mittels Nearest Neighbor und Bilinearer Interpolation}
 
+In einem separaten Filter \textit{RegisterFinal_.java} wurde die Funktionalitäten implementiert, die für die automatische Registrierung in c) benötigt werden. Bei Aufruf des Filters wird als erstes die Funktionalität des \textit{ChopImgInHalf_.java} Filter angewandt. Diese sorgt dafür, dass das Eingangsbild in zwei Hälften geteilt und das Originalbild A von Bild B getrennt wird. Abschließend wird neben dem bereits geöffnet Originalbild die zwei getrennten Bildhälften ausgegeben.
+
+Anschließend müssen deltaX und deltaY für die Translation angegeben werden. Für die Rotation muss zusätzlich noch der Rotationswinkel angegeben werden. Nach dem der User die Eingaben  getätigt und bestätigt hat, wird das Bild B dementsprechend neu positioniert und gedreht.
+
+Anbei folgen Testbilder, die die Funktionalität wiederspiegeln:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=7cm]{images/bilineare-interpolation-final/nn-scaled-2.jpeg}
+	\caption{Resampling anhand Nearest Neighbor Interpolation und Skalierung um Faktor 2.0}
+	\label{fig:Translation-Rotation}
+\end{figure}
+
 
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../RegisterFinal_.java}
 
-\subsubsection{automatische Registrierung}
+\subsubsection{Automatische Registrierung}
 Es wurde ein Filter in \textit{ImgaeJ} implementiert, der zur automatischen Registrierung von Bildinhalten herangezogen werden soll. Dabei wurde von den gegebenen Testbildern ausgegangen. \\
 Da diese mit einer Bildtiefe von $8 bit$ nur Werte von $0$ (schwarz) bis $255$ (weiß) aufweisen, kann mittels SSE einfach ein Algorithmus geschrieben werden, der die Bilder voneinander subtrahiert und die Pixelwerte des Resultatbildes als Fitness heranzieht und aufsummiert. Der Hintergrund der gegebenen Bilder ist dabei meist weiß ($255$). Bei einer Verschiebung und anschließender Subtraktion entstehen aus diesem Grund aber schwarze Fragmente am Rand. Dieser Umstand kann leicht eliminiert werden, indem das Ursprungsbild zu Beginn invertiert wird. So ist der Hintergrund schwarz ($0$). Kanten werden dementsprechend weiß ($255$) dargestellt. \\
 Das invertierte Bild wird anschließend, wie in Punkt \ref{chopImg} beschrieben, zerteilt und die Einzelbilder dargestellt. \\
