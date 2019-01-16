@@ -65,20 +65,55 @@ Zur vertikalen Teilung eines Bildes wurde ein simpler Filter \textit{ChopImgInHa
 
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../ChopImgInHalf_.java}
 
+
+
+
 \subsubsection{Transformation mittels Nearest Neighbor und Bilinearer Interpolation}
 
-In einem separaten Filter \textit{RegisterFinal_.java} wurde die Funktionalitäten implementiert, die für die automatische Registrierung in c) benötigt werden. Bei Aufruf des Filters wird als erstes die Funktionalität des \textit{ChopImgInHalf_.java} Filter angewandt. Diese sorgt dafür, dass das Eingangsbild in zwei Hälften geteilt und das Originalbild A von Bild B getrennt wird. Abschließend wird neben dem bereits geöffnet Originalbild die zwei getrennten Bildhälften ausgegeben.
+In einem separaten Filter \textit{RegisterFinal\_.java} wurden die Funktionalitäten implementiert, die für die automatische Registrierung in c) benötigt werden. Bei Aufruf des Filters wird als erstes die Funktionalität des \textit{ChopImgInHalf\_.java} Filter angewandt. Diese sorgt dafür, dass das Eingangsbild in zwei Hälften geteilt und das Originalbild A von Bild B getrennt wird. Abschließend wird neben dem bereits geöffnet Originalbild die zwei getrennten Bildhälften ausgegeben. Die Neuberechnung der Bilder erfolgt entweder mit der Nearest Neighbor- oder der Bilinearen Interpolation. Hierzu wurde eine boolsche Variable als Flag definiert, die je nach Wert eine der beiden Interpolationsmethoden verwendet.
 
 Anschließend müssen deltaX und deltaY für die Translation angegeben werden. Für die Rotation muss zusätzlich noch der Rotationswinkel angegeben werden. Nach dem der User die Eingaben  getätigt und bestätigt hat, wird das Bild B dementsprechend neu positioniert und gedreht.
 
 Anbei folgen Testbilder, die die Funktionalität wiederspiegeln:
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=7cm]{images/bilineare-interpolation-final/nn-scaled-2.jpeg}
-	\caption{Resampling anhand Nearest Neighbor Interpolation und Skalierung um Faktor 2.0}
-	\label{fig:Translation-Rotation}
-\end{figure}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c | c | c |}
+	\hline
+	gegebenes & erste & zweite & resultierendes \\	
+	Testbild & Bildhälfte & Bildhälfte & Ergebnis \\ 
+    \hline
+    \includegraphics[width=5cm]{images/register/gray1.jpg}  &
+    \includegraphics[width=2.5cm]{images/register/first-half-image-01.jpg} &
+    \includegraphics[width=2.5cm]{images/register/second-half-image-01.jpg} &
+    \includegraphics[width=2.5cm]{images/register/transformed-image-01.jpg} \\
+    \hline
+	deltaX=20, deltaY=20, \\rotation=45, nnFlag=false \\
+     \hline
+    \includegraphics[width=5cm]{images/register/gray1.jpg}  &
+    \includegraphics[width=2.5cm]{images/register/first-half-image-01.jpg} &
+    \includegraphics[width=2.5cm]{images/register/second-half-image-01.jpg} &
+    \includegraphics[width=2.5cm]{images/register/transformed-image-02.jpg} \\
+     deltaX=100, deltaY=50,\\ rotation=10, nnFlag=false \\
+    \hline
+    \includegraphics[width=5cm]{images/register/gray1.jpg}  &
+    \includegraphics[width=2.5cm]{images/register/first-half-image-01.jpg} &
+    \includegraphics[width=2.5cm]{images/register/second-half-image-01.jpg} &
+    \includegraphics[width=2.5cm]{images/register/transformed-image-03.jpg} \\
+    \hline
+	deltaX=20, deltaY=20, \\ rotation=45, nnFlag=true \\
+     \hline
+    \includegraphics[width=5cm]{images/register/gray1.jpg}  &
+    \includegraphics[width=2.5cm]{images/register/first-half-image-01.jpg} &
+    \includegraphics[width=2.5cm]{images/register/second-half-image-01.jpg} &
+    \includegraphics[width=2.5cm]{images/register/transformed-image-04.jpg} \\
+     deltaX=100, deltaY=50, \\rotation=10, nnFlag=true \\
+    \hline
+    
+  \end{tabular}
+  \caption{Testfälle:Transformation mittels NN und Bilinearer Interpolation}
+  \label{tab:registerTest}
+\end{table}
 
 
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../RegisterFinal_.java}
@@ -120,23 +155,5 @@ Aus Ressourcengründen werden all die beschriebenen Berechnungen/Verschiebungen 
 \end{table}
 
 \lstinputlisting[frame=single,language=JAVA,breaklines=true]{../../AutoRegisterFinal_.java}
-\newpage
-
-
-\begin{figure}[H]
-	\centering
-	%\includegraphics[width=7cm]{images/bilineare-interpolation-final/bip-scaled-2.jpg}
-	\caption{Resampling anhand bilinearer Interpolation und Skalierung um Faktor 2.0}
-	\label{fig:resultResamplingBilinearInterpolation-2.0}
-\end{figure}
-
-
-
-
-\newpage
-%%\lstinputlisting[frame=single,language=MATLAB,breaklines=true,caption = Octave Script zur Darstellung der einzelnen Kompressionsraten.]{../calculateZipMatrix.m}
-%%\label{fig: calculateMatrixOctaveCode}
-
-
 
 \end{document}
