@@ -76,6 +76,21 @@ Figure \ref{tab:N4pattern} und Figure \ref{tab:N8pattern} vergleichen die zu une
   \label{tab:N8pattern}
 \end{table}
 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c | }
+    \hline
+    Eingangsbild & Ergebnisbild \\
+    \hline
+    \includegraphics[width=5cm]{../TestData/coins.jpg}  & \includegraphics[width=5cm]{../TestData/coins_result1.jpg}\\
+	\hline
+	\includegraphics[width=5cm]{../TestData/packman.jpg}  & \includegraphics[width=5cm]{../TestData/packman_result1.jpg}\\
+	\hline
+     
+  \end{tabular}
+  \caption{Testbilder zum Region Growing}
+\end{table}
+
 
 \begin{landscape}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = RegionGrowing-Algorithmus.]{../../RegionGrowing_.java}
@@ -84,6 +99,25 @@ Figure \ref{tab:N4pattern} und Figure \ref{tab:N8pattern} vergleichen die zu une
 
 \subsubsection{Image Growing mit Labeling}
 Für die Implmentierung wurde der Code aus Aufgabe \ref{subsec:manualRegionGrowing} kopiert und erweitert. Muss das gesamte Bild untersucht werden um alle Objekte zu finden. Wird ein passendes Pixel gefunden, wird der Region-Growing Algorithmus herangezogen. Mittels der Fordergrundfarbe werden die Objekte eingeteilt und unterschieden.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c | }
+    \hline
+    Eingangsbild & Ergebnisbild \\
+    \hline
+    \includegraphics[width=5cm]{../TestData/coins.jpg}  & \includegraphics[width=5cm]{../TestData/coins_result.jpg}\\
+	\hline
+	\includegraphics[width=5cm]{../TestData/dots.jpg}  & \includegraphics[width=5cm]{../TestData/dots_result.jpg}\\
+	\hline
+	\includegraphics[width=5cm]{../TestData/binary.jpg}  & \includegraphics[width=5cm]{../TestData/binary_result.jpg}\\
+	\hline
+	\includegraphics[width=5cm]{../TestData/batman.jpg}  & \includegraphics[width=5cm]{../TestData/batman_result.jpg}\\
+	\hline
+     
+  \end{tabular}
+  \caption{Testbilder zum Automatischen Region Growing}
+\end{table}
 
 \begin{landscape}
 \lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = RegionGrowing-Algorithmus]{../../AutoRegionGrowing_.java}

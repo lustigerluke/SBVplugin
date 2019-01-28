@@ -126,7 +126,7 @@ public class RegionGrowing_ implements PlugInFilter {
 		GenericDialog gd = new GenericDialog("thresh params");
 		gd.addSlider("lower thresh", 0, 255, lowerThresh);
 		gd.addSlider("upper thresh", 0, 255, upperThresh);
-		gd.addChoice("Wählen Sie eine NachbarschaftsAdjazenz",nachbarschaften,nachbarschaften[0]);
+		gd.addChoice("WÃ¤hlen Sie eine NachbarschaftsAdjazenz",nachbarschaften,nachbarschaften[0]);
 		gd.showDialog();
 
 		String nachbarschaft = null;
