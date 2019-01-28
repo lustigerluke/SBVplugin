@@ -123,19 +123,23 @@ public class AutoRegionGrowing_ implements PlugInFilter {
 		// user input - default
 		int lowerThresh = 100;
 		int upperThresh = 255;
+		String[] nachbarschaften = {"N4","N8"};
 		// user dialog
 		GenericDialog gd = new GenericDialog("thresh params");
 		gd.addSlider("lower thresh", 0, 255, lowerThresh);
 		gd.addSlider("upper thresh", 0, 255, upperThresh);
+		gd.addChoice("Wählen Sie eine NachbarschaftsAdjazenz",nachbarschaften,nachbarschaften[0]);
 		gd.showDialog();
 
+		String nachbarschaft = null;
 		if (!gd.wasCanceled()) {
 			lowerThresh = (int) gd.getNextNumber();
 			upperThresh = (int) gd.getNextNumber();
+			nachbarschaft = gd.getNextChoice();
 		}
 		
 		//finally calling function
-		int[][] resultImg = performRegionGrowing(inDataArrInt, width, height, lowerThresh, upperThresh,"N8");
+		int[][] resultImg = performRegionGrowing(inDataArrInt, width, height, lowerThresh, upperThresh,nachbarschaft);
 
 	
 		ImageJUtility.showNewImage(resultImg, width, height, "region coin result");
