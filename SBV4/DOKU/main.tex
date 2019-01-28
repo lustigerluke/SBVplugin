@@ -86,22 +86,57 @@ Figure \ref{tab:N4pattern} und Figure \ref{tab:N8pattern} vergleichen die zu une
 Für die Implmentierung wurde der Code aus Aufgabe \ref{subsec:manualRegionGrowing} kopiert und erweitert. Muss das gesamte Bild untersucht werden um alle Objekte zu finden. Wird ein passendes Pixel gefunden, wird der Region-Growing Algorithmus herangezogen. Mittels der Fordergrundfarbe werden die Objekte eingeteilt und unterschieden.
 
 \begin{landscape}
-\lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = RegionGrowing-Algorithmus.]{../../AutoRegionGrowing_.java}
+\lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = RegionGrowing-Algorithmus]{../../AutoRegionGrowing_.java}
 \end{landscape}
 
 
 \subsection{Optimaler Threshold}
+Der zum Start benötigte initiale Threshold wird anhand eines User Inputs definiert. Wird kein Input angegeben wird als Default-Wert 127 gesetzt (255/2), somit startet die Berechnung mittig vom Histogramm.\\
+Um mit der Berechnung des optimalen Threshold starten zu können wurden zwei Konstanten FG\_VAL und BG\_VAL definiert, die die jeweils kleinste und höchste Intensität enthalten.  Bei jeder Iteration wird geprüft, ob der aktuelle Wert des Eingangsbildes über oder unter dem Threshold Wert. Liegt der Wert darunter, wird dieser in der sumThresh01 Variable aufsummiert und der Counter erhöht. Ist der Wert darüber, passiert dasselbe nur mit anderen Variablen.\\
+Die aufsummierten Werte der zwei Bereiche werden nun benötigt um nach durlaufen des Eingangsbildes den Durchschnitt zu berechnen. Der vorübergehende Threshold wird aus den beiden meanThresh01, meanThresh02 berechnet. Nun wird geprüft, ob das Delta das sich zwischen dem vorübergehenden und initialen Threshold ergibt, über der definierten Konvergenz (DELTA\_VAL), in diesem Fall 0.01, liegt. Wenn ja, wird ein erneuter Schleifendurchlauf gestartet. Wenn die Werte gleich sind, wird die Schleife abgebrochen und das berechnete Ausgangsbild ausgegeben.
 
 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c | c | c | }
+    \hline
+   initialer \\Threshold Wert & Eingangsbild & Optimal Threshold & Threshold Bild \\
+    \hline
+     60 & \includegraphics[width=5cm]{../Bilddaten/3_lena.png} &  117.81496778947292; & \includegraphics[width=5cm]{../Bilddaten/threshold_image-01.png}\\
+\hline
+ 127 & \includegraphics[width=5cm]{../Bilddaten/3_lena.png} &    120.52898065546574  & \includegraphics[width=5cm]{../Bilddaten/threshold_image-02.png} \\
+\hline
+     
+  \end{tabular}
+  \caption{Optimal Threshold Testbilder}
+\end{table}
 
-\lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = Optimal Threshold Algorythmus.]{../../OptimalThreshold_.java}
+
+\lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = Optimal Threshold Algorithmus]{../../OptimalThreshold_.java}
 
 
 \subsubsection{Adaptiver optimar Threshold}
 
+Um den Filter des Optimal Threshold auch bei Bildern gut einsetzen zu können, die unterschiedliche Intensitätsverteilung pro Sektor haben, wurde der Adaptive Threshold-Filter implementiert.
 
+Dieser verwendet die Funktionalität des Optimal Threshold wendet diese jedoch auf Sektoren mit einer Größe von 100x100 Pixel an. Die Sektoren werden aus dem Bild herausgeschnitten, der Optimal Threshold berechnet und zwischengespeichert. Abschließend werden Sie zu einem Bild zusammen gesetzt und ausgegeben.
 
-\lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = Adaptive Threshold Algorythmus.]{../../AdaptiveThreshold_.java}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{| c | c | c | c | }
+    \hline
+   initialer \\Threshold Wert & Eingangsbild &  Threshold Bild \\
+    \hline
+     60 & \includegraphics[width=5cm]{../Bilddaten/bacteria.png} &   \includegraphics[width=5cm]{../Bilddaten/bacteria-01.png}\\
+\hline
+ 127 & \includegraphics[width=5cm]{../Bilddaten/bacteria.png} &     \includegraphics[width=5cm]{../Bilddaten/bacteria-02.png} \\
+\hline
+     
+  \end{tabular}
+  \caption{Adaptive Threshold Testbilder}
+\end{table}
+
+\lstinputlisting[frame=single,language=JAVA,breaklines=true,caption = Adaptive Threshold Algorithmus]{../../AdaptiveThreshold_.java}
 
 
 \end{document}
